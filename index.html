@@ -1054,6 +1054,9 @@ a.link{text-decoration:none}
 .lvls button[aria-pressed=true]{background:var(--accent);color:#fff}
 .deleg .note{margin-top:4px}
 @media (max-width:760px){.board.people{grid-template-columns:minmax(0,1fr);overflow:visible}.lvls{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.login-card{max-width:440px;margin:28px auto 0;padding:22px;border:1px solid var(--line);border-radius:var(--r-l);background:var(--surface);display:grid;gap:12px}
+.login-card h2{margin:0;font-size:20px}.login-card p{margin:0}
+.loginf{display:grid;gap:10px}
 
 </style>
 </head>
@@ -1741,7 +1744,8 @@ function settingsSheet(){
   openLayer('settings',head('Gegevens en back-up')+`<div class="sheet-body">
   <p class="small" style="margin:0">Alles staat eerst in deze browser. Ben je ingelogd, dan synchroniseert Focus met Supabase. Een JSON-export blijft mogelijk als extra back-up.</p>
   <div class="row"><button class="btn primary" data-a="export">Exporteer JSON</button><button class="btn" data-a="import">Importeer JSON</button><input type="file" id="importFile" accept="application/json,.json" hidden></div>
-  <div class="field"><span class="lbl">Synchronisatie</span>${sess?`<div class="small">Ingelogd als ${esc(sess.email||'jouw account')} · <span id="syncLine">${esc(syncLine())}</span></div><div class="row"><button class="btn" data-a="sync-now">Nu synchroniseren</button><button class="btn ghost" data-a="sync-out">Uitloggen</button></div>`:`<div class="small">Log in met een link per e-mail om je data op meerdere apparaten te gebruiken. Zonder inloggen blijft alles in deze browser.</div><div class="row"><input class="input" id="syncMail" type="email" placeholder="jij@voorbeeld.nl" autocomplete="email" aria-label="E-mailadres"><button class="btn primary" data-a="sync-in">Stuur inloglink</button></div>`}</div>
+  <div class="field"><span class="lbl">Account en synchronisatie</span>${sess?`<div class="small">Ingelogd als ${esc(sess.email||'jouw account')} · <span id="syncLine">${esc(syncLine())}</span></div><div class="row"><button class="btn" data-a="sync-now">Nu synchroniseren</button><button class="btn ghost" data-a="sync-out">Uitloggen</button></div>
+   <form class="row" data-form="set-pw" style="flex-wrap:wrap"><input class="input" name="pw" type="password" autocomplete="new-password" minlength="8" placeholder="Nieuw wachtwoord (min. 8 tekens)" aria-label="Nieuw wachtwoord" style="flex:1;min-width:200px"><button class="btn">Wachtwoord instellen</button></form><span class="hint">Daarna log je overal in met e-mail en wachtwoord, zonder link.</span>`:loginForm()}</div>
   ${teamBlock()}
   ${weekEditor()}
   ${rhythmSummary()}
@@ -1830,6 +1834,7 @@ const ACT={
   'week-ics':()=>{downloadWeekIcs();toast('Weekritme als terugkerende agenda-items gedownload')},
   'pin-set':async()=>{const v=($('#pinNew')?.value||'').trim();if(!/^\d{4}$/.test(v)){toast('Gebruik precies 4 cijfers');return}await setPin(v);settingsSheet();toast('Pincode ingesteld op dit apparaat')},
   'pin-off':()=>{wr(PIN_KEY,null);ss('focus-ontgrendeld',null);settingsSheet();toast('Pincode verwijderd')},
+  'sync-link':async()=>{const m=($('#layer [data-form=login] [name=email]')?.value||'').trim();if(!m){toast('Vul je e-mailadres in');return}const ok=await sendLink(m);toast(ok?'Inloglink verstuurd. Stel daarna een wachtwoord in onder Gegevens.':'Versturen lukt niet. Probeer het later opnieuw.')},
   'sync-in':async()=>{const m=($('#syncMail')?.value||'').trim();if(!m){toast('Vul je e-mailadres in');return}const ok=await sendLink(m);toast(ok?'Inloglink verstuurd. Open de link op dit apparaat.':'Versturen lukt niet. Probeer het later opnieuw.')},
   'sync-now':async()=>{await syncNow();settingsSheet()},
   'sync-out':()=>{setSess(null);wr(PEND_KEY,null);syncInfo={at:null,err:null};settingsSheet();toast('Uitgelogd. Je data blijft in deze browser.')},
@@ -2025,6 +2030,16 @@ async function authFetch(path,opts={}){
   if(r.status===401&&await refresh())r=await go();
   return r;
 }
+async function signInPassword(email,password){
+  const r=await fetch(SB.url+'/auth/v1/token?grant_type=password',{method:'POST',headers:{apikey:SB.key,'Content-Type':'application/json'},body:JSON.stringify({email,password})});
+  if(!r.ok){let m='';try{m=(await r.json()).error_description||''}catch{}throw new Error(r.status===400?'E-mail of wachtwoord klopt niet'+(m&&!/invalid/i.test(m)?' ('+m+')':''):'Inloggen lukt nu niet ('+r.status+')')}
+  const j=await r.json();setSess(sessFromTokens(j.access_token,j.refresh_token,j.expires_in));
+}
+async function setPassword(pw){
+  const r=await authFetch('/auth/v1/user',{method:'PUT',body:JSON.stringify({password:pw})});
+  if(!r.ok){let m='';try{const j=await r.json();m=j.msg||j.error_description||j.message||''}catch{}throw new Error(m||('fout '+r.status))}
+}
+function loginForm(){return `<form class="loginf" data-form="login"><div class="grid2"><input class="input" name="email" type="email" autocomplete="username" placeholder="E-mailadres" aria-label="E-mailadres" required value="${esc(rd('focus-last-email')||'')}"><input class="input" name="pw" type="password" autocomplete="current-password" placeholder="Wachtwoord" aria-label="Wachtwoord" required></div><div class="row"><button class="btn primary">Inloggen</button><span class="spacer"></span><button type="button" class="link quiet" data-a="sync-link">Geen wachtwoord? Stuur een inloglink</button></div></form><span class="hint">Zonder inloggen blijft alles alleen in deze browser.</span>`}
 async function sendLink(email){
   const to=location.origin+location.pathname;
   const r=await fetch(SB.url+'/auth/v1/otp?redirect_to='+encodeURIComponent(to),{method:'POST',headers:{apikey:SB.key,'Content-Type':'application/json'},body:JSON.stringify({email,create_user:true})});
@@ -2389,6 +2404,18 @@ signals=function(){const out=_signals(),t=iso();
   open().filter(x=>x.owner&&x.followUp&&x.followUp<=t).forEach(x=>out.push({w:1.2,o:obj(x.objectiveId),text:`Terugkoppelen met ${ownerName(x)}`,sub:x.title,a:'open-task',id:x.id,label:'Open'}));
   return out.sort((a,b)=>a.w-b.w)};
 
+/* ---- 16-login.js ---- */
+/* ================= Inloggen met e-mail en wachtwoord ================= */
+document.addEventListener('submit',async e=>{const f=e.target,k=f.dataset.form;if(k!=='login'&&k!=='set-pw')return;e.preventDefault();
+  const fd=new FormData(f),btn=f.querySelector('button.primary,button:not([type])');
+  if(k==='login'){const email=clean(fd.get('email')),pw=String(fd.get('pw')||'');if(!email||!pw)return;if(btn){btn.disabled=true;btn.textContent='Bezig…'}
+    try{await signInPassword(email,pw);wr('focus-last-email',email);toast('Ingelogd. Je gegevens worden opgehaald.');await startSync();closeLayer(true);render()}
+    catch(err){toast(err.message);if(btn){btn.disabled=false;btn.textContent='Inloggen'}}return}
+  if(k==='set-pw'){const pw=String(fd.get('pw')||'');if(pw.length<8){toast('Gebruik minstens 8 tekens.');return}
+    try{await setPassword(pw);f.reset();toast('Wachtwoord ingesteld. Voortaan log je in met e-mail en wachtwoord.')}catch(err){toast('Instellen lukte niet: '+err.message)}}});
+// Lege start zonder inlog: niet een leeg scherm, maar meteen de mogelijkheid om in te loggen.
+function loginCard(){if(sess||objs().length)return '';return `<section class="login-card"><h2>Welkom terug</h2><p class="muted">Log in om je objectives en acties op te halen.</p>${loginForm()}</section>`}
+
 /* ---- 20-week.js ---- */
 /* ================= Release 1 · weekplanning ================= */
 let wpEdit=false,wpOpen=new Set();
@@ -2592,6 +2619,7 @@ function homePage2(){
   return `<div class="page solo">
    <div class="solo-top"><span class="small">${esc(date[0].toUpperCase()+date.slice(1))}${td.length?` · ${pos||1} van ${td.length+doneToday.length}`:''}</span>${dayChip()}<span class="spacer"></span><button class="btn ghost" data-a="plan">${I('sun')} Plan je dag</button></div>
    ${banner}
+   ${loginCard()}
    ${co.length?`<div class="carry" role="status"><span>${plural(co.length,'actie van eerder staat','acties van eerder staan')} nog open.</span><span class="spacer"></span><button class="link" data-a="carry-keep">Naar vandaag</button><button class="link" data-a="carry-drop" style="color:var(--ink-3)">Laat los</button></div>`:''}
    <section class="solo-now" aria-labelledby="nowH">${now?soloCard2(now):sug.length?`<div class="solo-empty sug"><h1 id="nowH">Wat telt vandaag?</h1><p class="muted">Op basis van je weekplanning. Neem ze over of kies zelf.${dayFocus()?'<br>'+dayHint(dayFocus()):''}</p>
      <ol class="sug-list">${sug.map((s,i)=>`<li><label><input type="checkbox" data-sug="${s.t.id}" checked><span class="pnum">${i+1}</span><span class="pmain"><span class="pt">${esc(s.t.title)}</span><span class="pm">${obj(s.t.objectiveId)?`<span class="pdot" style="background:${obj(s.t.objectiveId).color}"></span>${esc(obj(s.t.objectiveId).name)}${krOf(s.t)?' · KR '+krOf(s.t).i:''}`:'Inbox'} · ${esc(s.why)}</span></span></label></li>`).join('')}</ol>
