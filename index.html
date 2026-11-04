@@ -1057,13 +1057,195 @@ a.link{text-decoration:none}
 .login-card{max-width:440px;margin:28px auto 0;padding:22px;border:1px solid var(--line);border-radius:var(--r-l);background:var(--surface);display:grid;gap:12px}
 .login-card h2{margin:0;font-size:20px}.login-card p{margin:0}
 .loginf{display:grid;gap:10px}
+.ohero-ctx{max-width:72ch;display:grid;gap:4px;margin-top:10px;color:#c7d2ee;font-size:14px;line-height:1.5}
+.ohero-ctx p{margin:0}.ohero-ctx b{color:#F4EEE0}
+.dep.later{opacity:.7;font-style:italic}
+
+/* ================= Focus E: Nu, Week, Resultaten, Samen ================= */
+body.e{--bg:#F6F3EC;--rail:#FFFFFF;--surface:#FFFFFF;--sunken:#EFEBE2;--hover:#F1EDE4;--line:#E6E1D6;--line-2:#D6CFC0;
+  --ink:#0E1A33;--ink-2:#3A4560;--ink-3:#6B7489;--ink-4:#8B93A5;--accent:#2F5BFF;--accent-ink:#2448D8;--accent-soft:#E9EEFF;--accent-line:#C9D3FF;--navy:#0E1A33}
+@media (prefers-color-scheme:dark){body.e{--bg:#0F1626;--rail:#121B2E;--surface:#172036;--sunken:#121B2E;--hover:#1E2943;--line:#26314B;--line-2:#34415F;
+  --ink:#F4EEE0;--ink-2:#D3CDBD;--ink-3:#A5A394;--ink-4:#7F8091;--accent:#7C9BFF;--accent-ink:#A3B8FF;--accent-soft:#1A2547;--accent-line:#34477F;--navy:#0A1020}}
+.e .app{grid-template-columns:84px minmax(0,1fr)}
+.e .rail{padding:16px 10px 12px;align-items:center;gap:4px}
+.e .brand{font-size:0;padding:4px 0 18px;justify-content:center}.e .brand .mark{width:34px;height:34px;border-radius:10px;background:var(--navy)}.e .brand .mark svg{width:16px;height:16px}
+.e #qRail,.e .nav-label,.e #objNav,.e .capture-trigger,.e #sessionRail{display:none}
+.e #nav{display:flex;flex-direction:column;gap:4px;width:100%}
+.e .nav-item.e-nav{flex-direction:column;justify-content:center;gap:4px;min-height:58px;padding:8px 0;font-size:11px;position:relative;border-radius:12px}
+.e .nav-item.e-nav svg{width:20px;height:20px}
+.e .nav-item.e-nav .nm{flex:none;overflow:visible}
+.e .nav-item.e-nav[aria-current]{background:var(--accent-soft);box-shadow:none;font-weight:650}
+.e .e-badge{position:absolute;top:8px;right:16px;width:8px;height:8px;border-radius:50%;background:var(--accent)}.e .e-badge.warn{background:var(--warn-mid)}
+.e .rail-foot{align-items:center;width:100%}
+.e .rail-foot .nav-item{justify-content:center;padding:0;width:40px;height:36px}.e .rail-foot .nav-item .nm{display:none}
+.e .save-state{font-size:0;padding:0;justify-content:center}
+.e-plus{width:42px;height:42px;border-radius:13px;background:var(--accent);color:#fff;display:grid;place-items:center;box-shadow:0 8px 18px -10px var(--accent);margin-bottom:6px}
+.e-plus svg{width:20px;height:20px;stroke-width:2}
+.e .page.e-page{max-width:1180px;padding:30px 44px 120px}
+.e h1{letter-spacing:-.02em}
+.e .lbl{font-size:11px;font-weight:650;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
+.e .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}
+.e .dim{color:var(--ink-4)}.e .warn{color:var(--warn)}.e .ok{color:var(--ok)}
+.e-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:18px}.e-top h1{margin:0;font-size:24px}
+/* Nu */
+.e-date{font-size:13px;color:var(--ink-3);margin-bottom:14px}
+.e-banner{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;background:var(--accent-soft);color:var(--ink-2);text-decoration:none;margin-bottom:14px;flex-wrap:wrap}.e-banner b{color:var(--ink)}
+.e-focus{position:relative;overflow:hidden;background:var(--navy);color:#fff;border-radius:20px;padding:26px 30px;margin-bottom:26px}
+.e-focus::after{content:"";position:absolute;right:-70px;top:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(closest-side,rgba(47,91,255,.55),transparent);pointer-events:none}
+.e-focus-l{font-size:12px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:#9DB2FF}
+.e-focus-t{font-size:clamp(22px,3vw,28px);font-weight:700;line-height:1.2;margin:10px 0 0;max-width:640px;color:#fff}
+.e-focus-m{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:13.5px;color:#C9D3EE;flex-wrap:wrap}.e-focus-m b{color:#fff;font-weight:600}.e-focus-m .dim{color:#8FA0C8}
+.e-focus-a{display:flex;align-items:center;gap:10px;margin-top:20px;position:relative;z-index:1;flex-wrap:wrap}
+.e-focus .btn.primary{background:var(--accent);border-color:var(--accent)}
+.e-ghost{background:rgba(255,255,255,.1)!important;color:#fff!important;border-color:rgba(255,255,255,.25)!important;box-shadow:none!important}
+.link.inv{color:#9DB2FF}.e-more.inv{color:#C9D3EE}
+.e-more{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;color:var(--ink-3);flex:none}.e-more:hover{background:var(--hover);color:var(--ink)}.e-more.inv:hover{background:rgba(255,255,255,.1);color:#fff}
+.e-cols{display:grid;grid-template-columns:1.2fr 1fr;gap:36px}
+.e-h{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:4px}
+.e-list{list-style:none;margin:0;padding:0}
+.e-row,.e-wrow{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.e-row-m{flex:1;min-width:0}
+.e-tt{font-size:14px;font-weight:520;text-align:left;color:var(--ink);line-height:1.35}.e-tt:hover{color:var(--accent-ink)}
+.e-sub{font-size:12px;color:var(--ink-3);margin-top:2px;display:flex;align-items:center;gap:6px}.e-sub .dot{width:6px;height:6px}.e-sub.warn{color:var(--warn)}
+.e-chk{width:19px;height:19px;border-radius:50%;box-shadow:inset 0 0 0 1.6px var(--line-2);display:grid;place-items:center;flex:none;color:#fff}.e-chk:hover{box-shadow:inset 0 0 0 1.6px var(--ok)}
+.e-chk svg{width:12px;height:12px;stroke-width:2.4}.e-row.done .e-chk{background:var(--ok);box-shadow:none}.e-row.done .e-tt{color:var(--ink-4);text-decoration:line-through}
+.e-when{font-size:12px;color:var(--ink-3);white-space:nowrap}.e-when.go{color:var(--accent-ink);font-weight:600}
+.e-add{display:flex;align-items:center;gap:8px;padding:9px 2px;border-top:1px solid var(--line);color:var(--ink-4)}
+.e-add input{flex:1;border:0;background:none;outline:none;font-size:13.5px;color:var(--ink);min-width:0}.e-add:focus-within{color:var(--accent)}
+.e-add.sm{padding:6px 0;border-top:0}.e-add.sm input{font-size:12.5px}
+.e-add.box{border:1.5px solid var(--accent-line);border-radius:10px;padding:8px 10px;background:var(--surface)}.e-add.box:focus-within{border-color:var(--accent)}
+.e-weekline{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:34px;font-size:12.5px;color:var(--ink-3)}
+.e-weekline a{display:inline-flex;align-items:center;gap:6px;color:var(--ink-2);text-decoration:none}.e-weekline a:hover{color:var(--accent-ink)}
+.e-pop{position:absolute;z-index:60;width:220px;background:var(--surface);border-radius:12px;box-shadow:0 0 0 1px var(--line),var(--shadow-2);padding:6px;display:grid}
+.e-pop button{padding:8px 10px;border-radius:8px;font-size:13.5px}.e-pop button:hover,.e-pop button:focus-visible{background:var(--accent-soft);outline:none}
+/* Week */
+.e-wnav{display:inline-flex;align-items:center;gap:2px}
+.btn.e-ok{color:var(--ok);font-weight:600}.e-live{width:7px;height:7px;border-radius:50%;background:var(--ok)}
+.e-wgrid{display:grid;grid-template-columns:260px minmax(0,1fr);gap:20px;align-items:start}
+.e-wleft{display:flex;flex-direction:column;gap:12px;min-height:200px;border-radius:12px;transition:background .15s}
+.e-wleft.e-drop{background:var(--accent-soft)}
+.e-wkr{background:var(--surface);border-radius:12px;box-shadow:0 0 0 1px var(--line);padding:11px 12px 6px}
+.e-wkr-h{display:flex;align-items:center;gap:8px;font-weight:650;font-size:13.5px;color:var(--ink);text-decoration:none;margin-bottom:4px}
+.e-steps{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.e-step{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:12.5px;cursor:grab}.e-step .e-tt{font-size:12.5px;flex:1;min-width:0;font-weight:500}.e-step.dim{cursor:default}.e-step.dim .e-tt{color:var(--ink-3)}
+.e-bar{width:3px;align-self:stretch;min-height:16px;border-radius:2px;background:var(--c);flex:none}
+.e-tip{margin:0}
+[data-tid].dragging{opacity:.45}
+.e-cands{display:grid;gap:8px}
+.e-cand{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:10px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);text-align:left}
+.e-cand.on{box-shadow:0 0 0 2px var(--accent);background:var(--accent-soft)}.e-cand-t{flex:1;font-weight:600;font-size:13.5px}.e-cand-w{font-size:11.5px;color:var(--ink-3)}
+.e-cal{display:grid;grid-template-columns:34px repeat(5,minmax(0,1fr));background:var(--surface);border-radius:12px;box-shadow:0 0 0 1px var(--line);overflow:hidden}
+.e-hours span{position:absolute;right:6px;font-size:10px;color:var(--ink-4);transform:translateY(-6px)}
+.e-day{border-left:1px solid var(--line);min-width:0}
+.e-dh{height:44px;padding:7px 8px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;line-height:1.25}
+.e-dh b{font-size:12.5px}.e-dh span{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.e-day.today .e-dh{background:var(--navy);color:#fff}.e-day.today .e-dh span{color:#9DB2FF}
+.e-allday{height:52px;overflow-y:auto;padding:3px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:3px}
+.e-allday.e-drop,.e-dcol.e-drop{background:var(--accent-soft)}
+.e-chip{font-size:10.5px;text-align:left;padding:3px 6px;border-radius:5px;background:var(--sunken);box-shadow:inset 3px 0 0 var(--c);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:grab}
+.e-chip.fu{background:none;box-shadow:inset 0 0 0 1px var(--line-2);border-style:dashed;color:var(--ink-3);cursor:pointer}
+.e-dcol{position:relative;background:repeating-linear-gradient(to bottom,transparent 0 45px,var(--line) 45px 46px)}
+.e-day.today .e-dcol{background-color:color-mix(in srgb,var(--accent-soft) 35%,transparent)}
+.e-blk{position:absolute;left:3px;right:3px;border-radius:6px;padding:3px 6px;font-size:11px;line-height:1.3;text-align:left;overflow:hidden;background:var(--accent-soft);color:var(--ink);box-shadow:inset 3px 0 0 var(--c);cursor:grab;text-decoration:none}
+.e-blk b{font-weight:650;font-variant-numeric:tabular-nums}.e-blk.tiny{white-space:nowrap;text-overflow:ellipsis}.e-blk.done{opacity:.55;text-decoration:line-through}
+.e-blk.rv{background:var(--navy);color:#fff;box-shadow:none;cursor:pointer;font-weight:600}
+.e-ghost-blk{position:absolute;left:3px;right:3px;border-radius:6px;border:1.5px dashed var(--accent);background:color-mix(in srgb,var(--accent-soft) 70%,transparent);font-size:11px;font-weight:650;color:var(--accent-ink);padding:2px 6px;pointer-events:none}
+.e-now{position:absolute;left:0;right:0;height:2px;background:var(--bad);pointer-events:none}
+.e-bal{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;align-items:center}.e-bal>span{display:inline-flex;align-items:center;gap:6px}
+.e-segl{position:relative}.e-segl input{position:absolute;opacity:0;pointer-events:none}.e-segl span{display:inline-flex;align-items:center;padding:6px 12px;border-radius:7px;font-size:13px;cursor:pointer;color:var(--ink-2)}
+.e-segl input:checked+span{background:var(--surface);color:var(--ink);font-weight:600;box-shadow:var(--shadow-1)}.e-segl input:focus-visible+span{outline:2px solid var(--accent)}
+/* Review */
+.e-rgrid{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:26px;align-items:start}
+.e-stack{position:relative;padding-top:calc(var(--n,0) * 14px)}
+.e-stack>i{position:absolute;left:0;right:0;height:40px;border-radius:18px;background:var(--surface);box-shadow:0 0 0 1px var(--line)}
+.e-stack .g2{top:0;margin:0 30px;opacity:.5}.e-stack .g1{top:calc(var(--n,0) * 14px - 14px);margin:0 15px;opacity:.85}
+.e-card{position:relative;background:var(--surface);border-radius:18px;box-shadow:0 0 0 1px var(--line),0 30px 50px -30px rgba(14,26,51,.4);padding:22px 24px;display:grid;gap:14px}
+.e-card-l{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-3)}
+.e-card-t{font-size:22px;margin:0;letter-spacing:-.02em}
+.e-card-g{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.e-steps-dots{display:inline-flex;gap:5px}.e-steps-dots b{width:8px;height:8px;border-radius:4px;background:var(--line)}.e-steps-dots b.past{background:var(--accent);opacity:.5}.e-steps-dots b.on{width:22px;background:var(--accent)}
+.e-rlist{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:7px;font-size:13.5px}.e-rlist li{display:flex;align-items:center;gap:8px}.e-rlist li.done{color:var(--ink-4);text-decoration:line-through}
+.e-ck{width:17px;height:17px;border-radius:5px;box-shadow:inset 0 0 0 1.6px var(--line-2);display:grid;place-items:center;flex:none;color:#fff}.done>.e-ck,.on>.e-ck{background:var(--ok);box-shadow:none}.e-ck svg{width:11px;height:11px;stroke-width:2.4}
+.e-conf3{display:grid;gap:6px;margin-top:6px}.e-conf3 button{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;box-shadow:inset 0 0 0 1px var(--line);font-size:13.5px;text-align:left}
+.e-conf3 button kbd{font-size:10px}
+.e-conf3 button[aria-pressed=true].ok{background:var(--ok);color:#fff;box-shadow:none}.e-conf3 button[aria-pressed=true].warn{background:var(--warn-mid);color:#fff;box-shadow:none}.e-conf3 button[aria-pressed=true].bad{background:var(--bad);color:#fff;box-shadow:none}
+.e-krr .e-conf3{grid-template-columns:repeat(3,1fr)}.e-krr .e-conf3 button{justify-content:center;padding:7px 4px;font-size:12px;font-weight:600}
+.e-coach{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 12px;border-radius:10px;background:var(--accent-soft);font-size:13px;color:var(--ink-2)}.e-coach svg{color:var(--accent)}.e-coach .input{flex:1;min-width:180px;min-height:32px;padding:5px 9px}
+.e-rsum{display:grid;gap:8px}.e-rsum-i{display:flex;align-items:center;gap:8px;padding:9px 11px;border-radius:10px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);font-size:12.5px;text-align:left}
+.e-rsum-i.on{box-shadow:0 0 0 1.5px var(--accent);background:var(--accent-soft);font-weight:650}.e-rsum-i svg{color:var(--ok)}
+/* Resultaten */
+.e-rgrid2{display:grid;grid-template-columns:210px minmax(0,1fr);gap:28px;align-items:start}
+.e-objs{display:flex;flex-direction:column;gap:4px;position:sticky;top:20px}
+.e-qseg{display:flex;gap:2px;background:var(--sunken);padding:3px;border-radius:9px;margin-bottom:14px}.e-qseg button{flex:1;padding:5px 4px;border-radius:7px;font-size:12px;color:var(--ink-3);text-align:center}
+.e-qseg button[aria-pressed=true]{background:var(--surface);color:var(--ink);font-weight:650;box-shadow:var(--shadow-1)}
+.e-obj{display:flex;gap:9px;align-items:flex-start;padding:9px 10px;border-radius:10px;text-decoration:none;color:var(--ink)}.e-obj .dot{margin-top:5px}
+.e-obj b{display:block;font-size:13px;font-weight:560;line-height:1.3}.e-obj .small{display:block}.e-obj.on{background:var(--accent-soft)}.e-obj.on b{font-weight:650}.e-obj:hover{background:var(--hover)}
+.e-arch{padding:8px 10px}
+.e-ometa{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-3);flex-wrap:wrap}
+.e-otitle{font-size:22px;line-height:1.25;margin:8px 0 14px}
+.e-why{display:grid;gap:4px;font-size:13px;color:var(--ink-2);margin:-6px 0 14px}.e-why p{margin:0}
+.e-krs{display:grid;gap:10px}
+.e-kr{background:var(--surface);border-radius:12px;box-shadow:0 0 0 1px var(--line)}
+.e-krh{display:flex;align-items:center;gap:12px;width:100%;padding:12px 14px;text-align:left}
+.e-car{color:var(--ink-4);font-size:11px;width:10px}.e-krn{flex:1;min-width:0}.e-krn b{display:block;font-size:14.5px}.e-krn .small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.e-krc{width:62px;text-align:right}
+.e-pips{display:inline-flex;gap:3px}.e-pips i{width:10px;height:10px;border-radius:3px;background:var(--sunken);box-shadow:inset 0 0 0 1px var(--line)}.e-pips i.on{background:var(--c,var(--ok));box-shadow:none}
+.e-omain .e-pips i.on{background:var(--c)}
+.e-conf{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;width:104px}.e-conf i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.e-conf.ok{color:var(--ok)}.e-conf.warn{color:var(--warn)}.e-conf.bad{color:var(--bad)}.e-conf.idle{color:var(--ink-4)}
+.e-krb{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:22px;padding:0 16px 16px 36px}
+.e-krl{display:grid;gap:10px;align-content:start}.e-krr{display:grid;gap:16px;align-content:start}
+.e-next{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:var(--navy);color:#fff}.e-next>div{flex:1;min-width:0}
+.e-next-l{font-size:11px;font-weight:650;letter-spacing:.06em;text-transform:uppercase;color:#9DB2FF}.e-next .e-tt.inv{color:#fff;font-size:14px;font-weight:600}
+.e-next.empty{display:block;background:var(--sunken);color:var(--ink-2);font-size:13px}.e-next.empty .e-next-l{color:var(--ink-3);margin-bottom:2px}
+.e-evs{display:grid;gap:4px;margin-top:6px}.e-ev{display:flex;align-items:center;gap:9px;font-size:13px;text-align:left;padding:3px 0}.e-ev.on{color:var(--ink-3)}
+.e-krlinks{display:flex;gap:14px;flex-wrap:wrap}
+.e-krfoot{margin-top:12px}
+/* Samen */
+.e-sgrid{display:grid;grid-template-columns:250px minmax(0,1fr);gap:28px;align-items:start}
+.e-person{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;text-decoration:none;color:var(--ink)}.e-person b{display:block;font-size:13.5px}.e-person .small{display:block}
+.e-person.on{background:var(--accent-soft)}.e-person:hover{background:var(--hover)}
+.e-sright{display:grid;gap:12px}.e-ph{display:flex;align-items:center;gap:12px}.e-ph h1{margin:0;font-size:20px}
+.e-sright>.lbl{margin-top:8px}.lbl.warn{color:var(--warn)}
+.e-sitem{display:flex;align-items:center;gap:10px;padding:10px 0 10px 10px;border-top:1px solid var(--line);box-shadow:inset 3px 0 0 var(--c)}
+.e-st{font-size:11.5px;padding:3px 8px;border-radius:7px;background:var(--sunken);color:var(--ink-2);font-weight:600;white-space:nowrap}.e-st.warn{background:var(--warn-soft);color:var(--warn)}.e-st.ok{background:var(--ok-soft);color:var(--ok)}
+.e-1on1{margin-top:10px;padding:14px 16px;border-radius:12px;background:var(--surface);box-shadow:0 0 0 1px var(--line)}.e-1on1 ol{margin:6px 0 8px;padding-left:20px;font-size:13.5px;color:var(--ink-2)}
+/* sheets */
+.e-who{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.e-whoi{display:grid;justify-items:center;gap:3px;font-size:11px;color:var(--ink-3);cursor:pointer}.e-whoi input{position:absolute;opacity:0;pointer-events:none}
+.e-whoi .av{box-shadow:0 0 0 2px transparent;transition:box-shadow .12s}.e-whoi input:checked+.av{box-shadow:0 0 0 3px var(--accent)}.e-whoi input:focus-visible+.av{outline:2px solid var(--accent);outline-offset:3px}
+.e-newname{width:130px;min-height:34px;border-style:dashed;border-radius:17px}
+.e-room{display:flex}
+.e-dstat{display:flex;gap:4px;background:var(--sunken);padding:3px;border-radius:9px}.e-dstat button{flex:1;padding:6px;border-radius:7px;font-size:12.5px;text-align:center;color:var(--ink-3)}
+.e-dstat button[aria-pressed=true]{background:var(--surface);color:var(--ink);font-weight:650;box-shadow:var(--shadow-1)}
+.e-pick-o{display:grid;gap:2px}.e-pick-h{display:flex;align-items:center;gap:8px;font-weight:650;font-size:13px;padding:4px 0}
+.e-pick-k{display:flex;justify-content:space-between;gap:8px;padding:8px 10px 8px 18px;border-radius:8px;text-align:left;font-size:13.5px}.e-pick-k:hover{background:var(--hover)}.e-pick-k.on{background:var(--accent-soft);font-weight:600}
+.e-mono{font-family:var(--mono);font-size:12px}
+.e-ol{margin:4px 0 0;padding-left:18px;font-size:13px;color:var(--ink-2);display:grid;gap:4px}
+/* mobiel */
+@media (max-width:1100px){.e-wgrid{grid-template-columns:minmax(0,1fr)}.e-rgrid{grid-template-columns:minmax(0,1fr)}.e-krb{grid-template-columns:minmax(0,1fr);padding-left:16px}}
+@media (max-width:860px){
+  .e .app{grid-template-columns:minmax(0,1fr)}
+  .e .page.e-page{padding:16px 16px 120px}
+  .e-cols,.e-rgrid2,.e-sgrid,.e-card-g{grid-template-columns:minmax(0,1fr)}
+  .e-objs{position:static;flex-direction:row;overflow-x:auto;gap:6px}.e-objs>.lbl,.e-objs .e-arch,.e-objs>.link{display:none}.e-qseg{display:none}.e-obj{flex:none}
+  .e-cal{overflow-x:auto;grid-template-columns:30px repeat(5,minmax(120px,1fr))}
+  .e-focus{padding:20px}
+  .e-conf{width:auto}.e-krc{display:none}
+}
+
+.e a.btn{text-decoration:none}
+.e .session-float,.e .session-pill{display:none!important}
+.e-allday{background:color-mix(in srgb,var(--sunken) 55%,transparent)}
+.e-hours .e-allday small{font-size:9.5px;color:var(--ink-4);display:block;text-align:right;padding-right:3px}
+.e-card-l .spacer{flex:1}
 
 </style>
 </head>
 <body>
 <div id="app" class="app">
   <aside class="rail" aria-label="Navigatie">
-    <div class="brand"><span class="mark"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/></svg></span>Focus<small>RWS · Data &amp; AI Lab</small></div>
+    <div class="brand"><span class="mark"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/></svg></span>Focus</div>
     <div id="qRail"></div>
     <button class="capture-trigger" data-a="capture"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Vastleggen of zoeken</span><kbd>N</kbd></button>
     <nav id="nav" aria-label="Hoofdnavigatie"></nav>
@@ -1159,7 +1341,7 @@ const obj=id=>db.objectives.find(o=>o.id===id);
 const task=id=>db.tasks.find(t=>t.id===id);
 const krById=id=>{for(const o of db.objectives){const k=o.krs.find(k=>k.id===id);if(k)return{o,k,i:o.krs.indexOf(k)+1}}return null};
 const krOf=t=>{const r=t.krId?krById(t.krId):null;return r&&r.o.id===t.objectiveId?r:null};
-const open=()=>db.tasks.filter(t=>!t.done&&!t.dropped);
+const open=()=>db.tasks.filter(t=>!t.done&&!t.dropped&&!obj(t.objectiveId)?.archived);
 const inboxTasks=()=>open().filter(t=>!t.objectiveId);
 const isToday=t=>t.today===iso();
 // Behaald = de stand haalt het doel én (bij een getal-KR) jij hebt dat bevestigd. Nooit automatisch door AI of afgeronde acties.
@@ -1371,6 +1553,7 @@ function objHero(o){
      <div class="ohero-actions"><button class="hbtn" data-a="edit-obj" data-id="${o.id}" aria-label="Objective bewerken">${I('edit')}</button><button class="hbtn" data-a="ai" data-id="${o.id}">${I('spark')}<span class="hide-m"> AI-briefing</span></button><button class="hbtn solid hide-m" data-a="capture" data-id="${o.id}">${I('plus')} Vastleggen</button></div></div>
    <div class="ohero-eyebrow">Objective ${pad(idx)} · ${esc(o.name)} · ${quarter()}</div>
    <h1 class="ohero-h1">${esc(o.objective)}</h1>
+   ${o.context||o.achieved?`<div class="ohero-ctx">${o.context?`<p>${esc(o.context)}</p>`:''}${o.achieved?`<p><b>Al bereikt:</b> ${esc(o.achieved)}</p>`:''}</div>`:''}
    <div class="ohero-row only-next"><div class="onext">${nx?`<span class="otile-k">Volgende actie</span><span class="next-t">${esc(nx.title)}</span><button class="link" data-a="focus" data-id="${nx.id}">${I('play')} Start focus</button>`:`<span class="otile-k">Volgende actie</span><span class="next-t" style="color:var(--ink-3)">Geen open actie</span><button class="link" data-a="capture" data-id="${o.id}">Actie toevoegen</button>`}</div>
    </div>
   </div></header>`;
@@ -1382,7 +1565,7 @@ function briefKR(o,k,i,tasks){
   return `<section class="bk" id="kr-${k.id}">
    <div class="bk-num"><span class="st-${s}">${pad(i)}</span><i class="spine"><b style="--w:${Math.round(r*100)}%;height:${Math.round(r*100)}%;background:${STCOL[s]}"></b></i></div>
    <div class="bk-main">
-     <div class="bk-meta">${stateBadge(k)}${k.kind==='learning'?'<span class="dep" title="Leerdoel: de aanpak ontdekken staat voorop">Leerdoel</span>':''}${trendDots(k)}${deps}${k.due?`<span class="dep">◆ ${fmt(k.due)}</span>`:''}<span class="spacer"></span><button class="btn ghost icon" data-a="edit-kr" data-id="${k.id}" aria-label="${esc(krName(k))} bewerken">${I('more')}</button></div>
+     <div class="bk-meta">${stateBadge(k)}${k.kind==='learning'?'<span class="dep" title="Leerdoel: de aanpak ontdekken staat voorop">Leerdoel</span>':''}${k.quarter?`<span class="dep ${k.quarter!==quarter()?'later':''}">${esc(k.quarter)}</span>`:''}${k.proposed?'<span class="dep" title="Voorgestelde planning, nog niet bevestigd">voorstel</span>':''}${trendDots(k)}${deps}${k.due?`<span class="dep">◆ ${fmt(k.due)}</span>`:''}<span class="spacer"></span><button class="btn ghost icon" data-a="edit-kr" data-id="${k.id}" aria-label="${esc(krName(k))} bewerken">${I('more')}</button></div>
      <h2 class="bk-title">${esc(k.title)}</h2>
      ${criterion(k)?`<p class="bk-crit">${esc(criterion(k))}</p>`:''}
      ${k.description&&k.description.trim()!==criterion(k).trim()?`<details class="crit"><summary>Volledige criteria en context</summary><p>${esc(k.description)}</p></details>`:''}
@@ -1678,7 +1861,7 @@ function briefing(){
   const ctx={datum:t,kwartaal:quarter(),objectives:scope.map(o=>({id:o.id,naam:o.name,objective:o.objective,activiteit_7_dagen:momentum(o.id),laatste_voortgang:lastActivity(o.id),key_results:o.krs.map((k,i)=>({kr_id:k.id,nummer:i+1,resultaat:k.title,status:STATE[krState(k)],gemeten:k.current==null?null:k.current+' / '+k.target+' '+k.unit,behaald_wanneer:criterion(k),bewijs:k.evidence.map(e=>(e.done?'[x] ':'[ ] ')+e.title),hangt_af_van:k.dependsOn.map(id=>krLabel(id,o.id)),streefdatum:k.due||undefined,initiatieven:o.initiatives.filter(x=>x.krId===k.id&&x.status!=='done').map(x=>x.title),open_acties:open().filter(x=>x.krId===k.id).map(x=>({actie:x.title,vandaag:isToday(x)||undefined,weekfocus:x.focus||undefined,wacht_op:x.waiting?(x.blocker||'ja'):undefined,deadline:x.due||undefined}))})),afgerond_14_dagen:db.tasks.filter(x=>x.objectiveId===o.id&&x.done&&x.doneAt&&x.doneAt>=from).map(x=>x.title)})),
     inbox_ongekoppeld:inboxTasks().map(x=>x.title),signalen:signals().slice(0,8).map(s=>s.text),laatste_checkin:db.checkins[0]||null,laatste_weekreview:db.reviews[0]||null};
   const q=clean(ai.q)||'Wat verdient deze week mijn aandacht, en welke volgende stappen ontbreken?';
-  return `Je bent mijn kritische sparringpartner voor OKR's. Ik werk als programmamanager Data en AI.\n\nMijn vraag: ${q}\n\nRegels:\n- Baseer je alleen op de context hieronder. Verzin geen voortgang, blokkades of prioriteiten die er niet staan; benoem wat ontbreekt.\n- Maak onderscheid tussen uitvoering (acties) en uitkomst (Key Results). Afgeronde acties zijn geen behaald resultaat.\n- Wees kort: maximaal drie aandachtspunten.\n- Stel je concrete acties voor, zet ze dan als losse regels in precies dit formaat, zodat ik ze kan importeren en eerst kan beoordelen:\n  - [kr_id] Korte actie in gebiedende wijs\n  Gebruik alleen bestaande kr_id's uit de context. Hoort een actie nergens bij, laat de haakjes dan weg.\n\nContext (${t}):\n${JSON.stringify(ctx,null,1)}`;
+  return `Je bent mijn kritische sparringpartner voor OKR's.\n\nMijn vraag: ${q}\n\nRegels:\n- Baseer je alleen op de context hieronder. Verzin geen voortgang, blokkades of prioriteiten die er niet staan; benoem wat ontbreekt.\n- Maak onderscheid tussen uitvoering (acties) en uitkomst (Key Results). Afgeronde acties zijn geen behaald resultaat.\n- Wees kort: maximaal drie aandachtspunten.\n- Stel je concrete acties voor, zet ze dan als losse regels in precies dit formaat, zodat ik ze kan importeren en eerst kan beoordelen:\n  - [kr_id] Korte actie in gebiedende wijs\n  Gebruik alleen bestaande kr_id's uit de context. Hoort een actie nergens bij, laat de haakjes dan weg.\n\nContext (${t}):\n${JSON.stringify(ctx,null,1)}`;
 }
 function aiSheet({q='',scope='',paste=false,v=''}={}){
   ai.q=q||(v==='review'?'Help me mijn weekreview voor te bereiden: wat is er feitelijk bereikt, wat schuurt, en wat zou volgende week moeten tellen?':ai.q);ai.scope=scope;ai.proposals=[];
@@ -2134,11 +2317,11 @@ const WAARDE_UPDATE_ID='waarde-2026-10-28';
 let contentNotice='';
 function applyContentUpdates(){
   db.contentUpdates=Array.isArray(db.contentUpdates)?db.contentUpdates:[];
-  if(db.contentUpdates.includes(WAARDE_UPDATE_ID))return;
+  if(db.contentUpdates.includes(WAARDE_UPDATE_ID)){applyOkrUpdate2();return}
   const o=db.objectives.find(x=>x.id==='waarde');
   if(o){
     try{localStorage.setItem(KEY+':voor-waarde-update',JSON.stringify(db))}catch{}
-    o.objective='We ontwikkelen en valideren twee complementaire aanpakken waarmee het Lab de waarde van AI-projecten aantoonbaar maakt.';
+    o.objective='We ontwikkelen en valideren twee complementaire aanpakken waarmee we de waarde van AI-projecten aantoonbaar maakt.';
     const NEW={
       'waarde-kr-1':{title:'Binnen AI-inkoop is een geïntegreerde batenmanagementaanpak toegepast, met één overkoepelende service blueprint en afzonderlijke batenplannen per geselecteerde toepassing',
         description:'Behaald wanneer binnen AI-inkoop één overkoepelende service blueprint is opgesteld waarin fricties, verwachte baten en meetindicatoren samenkomen, en voor de geselecteerde toepassingen afzonderlijke batenplannen zijn uitgewerkt die herleidbaar zijn tot die blueprint.\n\nContext: Dit is de geïntegreerde route: batenmanagement wordt vanaf de start meegeontworpen, met de service blueprint als ruggengraat van As-Is naar To-Be naar Actual. De blueprint begint bij de strategische opgave en takt in de oplossingsfase af naar toepassingen, elk met een eigen batenplan. AI-inkoop is de eerste praktijkcase.',
@@ -2146,10 +2329,10 @@ function applyContentUpdates(){
       'waarde-kr-2':{title:'Batenmanagement as a Service als losse dienst ontwikkeld en toegepast op minstens één bestaand AI-project zonder batenplan',
         description:'Behaald wanneer Batenmanagement as a Service als dienst is beschreven en op minstens één lopend AI-project zonder batenplan (bijvoorbeeld RDD Chat) is toegepast: baten in kaart gebracht, meetbaar gemaakt en met het projectteam afgesproken hoe wordt gemeten en bijgestuurd.\n\nContext: Dit is de zij-instroom: invliegen wanneer er al een project loopt waarvoor nog geen batenplan is gemaakt.',
         evidence:['Batenmanagement as a Service als dienst beschreven (aanpak, werkwijze, aanbod)','Bestaand AI-project zonder batenplan gekozen en afgestemd met het projectteam','Waardelogica en baten in kaart gebracht en meetbaar gemaakt','Meet- en reviewafspraken met het projectteam vastgelegd']},
-      'waarde-kr-3':{title:'Beide vormen met projectteams geëvalueerd en verbeterd, zodat duidelijk is hoe het Lab ze in volgende projecten inzet',
-        description:'Behaald wanneer geïntegreerd batenmanagement en Batenmanagement as a Service samen met de betrokken projectteams zijn geëvalueerd, de verbeterpunten zijn verwerkt en is vastgelegd wanneer en hoe het Lab welke vorm inzet.\n\nContext: Eind maart zijn er twee geteste werkwijzen en twee concrete cases.',
+      'waarde-kr-3':{title:'Beide vormen met projectteams geëvalueerd en verbeterd, zodat duidelijk is hoe we ze in volgende projecten inzetten',
+        description:'Behaald wanneer geïntegreerd batenmanagement en Batenmanagement as a Service samen met de betrokken projectteams zijn geëvalueerd, de verbeterpunten zijn verwerkt en is vastgelegd wanneer en hoe we welke vorm inzetten.\n\nContext: Eind maart zijn er twee geteste werkwijzen en twee concrete cases.',
         due:'2027-03-31',
-        evidence:['Beide vormen met de projectteams geëvalueerd','Verbeterpunten verwerkt in de twee aanpakken','Vastgelegd hoe het Lab ze in volgende projecten inzet']}
+        evidence:['Beide vormen met de projectteams geëvalueerd','Verbeterpunten verwerkt in de twee aanpakken','Vastgelegd hoe we ze in volgende projecten inzetten']}
     };
     for(const k of o.krs){
       const n=NEW[k.id];if(!n)continue;
@@ -2163,11 +2346,12 @@ function applyContentUpdates(){
     if(ini('waarde-init-1')){ini('waarde-init-1').title='Service blueprint AI-inkoop (overkoepelend)';ini('waarde-init-1').description='Eén overkoepelende service blueprint voor de strategische opgave van AI-inkoop: fricties, verwachte baten en meetindicatoren, van As-Is naar To-Be naar Actual.'}
     for(const id of ['waarde-init-4','waarde-init-5'])if(ini(id))ini(id).krId='';
     if(!ini('waarde-init-6'))o.initiatives.push({id:'waarde-init-6',title:'Batenplannen per toepassing (afgetakt van de blueprint)',description:'Per geselecteerde toepassing in de oplossingsfase een eigen batenplan dat terug te voeren is op de overkoepelende blueprint.',krId:'waarde-kr-1',start:'',end:'',status:'active'});
-    if(!ini('waarde-init-7'))o.initiatives.push({id:'waarde-init-7',title:'Evaluatie en verbeterronde met projectteams',description:'Beide vormen evalueren met de betrokken projectteams en vastleggen hoe het Lab ze in volgende projecten inzet.',krId:'waarde-kr-3',start:'',end:'',status:'active'});
+    if(!ini('waarde-init-7'))o.initiatives.push({id:'waarde-init-7',title:'Evaluatie en verbeterronde met projectteams',description:'Beide vormen evalueren met de betrokken projectteams en vastleggen hoe we ze in volgende projecten inzetten.',krId:'waarde-kr-3',start:'',end:'',status:'active'});
     for(const t of db.tasks)if(['waarde-actie-7','waarde-actie-8','waarde-actie-9'].includes(t.id))t.krId='';
     contentNotice='Doelen Waardegedreven innoveren bijgewerkt. Een kopie van de vorige versie is bewaard.';
   }
   db.contentUpdates.push(WAARDE_UPDATE_ID);
+  applyOkrUpdate2();
 }
 
 /* ================= weekritme: vaste dagen per objective, thuis of kantoor ================= */
@@ -2331,7 +2515,7 @@ Object.assign(ACT,{
 /* ---- 15-team.js ---- */
 /* ================= Team en delegeren ================= */
 // Korte KR-namen: jij bepaalt ze; dit zijn alleen beginwaarden voor de bestaande KR's.
-const KR_SHORT={'inkoop-kr-1':'Samenwerking ICM','inkoop-kr-2':'Usecases gevalideerd','inkoop-kr-3':'Bouwen of kopen','waarde-kr-1':'Baten in AI-inkoop','waarde-kr-2':'Baten als dienst','waarde-kr-3':'Evaluatie beide aanpakken','rpa-kr-1':'Eerste toepassing','rpa-kr-2':'Begeleidingsmodel','rpa-kr-3':'Pilotplan','onboarding-kr-1':'Businesscontext','onboarding-kr-2':'Rol en netwerk','onboarding-kr-3':'Lab-architectuur'};
+const KR_SHORT={'inkoop-kr-1':'Samenwerking ICM','inkoop-kr-2':'Usecases gevalideerd','inkoop-kr-3':'Bouwen of kopen','waarde-kr-1':'Baten in AI-inkoop','waarde-kr-2':'Baten als dienst','waarde-kr-3':'Evaluatie beide aanpakken','rpa-kr-1':'Eerste toepassing','rpa-kr-2':'Begeleidingsmodel','rpa-kr-3':'Pilotplan','onboarding-kr-1':'Businesscontext','onboarding-kr-2':'Rol en netwerk','onboarding-kr-3':'Architectuur'};
 function autoShort(t){const w=String(t||'').replace(/^(een|de|het)\s+/i,'').split(/\s+/).slice(0,4).join(' ');return w.length>34?w.slice(0,33)+'…':w}
 const krName=k=>clean(k?.short)||KR_SHORT[k?.id]||autoShort(k?.title)||'Key Result';
 const krN=r=>krName(r?.k);
@@ -2416,6 +2600,71 @@ document.addEventListener('submit',async e=>{const f=e.target,k=f.dataset.form;i
 // Lege start zonder inlog: niet een leeg scherm, maar meteen de mogelijkheid om in te loggen.
 function loginCard(){if(sess||objs().length)return '';return `<section class="login-card"><h2>Welkom terug</h2><p class="muted">Log in om je objectives en acties op te halen.</p>${loginForm()}</section>`}
 
+/* ---- 17-okr-update.js ---- */
+/* ================= Inhoudsupdate: OKR-overzicht Q4 2026 → Q1 2027 (29 okt 2026) ================= */
+// Drie objectives volgens het nieuwe overzicht; Onboarding blijft ongewijzigd; RPA wordt gearchiveerd (herstelbaar).
+// Oude KR's blijven bewaard in o.krsArchive; acties, initiatieven, bewijs en metingen verhuizen naar het nieuwe KR.
+const OKR2_ID='okr-2026-10-29';
+const Q4='Q4 2026',Q1='Q1 2027',Q4END='2026-12-31',Q1END='2027-03-31';
+const OKR2={
+  waarde:{name:'Waardegedreven innoveren',objective:'Maak waardegedreven innoveren de standaard binnen het Data & AI Lab.',
+    context:'De omslag van AI-oplossingen opleveren naar aantoonbaar waarde realiseren, met de service blueprint als gemeenschappelijke basis.',
+    achieved:'Mandaat en gedeelde ambitie, akkoord op werkwijze, eerste service blueprint, collega\'s betrokken. Nog geen bewijs van structurele toepassing.',
+    krs:[
+      {id:'w2-kr-1',short:'Blueprint vastgesteld',title:'Geïntegreerde service blueprint gezamenlijk uitgewerkt en vastgesteld',q:Q4,ev:['Blueprint gezamenlijk uitgewerkt in de teamsessies','Blueprint vastgesteld']},
+      {id:'w2-kr-2',short:'Eigenaarschap collega\'s',title:'Drie collega\'s nemen inhoudelijk eigenaarschap over hun onderdelen en het vervolg',q:Q4,ev:['Collega 1 eigenaar van een onderdeel en het vervolg','Collega 2 eigenaar van een onderdeel en het vervolg','Collega 3 eigenaar van een onderdeel en het vervolg']},
+      {id:'w2-kr-3',short:'Lab OS en tools',title:'Fundament voor het Lab OS en drie eerste werkende ondersteunende tools beschikbaar',q:Q4,ev:['Fundament Lab OS staat','Tool 1 werkt','Tool 2 werkt','Tool 3 werkt']},
+      {id:'w2-kr-4',short:'Labbrede introductie',title:'Werkwijze labbreed geïntroduceerd, inclusief afspraken voor toepassing',q:Q4,ev:['Labbrede presentatie gegeven','Afspraken voor toepassing vastgelegd']},
+      {id:'w2-kr-5',short:'Eerste praktijktraject',title:'Werkwijze toegepast en geëvalueerd in eerste praktijktraject',q:Q1,ev:['Werkwijze toegepast in een praktijktraject','Evaluatie met het projectteam gedaan']}]},
+  inkoop:{name:'AI voor Inkoop',objective:'Richt AI voor Inkoop op de belangrijkste, nog onvoldoende afgedekte verbeterkansen in de inkoopwaardeketen, passend bij de toekomstige inkoopfunctie.',
+    context:'Van breed probleemonderzoek naar een gevalideerde, waardevolle en strategisch passende oplossingsrichting.',
+    achieved:'Programma-aanpak geaccepteerd en collega\'s betrokken. De North Star-sessie en validatie moeten nog plaatsvinden.',
+    krs:[
+      {id:'i2-kr-1',short:'North Star en diagnose',title:'North Star-sessie en kwalitatieve diagnose van fricties in de inkoopwaardeketen afgerond',q:Q4,ev:['North Star-sessie gehouden','Kwalitatieve diagnose van fricties afgerond']},
+      {id:'i2-kr-2',short:'Heatmap fricties',title:'Fricties kwantitatief gevalideerd en vertaald naar een geprioriteerde heatmap',q:Q4,proposed:true,ev:['Fricties kwantitatief gevalideerd','Geprioriteerde heatmap opgesteld']},
+      {id:'i2-kr-3',short:'Toets overlap en visie',title:'Hoogst scorende kansen getoetst op overlap, VGP-ontwerpprincipes en toekomstvisie inkoop',q:Q1,proposed:true,ev:['Getoetst op overlap','Getoetst op VGP-ontwerpprincipes','Getoetst op toekomstvisie inkoop']},
+      {id:'i2-kr-4',short:'Kans geselecteerd',title:'Eén kans geselecteerd met hoge waarde, minimale onnodige overlap, strategische fit en business-eigenaar',q:Q1,proposed:true,ev:['Eén kans geselecteerd','Business-eigenaar bekend']}]},
+  baten:{name:'Batenrealisatie',objective:'Maak batenrealisatie leidend in de sturing op bestaande AI-toepassingen, zodat beoogde waarde daadwerkelijk gerealiseerd en geborgd wordt.',
+    context:'We starten met RDD Chat en VTH, die zich in verschillende ontwikkelfases bevinden.',
+    achieved:'RDD Chat heeft een batenplan-light en meetplan-light. Voor VTH is de businesscase ontvangen en de eerste kennismaking gedaan.',color:'#D66B37',
+    krs:[
+      {id:'b2-kr-1',short:'RDD meetplan en dashboard',title:'RDD Chat heeft een technisch werkend meetplan, meetinfrastructuur en dashboard voor gebruik en eerste waarde-indicatoren',q:Q4,due:'2026-12-17',ev:['Meetplan technisch werkend','Meetinfrastructuur draait','Dashboard met gebruik en eerste waarde-indicatoren']},
+      {id:'b2-kr-2',short:'RDD bateneigenaarschap',title:'Bij RDD Chat zijn bateneigenaarschap, evaluatieritme en afspraken over bijsturing vastgelegd',q:Q4,ev:['Bateneigenaar vastgelegd','Evaluatieritme afgesproken','Afspraken over bijsturing vastgelegd']},
+      {id:'b2-kr-3',short:'VTH batenplan',title:'Voor VTH is een gedragen batenplan opgesteld met baten, KPI\'s, meetaanpak en eigenaren',q:Q1,proposed:true,ev:['Baten en KPI\'s benoemd','Meetaanpak beschreven','Eigenaren akkoord']}]},
+};
+// Oude KR → nieuw KR (objective volgt uit het nieuwe KR). Per actie kan een preciezere koppeling gelden.
+const OKR2_MAP={'inkoop-kr-1':'i2-kr-1','inkoop-kr-2':'i2-kr-2','inkoop-kr-3':'i2-kr-3','waarde-kr-1':'w2-kr-1','waarde-kr-2':'b2-kr-2','waarde-kr-3':'w2-kr-5'};
+const OKR2_TASK={'inkoop-actie-4':'i2-kr-1','waarde-actie-2':'w2-kr-2','waarde-actie-3':'w2-kr-5'};
+const OKR2_INIT={'waarde-init-2':'w2-kr-2','inkoop-init-3':'i2-kr-1'};
+let okrNotice='';
+function applyOkrUpdate2(){
+  db.contentUpdates=Array.isArray(db.contentUpdates)?db.contentUpdates:[];
+  if(db.contentUpdates.includes(OKR2_ID))return;
+  const w=obj('waarde'),k=obj('inkoop');
+  if(w&&k){
+    try{localStorage.setItem(KEY+':voor-okr-update',JSON.stringify(db))}catch{}
+    if(!obj('baten'))db.objectives.splice(db.objectives.indexOf(k)+1,0,{id:'baten',name:'',objective:'',color:OKR2.baten.color,archived:false,krs:[],initiatives:[]});
+    const krOwner={};
+    for(const [oid,def] of Object.entries(OKR2)){const o=obj(oid);
+      const old=oid==='baten'?[]:o.krs;o.krsArchive=[...(o.krsArchive||[]),...old.map(x=>({...x,archivedAt:iso(),replacedBy:OKR2_MAP[x.id]||''}))];
+      o.name=def.name;o.objective=def.objective;o.context=def.context;o.achieved=def.achieved;o.archived=false;
+      o.krs=def.krs.map(d=>({id:d.id,title:d.title,short:d.short,description:'',target:1,current:null,unit:'mijlpaal',due:d.due||(d.q===Q1?Q1END:Q4END),quarter:d.q,proposed:!!d.proposed,kind:'outcome',confidence:'unknown',dependsOn:[],
+        evidence:d.ev.map(t=>({id:uid(),title:t,done:false,doneAt:null})),evidenceSeeded:true,proofs:[],measures:[]}));
+      o.krs.forEach(x=>krOwner[x.id]=oid);}
+    // Bewijs en metingen verhuizen mee naar het nieuwe KR.
+    for(const oid of ['waarde','inkoop'])for(const ok of obj(oid).krsArchive.filter(x=>x.archivedAt===iso())){const nk=krById(OKR2_MAP[ok.id]);if(nk){nk.k.proofs.push(...(ok.proofs||[]));nk.k.measures.push(...(ok.measures||[]))}}
+    // Acties en initiatieven opnieuw koppelen.
+    for(const t of db.tasks){const to=OKR2_TASK[t.id]||OKR2_MAP[t.krId];if(to){t.krId=to;t.objectiveId=krOwner[to]}}
+    for(const oid of ['waarde','inkoop']){const o=obj(oid);
+      for(const i of [...o.initiatives]){const to=OKR2_INIT[i.id]||OKR2_MAP[i.krId];if(!to)continue;i.krId=to;i.krIds=[to];const dest=obj(krOwner[to]);if(dest!==o){o.initiatives=o.initiatives.filter(x=>x!==i);dest.initiatives.push(i)}}}
+    // Volgorde: O1 waarde, O2 inkoop, O3 baten, dan de rest.
+    const order=['waarde','inkoop','baten'];db.objectives.sort((a,b)=>(order.indexOf(a.id)+1||9)-(order.indexOf(b.id)+1||9));
+    const rpa=obj('rpa');if(rpa)rpa.archived=true;
+    okrNotice='OKR\'s bijgewerkt naar het overzicht Q4 2026 → Q1 2027. Onboarding is ongewijzigd, RPA is gearchiveerd. Een kopie van de vorige versie is bewaard.';
+  }
+  db.contentUpdates.push(OKR2_ID);
+}
+
 /* ---- 20-week.js ---- */
 /* ================= Release 1 · weekplanning ================= */
 let wpEdit=false,wpOpen=new Set();
@@ -2437,7 +2686,7 @@ function wpSuggest(k){
 function krCardMeta(k){
   const op=open().filter(x=>x.krId===k.id).length,pr=k.proofs.length,last=[...k.proofs.map(p=>p.date),...k.measures.map(m=>m.date),...k.evidence.filter(e=>e.doneAt).map(e=>e.doneAt)].sort().at(-1);
   const prog=isMilestone(k)?(k.evidence.length?`criteria ${evDone(k)}/${k.evidence.length}`:(achieved(k)?'behaald':'mijlpaal')):`stand ${k.current??'—'}/${k.target} ${esc(k.unit)}`;
-  return [stateBadge(k),`<span>${prog}</span>`,`<span>${plural(pr,'bewijsstuk','bewijsstukken')}</span>`,`<span>${plural(op,'open actie','open acties')}</span>`,k.due?`<span>◆ ${fmt(k.due)}</span>`:'',last?`<span class="muted">laatste beweging ${rel(last)}</span>`:''].filter(Boolean).join('<i class="sep">·</i>');
+  return [stateBadge(k),`<span>${prog}</span>`,`<span>${plural(pr,'bewijsstuk','bewijsstukken')}</span>`,`<span>${plural(op,'open actie','open acties')}</span>`,k.due?`<span>◆ ${fmt(k.due)}</span>`:'',k.quarter&&k.quarter!==quarter()?`<span class="muted">${esc(k.quarter)}</span>`:'',last?`<span class="muted">laatste beweging ${rel(last)}</span>`:''].filter(Boolean).join('<i class="sep">·</i>');
 }
 function wpRow(x,k){
   const ws=planWs(),days=weekDays(ws),r=krOf(x);
@@ -2547,7 +2796,7 @@ function boardPage(){
   const ws=weekStart(),sel=db.settings.boardObj&&obj(db.settings.boardObj)?db.settings.boardObj:'',o=obj(sel),w=curWeek(),lo=leftovers(),ib=inboxTasks();
   const inScope=t=>sel?t.objectiveId===sel:true;
   const people=[{id:'',name:'Ik',role:'jij'},...membersOf(sel)];
-  const ts=db.tasks.filter(t=>inScope(t)&&onBoard(t));
+  const ts=db.tasks.filter(t=>inScope(t)&&onBoard(t)&&!obj(t.objectiveId)?.archived);
   const ord=t=>({doing:0,wait:1,todo:2,done:3})[statusOf(t)];
   const colOfP=p=>ts.filter(t=>(t.owner||'')===p.id).sort((a,b)=>ord(a)-ord(b)||(a.planDay||'9').localeCompare(b.planDay||'9')||(a.rank||0)-(b.rank||0));
   const tabs=`<div class="btabs" role="tablist" aria-label="Objective">${[['','Alle'],...objs().map(x=>[x.id,x.name])].map(([id,n])=>`<button role="tab" aria-selected="${sel===id}" data-a="board-obj" data-id="${id}">${id?`<span class="dot" style="--c:${obj(id).color}"></span>`:''}${esc(n)}</button>`).join('')}</div>`;
@@ -2915,6 +3164,7 @@ function planRecs(){
     if(!last){s+=1;why.push('nog geen bewijs')}else if(dayDiff(t,last)>=14){s+=1.5;why.push('al '+dayDiff(t,last)+' dagen geen bewijs')}
     if(prev?.krs.includes(k.id)&&!krHasMoved(k,prev.id,addDays(prev.id,6))){s+=1.5;why.push('vorige week gekozen, nog geen bewijs')}
     if(!open().some(x=>x.krId===k.id)){s-=.5;why.push('nog geen acties')}
+    if(k.quarter&&k.quarter!==quarter()){s-=2.5;why.push('gepland voor '+k.quarter)}
     if(k.dependsOn.some(id=>{const d=krById(id);return d&&!achieved(d.k)})){s-=1.5;why.push('wacht op ander KR')}
     const b=(db.settings.week&&weekTargets()[bucketOf(o.id)])||0;if(b>=40)s+=.5;
     out[k.id]={score:s,reasons:why};list.push({id:k.id,s})});
@@ -3032,8 +3282,411 @@ Object.assign(ACT,{
 window.addEventListener('offline',()=>{refreshSyncUI();toast('Je bent offline. Focus werkt door en synchroniseert later.')});
 window.addEventListener('online',()=>refreshSyncUI());
 
+/* ---- 95-e.js ---- */
+/* ================= Focus E · vier gebieden: Nu, Week, Resultaten, Samen ================= */
+// Ontwerp "stream E": één beeldtaal, één weekscherm met kalender, één resultatenscherm,
+// delegeren via één kaart, weekreview als kaartenstapel, agenda-abonnement voor Outlook.
+// Alle bestaande data blijft; nieuwe velden zijn optioneel: t.slot {start,dur}, t.waitMe, t.result, t.notNow,
+// settings.agenda {on,token,privacy}. Oude schermen (bord, check-in) blijven bereikbaar via hun adres.
+Object.assign(P,{
+  cal:'<rect x="4" y="5" width="16" height="15" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4"/>',
+  people:'<circle cx="9" cy="9" r="3"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5"/><circle cx="17" cy="8.5" r="2.3"/><path d="M15.6 13.7c2.2-.3 4.2.9 5 3.3"/>',
+  dots:'<circle cx="6" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="18" cy="12" r="1.2"/>',
+});
+const E={kr:null,krFor:null,obj:null,q:null,why:false,week:'plan',wsOff:0,pick:null,rv:0,rvAns:{},rvEnd:{},person:null,more:false};
+const toMin=s=>{const [h,m]=String(s||'0:0').split(':').map(Number);return (h||0)*60+(m||0)};
+const fromMin=n=>String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');
+const endOf=sl=>fromMin(toMin(sl.start)+(Number(sl.dur)||60));
+const evCount=k=>k.evidence.filter(e=>e.done).length;
+const CONF3=[['on','Op koers'],['risk','Risico'],['blocked','Vast']];
+const confL=v=>({on:'Op koers',risk:'Risico',blocked:'Vast',done:'Behaald'}[v]||'Nog onbekend');
+const confC=v=>({on:'ok',risk:'warn',blocked:'bad',done:'ok'}[v]||'idle');
+const mineOpen=t=>!t.done&&!t.dropped&&!t.owner&&!t.waiting;
+const krOpenMine=k=>open().filter(t=>t.krId===k.id&&mineOpen(t)).sort((a,b)=>(a.planDay||'9999').localeCompare(b.planDay||'9999')||(a.slot?toMin(a.slot.start):9999)-(b.slot?toMin(b.slot.start):9999)||(a.rank||0)-(b.rank||0));
+const waitMeList=()=>open().filter(t=>t.owner&&t.waitMe);
+const waitingList=()=>open().filter(t=>t.owner||t.waiting).sort((a,b)=>(b.waitMe?1:0)-(a.waitMe?1:0)||String(a.followUp||'9').localeCompare(String(b.followUp||'9')));
+const dStat=t=>t.done?['Klaar','ok']:t.waitMe?['Wacht op mij','warn']:['Bij '+(member(t.owner)?.name||'iemand'),''];
+const wkKRs=ws=>(db.weeks.find(w=>w.id===ws)?.krs||[]).filter(id=>krById(id));
+const qSort=(a,b)=>{const p=s=>{const m=/Q(\d)\s+(\d{4})/.exec(s)||[0,0,0];return +m[2]*10+ +m[1]};return p(a)-p(b)};
+const pipsE=k=>k.evidence.length?`<span class="e-pips" title="Bewijs ${evCount(k)} van ${k.evidence.length}">${k.evidence.map(e=>`<i class="${e.done?'on':''}"></i>`).join('')}</span>`:'';
+const confTag=v=>`<span class="e-conf ${confC(v)}"><i></i>${confL(v)}</span>`;
+const eReviewDue=()=>{const d=new Date().getDay();return (d===5||d===6||d===0)&&weekKRs().length>0&&!curWeek()?.reviewed};
+const addWorkdays=(d,n)=>{let x=d;while(n>0){x=addDays(x,1);const g=new Date(x+'T12:00:00').getDay();if(g!==0&&g!==6)n--}return x};
+
+/* ---------- navigatie ---------- */
+function parseHash(){const [a,b,c]=location.hash.replace(/^#\/?/,'').split('/');
+  if(a==='week')return{view:'week',sub:b||''};
+  if(a==='resultaten')return{view:'res',id:b||'',kr:c||''};
+  if(a==='o'&&b)return{view:'res',id:b,kr:''};
+  if(a==='samen')return{view:'samen',id:b||''};
+  if(a==='taken')return{view:'tasks',tab:b||'inbox'};
+  if(a==='review'||a==='checkin')return{view:'week',sub:'review'};
+  return{view:'home'}}
+function renderRail(){renderQuarter();
+  const v=route.view,item=(h,ic,l,cur,badge='')=>`<a class="nav-item e-nav" href="#${h}" ${cur?'aria-current="page"':''}>${I(ic)}<span class="nm">${l}</span>${badge}</a>`,wm=waitMeList().length;
+  $('#nav').innerHTML=item('/','home','Nu',v==='home')+item('/week','cal','Week',v==='week',eReviewDue()?'<span class="e-badge" title="Weekreview staat klaar"></span>':'')
+    +item('/resultaten','target','Resultaten',v==='res')+item('/samen','people','Samen',v==='samen',wm?`<span class="e-badge warn" title="${wm} wacht op jou"></span>`:'');
+  $('#objNav').innerHTML='';
+  if(!$('#ePlus')){const b=document.createElement('button');b.id='ePlus';b.className='e-plus';b.dataset.a='capture';b.setAttribute('aria-label','Vastleggen (N)');b.title='Vastleggen (N)';b.innerHTML=I('plus');$('.rail-foot').prepend(b)}
+}
+function renderTabbar(){const v=route.view,t=(h,ic,l,cur)=>`<a href="#${h}" ${cur?'aria-current="page"':''}>${I(ic)}${l}</a>`;
+  $('#tabbar').innerHTML=t('/','home','Nu',v==='home')+t('/week','cal','Week',v==='week')+`<button class="plus" data-a="capture" aria-label="Vastleggen"><span>${I('plus')}</span></button>`+t('/resultaten','target','Resultaten',v==='res')+t('/samen','people','Samen',v==='samen')}
+function render(){
+  document.body.classList.add('e');closeMenu();
+  renderRail();renderTabbar();
+  const v=route.view;
+  $('#main').innerHTML=v==='week'?eWeek():v==='res'?eRes():v==='samen'?eSamen():v==='tasks'?(route.tab==='wacht'||route.tab==='klaar'?tasksPage():boardPage()):eNu();
+  $('#mTitle').textContent={week:'Week',res:'Resultaten',samen:'Samen',tasks:'Acties'}[v]||'Nu';
+  flashId=null;renderSessionPill();
+}
+
+/* ---------- Nu ---------- */
+function eFocus(){const t0=iso(),ok=x=>mineOpen(x)&&x.notNow!==t0;
+  const today=open().filter(x=>ok(x)&&(x.planDay===t0||x.today===t0)).sort((a,b)=>(a.slot?toMin(a.slot.start):9999)-(b.slot?toMin(b.slot.start):9999)||(a.rank||0)-(b.rank||0));
+  const doing=open().find(x=>ok(x)&&x.status==='doing');
+  const df=dayFocus(),kd=x=>krOf(x)?.k.due||'9999';
+  const pool=open().filter(x=>ok(x)&&x.krId&&krOf(x)&&!achieved(krOf(x).k)&&(!x.planDay||x.planDay<=t0)).sort((a,b)=>(weekKRs().includes(b.krId)-weekKRs().includes(a.krId))||((df&&inBucket(b,df))-(df&&inBucket(a,df)))||kd(a).localeCompare(kd(b))||(a.rank||0)-(b.rank||0));
+  const sugg=[...suggestToday(4).map(s=>s.t).filter(ok),...pool].filter((x,i,a)=>a.indexOf(x)===i);
+  const first=doing||today[0]||sugg[0]||null;
+  const rest=today.filter(x=>x!==first);
+  return{first,rest,sugg:rest.length?[]:sugg.filter(x=>x!==first).slice(0,2)}}
+function eRow(t,{meta=true,menu=true}={}){const r=krOf(t),o=obj(t.objectiveId),m=member(t.owner);
+  const when=t.owner?dStat(t)[0]:t.planDay?dayLabel(t.planDay)+(t.slot?' '+t.slot.start:''):'';
+  return `<li class="e-row ${t.done?'done':''}" data-tid="${t.id}" draggable="${!t.done&&!t.owner}">
+   <button class="e-chk" data-a="toggle" data-id="${t.id}" aria-pressed="${t.done}" aria-label="${t.done?'Heropen':'Markeer als gedaan'}">${t.done?I('check'):''}</button>
+   <div class="e-row-m"><button class="e-tt" data-a="open-task" data-id="${t.id}">${esc(t.title)}</button>${meta?`<div class="e-sub">${o?`<span class="dot" style="--c:${o.color}"></span>`:''}${r?esc(krN(r)):o?esc(o.name):'Nog niet gekoppeld'}</div>`:''}</div>
+   ${m?avatar(m,20):''}${when?`<span class="e-when">${esc(when)}</span>`:''}
+   ${menu&&!t.done?`<button class="e-more" data-a="e-menu" data-id="${t.id}" aria-label="Meer voor ${esc(t.title)}">${I('dots')}</button>`:''}</li>`}
+function eWaitRow(t){const m=member(t.owner),od=t.followUp&&t.followUp<=iso();
+  const sub=t.owner?(t.waitMe?`${esc(m?.name||'')} wacht op jouw besluit`:`${esc(m?.name||'')} · terug ${t.followUp?dayLabel(t.followUp):'—'}`):`Wacht${t.blocker?': '+esc(t.blocker):''}`;
+  return `<li class="e-wrow">${m?avatar(m,28):`<span class="av me" style="width:28px;height:28px;font-size:11px">…</span>`}<div class="e-row-m"><button class="e-tt" data-a="${t.owner?'e-deleg':'open-task'}" data-id="${t.id}">${esc(t.title)}</button><div class="e-sub ${t.waitMe||od?'warn':''}">${sub}</div></div><button class="link" data-a="${t.owner?'e-deleg':'open-task'}" data-id="${t.id}">${t.waitMe?'Beslis':'Volg op'}</button></li>`}
+function eNu(){
+  if(!objs().length&&!db.tasks.length)return `<div class="page e-page">${loginCard()||'<p class="muted">Nog geen objectives. Begin bij Resultaten.</p>'}</div>`;
+  const {first:f,rest,sugg}=eFocus(),d=new Date(),df=dayFocus(d),date=d.toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'});
+  const r=f&&krOf(f),k=r?.k,wl=waitingList(),shown=E.more?rest:rest.slice(0,3),wk=weekKRs().map(krById).filter(Boolean);
+  const card=f?`<section class="e-focus" aria-labelledby="eFocT">
+    <div class="e-focus-l">Dit verdient nu je aandacht${f.slot&&f.planDay===iso()?` · vandaag ${f.slot.start}–${endOf(f.slot)}`:''}</div>
+    <h1 class="e-focus-t" id="eFocT">${esc(f.title)}</h1>
+    <div class="e-focus-m">${r?`<span class="dot" style="--c:${r.o.color}"></span>Brengt dichterbij: <b>${esc(krN(r))}</b>${k.evidence.length?`<span class="dim"> · bewijs ${evCount(k)} van ${k.evidence.length}</span>`:''}`:`<button class="link inv" data-a="e-link-kr" data-id="${f.id}">Koppel aan een Key Result</button>`}</div>
+    <div class="e-focus-a"><button class="btn primary lg" data-a="e-done" data-id="${f.id}">${I('check')} Gedaan</button>${r?`<button class="btn lg e-ghost" data-a="e-open-kr" data-id="${k.id}">Open KR</button>`:`<button class="btn lg e-ghost" data-a="open-task" data-id="${f.id}">Open</button>`}<span class="spacer"></span><button class="link inv" data-a="e-notnow" data-id="${f.id}">Niet nu</button><button class="e-more inv" data-a="e-menu" data-id="${f.id}" aria-label="Meer">${I('dots')}</button></div></section>`
+   :`<section class="e-focus" aria-labelledby="eFocT"><div class="e-focus-l">Nu</div><h1 class="e-focus-t" id="eFocT">Niets gepland voor nu</h1><div class="e-focus-m">Kies iets uit je week of leg een actie vast.</div><div class="e-focus-a"><a class="btn primary lg" href="#/week">Naar je week</a><button class="btn lg e-ghost" data-a="capture">${I('plus')} Vastleggen</button></div></section>`;
+  return `<div class="page e-page e-nu">
+   <div class="e-date">${esc(date[0].toUpperCase()+date.slice(1))}${df?` · ${df.loc} · ${esc(df.label)}`:''}</div>
+   ${eReviewDue()?`<a class="e-banner" href="#/week/review"><b>Weekreview</b><span>Vijf minuten: per resultaat een kaart. Daarna staat maandag klaar.</span><span class="spacer"></span><span class="link">Start review</span></a>`:''}
+   ${card}
+   <div class="e-cols">
+    <section><div class="e-h"><span class="lbl">Daarna vandaag</span><span class="small">${rest.length?`${Math.min(rest.length,3)} van max. 3`:''}</span></div>
+     <ul class="e-list">${shown.map(t=>eRow(t)).join('')}</ul>
+     ${sugg.length?`<div class="small" style="margin:10px 0 2px">Voorstel · zet op vandaag via ⋯</div><ul class="e-list e-sugg">${sugg.map(t=>eRow(t)).join('')}</ul>`:''}
+     ${rest.length>3?`<button class="link quiet" data-a="e-more-today">${E.more?'Minder tonen':`+ ${rest.length-3} meer`}</button>`:''}
+     <form class="e-add" data-form="e-today">${I('plus')}<input name="title" placeholder="Actie voor vandaag…" aria-label="Actie voor vandaag" maxlength="250" autocomplete="off"></form></section>
+    <section><div class="e-h"><span class="lbl">Wacht op anderen</span><span class="small">${wl.length||''}</span></div>
+     ${wl.length?`<ul class="e-list">${wl.slice(0,6).map(eWaitRow).join('')}</ul>`:`<p class="small">Niets uitstaand. Delegeren doe je via ⋯ bij een actie.</p>`}</section>
+   </div>
+   ${wk.length?`<div class="e-weekline"><span>Deze week:</span>${wk.map(r=>`<a href="#/resultaten/${r.o.id}/${r.k.id}"><span class="dot" style="--c:${r.o.color}"></span>${esc(krN(r))}</a>`).join('')}</div>`:`<div class="e-weekline"><a href="#/week">Kies de resultaten van deze week →</a></div>`}
+  </div>`}
+
+/* ---------- actiemenu (⋯) ---------- */
+function closeMenu(){$('#ePop')?.remove()}
+function eMenu(b){const t=task(b.dataset.id);if(!t)return;const was=$('#ePop')?.dataset.id===t.id;closeMenu();if(was)return;
+  const it=(a,l)=>`<button data-a="${a}" data-id="${t.id}" role="menuitem">${l}</button>`;
+  const m=document.createElement('div');m.id='ePop';m.className='e-pop';m.dataset.id=t.id;m.setAttribute('role','menu');
+  m.innerHTML=it('e-today','Doe vandaag')+it('e-plan','Plan op een dag…')+it('e-deleg',t.owner?'Delegatie…':'Delegeer…')+it('e-link-kr',t.krId?'Koppel aan ander KR…':'Koppel aan een KR…')+it('open-task','Details…')+it('e-drop','Laat los');
+  document.body.append(m);const r=b.getBoundingClientRect(),w=220,h=m.offsetHeight;
+  m.style.left=Math.max(8,Math.min(r.right-w,innerWidth-w-8))+'px';m.style.top=(r.bottom+h+8>innerHeight?r.top-h-6:r.bottom+6)+scrollY+'px';
+  m.querySelector('button').focus()}
+document.addEventListener('click',e=>{const p=$('#ePop');if(p&&!e.target.closest('#ePop')&&!e.target.closest('[data-a=e-menu]'))closeMenu()},true);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#ePop')){e.stopPropagation();closeMenu()}},true);
+
+/* ---------- plannen (dag, tijd, duur) ---------- */
+function ePlanSheet(id){const t=task(id);if(!t)return;closeMenu();
+  const ws=weekStart(),days=[...weekDays(ws),...weekDays(addDays(ws,7))].filter(d=>d>=iso()||d===t.planDay);
+  openLayer('eplan',head('Plannen')+`<form data-form="e-plan" data-id="${t.id}"><div class="sheet-body">
+    <p class="small" style="margin:0">${esc(t.title)}</p>
+    <div class="grid2"><div class="field"><label for="ep-d">Dag</label><select class="select" id="ep-d" name="day"><option value="">Geen dag</option>${days.map(d=>`<option value="${d}" ${t.planDay===d?'selected':''}>${esc(dayLabel(d))} ${fmt(d)}</option>`).join('')}</select></div>
+    <div class="field"><label for="ep-t">Tijd <span class="small">optioneel</span></label><input class="input" id="ep-t" name="time" type="time" step="900" value="${esc(t.slot?.start||'')}"></div></div>
+    <div class="field"><span class="lbl">Duur</span><div class="seg" role="radiogroup" aria-label="Duur">${[15,30,60,90,120,180].map(n=>`<label class="e-segl"><input type="radio" name="dur" value="${n}" ${(Number(t.slot?.dur)||60)===n?'checked':''}><span>${n<60?n+' min':n/60+' u'}</span></label>`).join('')}</div></div>
+    <p class="hint" style="margin:0">Met een tijd staat de actie in je weekkalender en, als je geabonneerd bent, in Outlook.</p>
+   </div><footer class="sheet-foot">${t.slot?`<button type="button" class="btn ghost" data-a="e-unslot" data-id="${t.id}">Uit de kalender</button><span class="spacer"></span>`:''}<button type="button" class="btn" data-a="close">Annuleren</button><button class="btn primary">Opslaan</button></footer></form>`,{cls:'dialog',label:'Plannen'})}
+function placeTask(t,day,start,dur){
+  t.planDay=day||'';if(day){t.week=weekStart(day);ensureWeek(t.week).committed=[...new Set([...(ensureWeek(t.week).committed||[]),t.id])]}
+  if(day&&start)t.slot={start,dur:Number(dur)||Number(t.slot?.dur)||60};else delete t.slot;
+  if(day===iso())t.today=iso();else if(t.today===iso())t.today='';
+  t.notNow='';t.dropped=false}
+
+/* ---------- KR koppelen ---------- */
+function eKrPick(id){const t=task(id);if(!t)return;closeMenu();const q=quarter();
+  openLayer('ekr',head('Koppel aan een Key Result')+`<div class="sheet-body"><p class="small" style="margin:0">${esc(t.title)}</p>
+   ${objs().map(o=>`<div class="e-pick-o"><div class="e-pick-h"><span class="dot" style="--c:${o.color}"></span>${esc(o.name)}</div>${o.krs.filter(k=>!achieved(k)||k.id===t.krId).map(k=>`<button class="e-pick-k ${t.krId===k.id?'on':''}" data-a="e-set-kr" data-id="${t.id}" data-kr="${k.id}"><span>${esc(krName(k))}</span><span class="small">${esc(k.quarter&&k.quarter!==q?k.quarter:'')}</span></button>`).join('')}</div>`).join('')}
+   <button class="link quiet" data-a="e-set-kr" data-id="${t.id}" data-kr="">Geen Key Result</button></div>`,{cls:'dialog',label:'Koppel aan KR'})}
+
+/* ---------- delegeren: één kaart ---------- */
+const ROOM=[[1,'Ik beslis','Jij besluit, de ander voert uit.'],[4,'Samen','Jullie stemmen eerst af.'],[6,'Zij beslissen','De ander bepaalt de aanpak en vertelt het achteraf.']];
+const roomOf=l=>!l?6:l<=2?1:l<=5?4:6;
+function eDelegSheet(id){const t=task(id);if(!t)return;closeMenu();
+  const own=membersOf(t.objectiveId),cand=own.length?own:team(),cur=member(t.owner),lv=roomOf(t.level),back=t.followUp||addWorkdays(iso(),3);
+  openLayer('edeleg',head(cur?'Gedelegeerd':'Delegeer')+`<form data-form="e-deleg" data-id="${t.id}"><div class="sheet-body">
+   ${cur?`<div class="e-dstat" role="group" aria-label="Status">${[['bij','Bij '+cur.name],['wacht','Wacht op mij'],['klaar','Klaar']].map(([v,l])=>`<button type="button" data-a="e-dstat" data-id="${t.id}" data-v="${v}" aria-pressed="${(v==='klaar'&&t.done)||(v==='wacht'&&!t.done&&!!t.waitMe)||(v==='bij'&&!t.done&&!t.waitMe)}">${esc(l)}</button>`).join('')}</div>`:''}
+   <div class="field"><span class="lbl">Aan wie</span><div class="e-who">${cand.map(m=>`<label class="e-whoi" title="${esc(m.name)}"><input type="radio" name="who" value="${m.id}" ${t.owner===m.id?'checked':''}>${avatar(m,34)}<span>${esc(m.name.split(' ')[0])}</span></label>`).join('')}
+    <input class="input e-newname" name="newname" placeholder="+ naam" aria-label="Nieuwe persoon" maxlength="60" autocomplete="off"></div>
+    ${!team().length?'<span class="hint">Typ een naam. Diegene komt in je team bij dit objective.</span>':''}</div>
+   <div class="field"><label for="ed-r">Wat moet eruit komen?</label><input class="input" id="ed-r" name="result" maxlength="250" value="${esc(t.result||t.title)}"></div>
+   <div class="field"><span class="lbl">Hoeveel ruimte?</span><div class="seg e-room" role="radiogroup">${ROOM.map(([v,l,h])=>`<label class="e-segl" title="${esc(h)}"><input type="radio" name="room" value="${v}" ${lv===v?'checked':''}><span>${l}</span></label>`).join('')}</div></div>
+   <div class="grid2"><div class="field"><label for="ed-b">Terugkoppelen op</label><input class="input" id="ed-b" name="back" type="date" value="${esc(back)}"></div><div></div></div>
+   ${krOf(t)?`<p class="hint" style="margin:0">Waarom: draagt bij aan ${esc(krN(krOf(t)))}.</p>`:''}
+  </div><footer class="sheet-foot">${cur?`<button type="button" class="btn ghost" data-a="e-takeback" data-id="${t.id}">Terugnemen</button>`:''}<span class="spacer"></span><button type="button" class="btn" data-a="e-brief" data-id="${t.id}">Kopieer briefing</button><button class="btn primary">${cur?'Opslaan':'Draag over'}</button></footer></form>`,{cls:'dialog',label:'Delegeren'})}
+function eDelegRead(f){const fd=new FormData(f);return{who:fd.get('who')||'',newname:clean(fd.get('newname')),result:clean(fd.get('result')),room:Number(fd.get('room'))||6,back:fd.get('back')||''}}
+function eWhoId(t,v){if(v.newname){const ex=team().find(m=>m.name.toLowerCase()===v.newname.toLowerCase());if(ex)return ex.id;
+    const id=uid();db.team.push({id,name:v.newname,role:'',objectives:t.objectiveId?[t.objectiveId]:[],color:MEMBER_COLORS[team().length%MEMBER_COLORS.length],created:iso()});return id}
+  return v.who}
+function eBrief(t,v){const m=member(v.who)||{name:v.newname},r=krOf(t),o=obj(t.objectiveId),R=ROOM.find(x=>x[0]===v.room);
+  return [`Hoi ${m?.name||''},`,'',`Wat moet eruit komen: ${v.result||t.title}.`,`Waarom: ${r?`het draagt bij aan "${r.k.title}"`:o?`het hoort bij ${o.name}`:'—'}.`,`Ruimte: ${R?R[1].toLowerCase()+'. '+R[2]:'—'}`,`Terugkoppelen: ${v.back?fmt(v.back):'—'}.`].join('\n')}
+
+/* ---------- Week ---------- */
+const H0=8,H1=18,PX=46;
+function eWeek(){
+  if(route.sub==='review')return eReview();
+  const ws=addDays(weekStart(),7*E.wsOff),krs=wkKRs(ws),choosing=E.week==='kies'||!krs.length,a=db.settings.agenda||{};
+  return `<div class="page e-page e-week">
+   <div class="e-top"><h1>Week ${isoWeek(ws)}</h1><span class="muted">${fmt(ws)} – ${fmt(addDays(ws,4))}</span>
+    <span class="e-wnav"><button class="btn ghost icon" data-a="e-wk" data-v="-1" aria-label="Vorige week" ${E.wsOff<=-1?'disabled':''}>‹</button>${E.wsOff?`<button class="link quiet" data-a="e-wk" data-v="0">Deze week</button>`:''}<button class="btn ghost icon" data-a="e-wk" data-v="1" aria-label="Volgende week" ${E.wsOff>=1?'disabled':''}>›</button></span>
+    <span class="spacer"></span>
+    ${E.wsOff===0&&krs.length?`<a class="btn ${eReviewDue()?'primary':''}" href="#/week/review">Weekreview</a>`:''}
+    <button class="btn ${a.on?'e-ok':''}" data-a="e-agenda">${a.on?'<span class="e-live"></span>In je Outlook':I('cal')+' Zet in Outlook'}</button></div>
+   <div class="e-wgrid">
+    <aside class="e-wleft" data-drop-unplan>${choosing?eChoose(ws):eWeekLeft(ws,krs)}</aside>
+    <div class="e-wright">${eCal(ws)}${eBalance(ws)}</div>
+   </div></div>`}
+function eChoose(ws){const prev=wkKRs(addDays(ws,-7));if(!E.pick)E.pick=wkKRs(ws).length?wkKRs(ws):prev.filter(id=>!achieved(krById(id).k)).slice(0,3);
+  const q=quarter(),soon=addDays(ws,28);
+  const cands=objs().flatMap(o=>o.krs.filter(k=>!achieved(k)&&(!k.quarter||k.quarter===q)).map(k=>({o,k})));
+  const why=({k})=>k.due&&k.due<=soon?'deadline '+fmt(k.due):['risk','blocked'].includes(k.confidence)?confL(k.confidence).toLowerCase():prev.includes(k.id)?'vorige week ook':(krOpenMine(k).length?plural(krOpenMine(k).length,'actie','acties'):'nog geen actie');
+  return `<div class="e-h"><span class="lbl">Welke drie resultaten krijgen deze week je aandacht?</span></div>
+   <div class="e-cands">${cands.map(c=>{const on=E.pick.includes(c.k.id);return `<button class="e-cand ${on?'on':''}" data-a="e-pick" data-id="${c.k.id}" aria-pressed="${on}"><span class="dot" style="--c:${c.o.color}"></span><span class="e-cand-t">${esc(krName(c.k))}</span><span class="e-cand-w">${esc(why(c))}</span></button>`}).join('')||'<p class="small">Geen open Key Results in dit kwartaal.</p>'}</div>
+   <div class="row" style="margin-top:12px"><span class="small">${E.pick.length} van max. 3</span><span class="spacer"></span>${wkKRs(ws).length?`<button class="btn ghost" data-a="e-pick-cancel">Annuleren</button>`:''}<button class="btn primary" data-a="e-pick-save" ${E.pick.length?'':'disabled'}>${!E.pick.length?'Kies resultaten':E.pick.length===1?'Plan dit resultaat':'Plan deze '+E.pick.length}</button></div>`}
+function eWeekLeft(ws,krs){const days=weekDays(ws);
+  const card=id=>{const r=krById(id),k=r.k,steps=krOpenMine(k).slice(0,7),other=open().filter(t=>t.krId===k.id&&t.owner);
+    return `<div class="e-wkr"><a class="e-wkr-h" href="#/resultaten/${r.o.id}/${k.id}"><span class="dot" style="--c:${r.o.color}"></span>${esc(krN(r))}</a>
+     <ul class="e-steps">${steps.map(t=>`<li class="e-step" draggable="true" data-tid="${t.id}"><span class="e-bar" style="--c:${t.planDay&&days.includes(t.planDay)?r.o.color:'var(--line-2)'}"></span><button class="e-tt" data-a="open-task" data-id="${t.id}">${esc(t.title)}</button>${t.planDay&&days.includes(t.planDay)?`<button class="e-when" data-a="e-plan" data-id="${t.id}">${esc(DAYNAMES[new Date(t.planDay+'T12:00').getDay()])}${t.slot?' '+t.slot.start:''}</button>`:`<button class="e-when go" data-a="e-plan" data-id="${t.id}" title="Sleep naar de kalender of klik om te plannen">plan →</button>`}</li>`).join('')}
+      ${other.map(t=>`<li class="e-step dim">${avatar(member(t.owner),16)}<button class="e-tt" data-a="e-deleg" data-id="${t.id}">${esc(t.title)}</button><span class="e-when">${esc(dStat(t)[0])}</span></li>`).join('')}</ul>
+     <form class="e-add sm" data-form="e-step" data-o="${r.o.id}" data-kr="${k.id}" data-ws="${ws}">${I('plus')}<input name="title" placeholder="stap" aria-label="Stap toevoegen bij ${esc(krN(r))}" maxlength="250" autocomplete="off"></form></div>`};
+  const loose=open().filter(t=>mineOpen(t)&&!krs.includes(t.krId)&&(t.week===ws||days.includes(t.planDay)));
+  return `<div class="e-h"><span class="lbl">Drie resultaten</span><button class="link" data-a="e-pick-edit">Wijzig</button></div>${krs.map(card).join('')}
+   ${loose.length?`<div class="e-h" style="margin-top:6px"><span class="lbl">Ook deze week</span></div><ul class="e-steps">${loose.slice(0,8).map(t=>`<li class="e-step" draggable="true" data-tid="${t.id}"><span class="e-bar" style="--c:${obj(t.objectiveId)?.color||'var(--line-2)'}"></span><button class="e-tt" data-a="open-task" data-id="${t.id}">${esc(t.title)}</button><button class="e-when ${t.planDay?'':'go'}" data-a="e-plan" data-id="${t.id}">${t.planDay?esc(DAYNAMES[new Date(t.planDay+'T12:00').getDay()])+(t.slot?' '+t.slot.start:''):'plan →'}</button></li>`).join('')}</ul>`:''}
+   <p class="small e-tip">Sleep een stap naar de kalender, of klik op “plan”.</p>`}
+function eCal(ws){const days=weekDays(ws),wk=db.settings.week||{},hrs=[];for(let h=H0;h<H1;h++)hrs.push(h);const today=iso(),c=db.settings.rhythm?.checkin;
+  const col=(d,i)=>{const th=wk[i+1],tn=th?.o==='rest'?'overig':obj(th?.o)?.name||'';
+    const timed=db.tasks.filter(t=>t.planDay===d&&t.slot?.start&&!t.dropped&&!t.owner),all=db.tasks.filter(t=>t.planDay===d&&!t.slot?.start&&!t.dropped&&!t.done&&!t.owner),fu=open().filter(t=>t.owner&&t.followUp===d);
+    const blk=t=>{const s=Math.max(toMin(t.slot.start),H0*60),top=(s-H0*60)/60*PX,hh=Math.max(20,(Number(t.slot.dur)||60)/60*PX-3),o=obj(t.objectiveId);
+      return `<button class="e-blk ${t.done?'done':''} ${hh<34?'tiny':''}" style="top:${top}px;height:${hh}px;--c:${o?.color||'var(--ink-4)'}" draggable="true" data-tid="${t.id}" data-a="e-plan" data-id="${t.id}" title="${esc(t.slot.start+'–'+endOf(t.slot)+' · '+t.title)}"><b>${esc(t.slot.start)}</b> ${esc(t.title)}</button>`};
+    const rv=c?.on&&Number(c.day)===i+1?`<a class="e-blk rv" href="#/week/review" style="top:${(toMin(c.time||'16:00')-H0*60)/60*PX}px;height:${Math.max(20,(c.dur||20)/60*PX-3)}px">Weekreview</a>`:'';
+    const now=d===today?(()=>{const n=new Date(),m=n.getHours()*60+n.getMinutes();return m>H0*60&&m<H1*60?`<i class="e-now" style="top:${(m-H0*60)/60*PX}px"></i>`:''})():'';
+    return `<div class="e-day ${d===today?'today':''}"><div class="e-dh"><b>${esc(DAYNAMES[i+1])} ${new Date(d+'T12:00').getDate()}</b><span>${esc([th?.loc,tn].filter(Boolean).join(' · '))}</span></div>
+     <div class="e-allday" data-drop-day="${d}" data-allday>${all.map(t=>`<button class="e-chip" draggable="true" data-tid="${t.id}" data-a="e-plan" data-id="${t.id}" style="--c:${obj(t.objectiveId)?.color||'var(--ink-4)'}">${esc(t.title)}</button>`).join('')}${fu.map(t=>`<button class="e-chip fu" data-a="e-deleg" data-id="${t.id}" title="Terugkoppeling">↩ ${esc(member(t.owner)?.name||'')}: ${esc(t.title)}</button>`).join('')}</div>
+     <div class="e-dcol" data-drop-day="${d}" style="height:${(H1-H0)*PX}px">${timed.map(blk).join('')}${rv}${now}</div></div>`};
+  return `<div class="e-cal"><div class="e-hours"><div class="e-dh"></div><div class="e-allday"><small>dag</small></div><div style="position:relative;height:${(H1-H0)*PX}px">${hrs.map(h=>`<span style="top:${(h-H0)*PX}px">${h}</span>`).join('')}</div></div>${days.map(col).join('')}</div>`}
+function eBalance(ws){const days=weekDays(ws),acc={};let tot=0;
+  for(const t of db.tasks)if(days.includes(t.planDay)&&t.slot&&!t.dropped&&!t.owner&&t.objectiveId){const b=bucketOf(t.objectiveId),m=Number(t.slot.dur)||60;acc[b]=(acc[b]||0)+m;tot+=m}
+  if(!tot)return `<div class="e-bal small">Nog niets met een tijd gepland deze week.</div>`;
+  const tg=weekTargets();
+  return `<div class="e-bal small"><span>Tijd ${Math.round(tot/60*10)/10} u:</span>${Object.entries(acc).sort((a,b)=>b[1]-a[1]).map(([b,m])=>`<span><span class="dot" style="--c:${bucketColor(b)}"></span>${esc(bucketName(b))} ${Math.round(m/tot*100)}%${tg[b]!=null?` <span class="dim">/ ${tg[b]}%</span>`:''}</span>`).join('')}</div>`}
+
+/* slepen naar de kalender */
+let eDrag=null;
+document.addEventListener('dragstart',e=>{const el=e.target.closest?.('[data-tid]');if(!el||!document.body.classList.contains('e'))return;eDrag=el.dataset.tid;e.dataTransfer.effectAllowed='move';try{e.dataTransfer.setData('text/plain',eDrag)}catch{}el.classList.add('dragging')});
+document.addEventListener('dragend',e=>{e.target.closest?.('[data-tid]')?.classList.remove('dragging');$$('.e-drop').forEach(x=>x.classList.remove('e-drop'));$('#eGhost')?.remove();eDrag=null});
+const eSlotAt=(col,y)=>Math.min((H1*60)-15,Math.max(H0*60,H0*60+Math.round(y/PX*60/15)*15));
+document.addEventListener('dragover',e=>{if(!eDrag)return;const z=e.target.closest?.('[data-drop-day],[data-drop-unplan]');if(!z)return;e.preventDefault();
+  $$('.e-drop').forEach(x=>x!==z&&x.classList.remove('e-drop'));z.classList.add('e-drop');
+  if(z.classList.contains('e-dcol')){const r=z.getBoundingClientRect(),m=eSlotAt(z,e.clientY-r.top),t=task(eDrag),dur=Number(t?.slot?.dur)||60;let g=$('#eGhost');if(!g||g.parentElement!==z){g?.remove();g=document.createElement('div');g.id='eGhost';g.className='e-ghost-blk';z.append(g)}
+    g.style.top=(m-H0*60)/60*PX+'px';g.style.height=dur/60*PX-3+'px';g.textContent=fromMin(m)}else $('#eGhost')?.remove()});
+document.addEventListener('drop',e=>{if(!eDrag)return;const z=e.target.closest?.('[data-drop-day],[data-drop-unplan]');if(!z)return;e.preventDefault();const t=task(eDrag);eDrag=null;if(!t)return;
+  if(z.dataset.dropDay&&z.classList.contains('e-dcol')){const r=z.getBoundingClientRect(),m=eSlotAt(z,e.clientY-r.top),d=z.dataset.dropDay;commit(()=>placeTask(t,d,fromMin(m),t.slot?.dur||60),{msg:`Gepland: ${dayLabel(d)} ${fromMin(m)}`,undo:true})}
+  else if(z.dataset.dropDay){const d=z.dataset.dropDay;commit(()=>placeTask(t,d,'',0),{msg:`Op ${dayLabel(d)}, zonder tijd`,undo:true})}
+  else if(t.planDay){commit(()=>placeTask(t,'','',0),{msg:'Uit de kalender gehaald',undo:true})}});
+
+/* ---------- Weekreview: gestapelde kaarten ---------- */
+function eReview(){const ws=weekStart(),krs=wkKRs(ws),cards=[...krs,'_end'],i=Math.min(E.rv,cards.length-1),cur=cards[i],days=weekDays(ws),inW=d=>d&&d>=ws&&d<=addDays(ws,6);
+  const summary=`<aside class="e-rsum"><div class="lbl">Week ${isoWeek(ws)} in het kort</div>${cards.map((c,j)=>{const r=c==='_end'?null:krById(c),ans=c==='_end'?E.rvEnd.wins:E.rvAns[c]?.v;return `<button class="e-rsum-i ${j===i?'on':''}" data-a="e-rv-go" data-v="${j}"><span class="dot" style="--c:${r?r.o.color:'var(--ink-4)'}"></span><span>${r?esc(krN(r)):'Terugblik'}</span><span class="spacer"></span>${ans?I('check'):''}</button>`}).join('')}
+    <p class="small">${plural(doneIn(ws,addDays(ws,6)).filter(t=>!t.owner).length,'actie','acties')} afgerond · ${doneIn(ws,addDays(ws,6)).filter(t=>t.owner).length} opgeleverd door anderen${inboxTasks().length?` · ${plural(inboxTasks().length,'losse actie','losse acties')}`:''}</p></aside>`;
+  if(!krs.length)return `<div class="page e-page"><div class="e-top"><h1>Weekreview</h1><span class="spacer"></span><a class="link" href="#/week">Terug naar de week</a></div><p class="muted">Deze week zijn nog geen resultaten gekozen. Kies ze in Week; de review loopt daarlangs.</p></div>`;
+  let body;
+  if(cur==='_end'){body=`<div class="e-card-l">Terugblik</div><h2 class="e-card-t">Wat neem je mee naar volgende week?</h2>
+     ${[['wins','Wat ging goed?'],['learned','Wat leerde je?'],['next','Wat neem je mee?']].map(([k,l])=>`<div class="field"><label for="rv-${k}">${l}</label><textarea class="textarea" id="rv-${k}" rows="2" data-rvend="${k}">${esc(E.rvEnd[k]||'')}</textarea></div>`).join('')}`}
+  else{const r=krById(cur),k=r.k,a=E.rvAns[cur]||{},v=a.v||(['on','risk','blocked'].includes(k.confidence)?k.confidence:'');
+    const mine=db.tasks.filter(t=>t.krId===k.id&&!t.owner&&!t.dropped&&(inW(t.planDay)||t.week===ws||inW(t.doneAt))),theirs=db.tasks.filter(t=>t.krId===k.id&&t.owner&&(inW(t.doneAt)||!t.done));
+    const gave=theirs.filter(t=>t.done);
+    body=`<div class="e-card-l"><span class="dot" style="--c:${r.o.color}"></span>${esc(r.o.name)}<span class="spacer"></span><span class="e-steps-dots">${cards.map((_,j)=>`<b class="${j<i?'past':j===i?'on':''}"></b>`).join('')}</span></div>
+     <h2 class="e-card-t">${esc(krN(r))}: hoe staat het?</h2>
+     <div class="e-card-g"><div><div class="lbl">Deze week</div><ul class="e-rlist">${mine.map(t=>`<li class="${t.done?'done':''}"><span class="e-ck">${t.done?I('check'):''}</span>${esc(t.title)}</li>`).join('')||'<li class="dim">Niets gepland of gedaan voor dit resultaat.</li>'}${theirs.map(t=>`<li>${avatar(member(t.owner),18)}${esc(t.title)} <span class="small ${t.done?'ok':''}">${t.done?'klaar':esc(dStat(t)[0].toLowerCase())}</span></li>`).join('')}</ul>
+       ${k.evidence.length?`<div class="small" style="margin-top:8px">Bewijs: ${k.evidence.map(e=>`${e.done?'✓':'□'} ${esc(e.title)}`).join(' · ')}</div>`:''}</div>
+      <div><div class="lbl">Jouw inschatting</div><div class="e-conf3">${CONF3.map(([c,l],j)=>`<button class="${confC(c)}" data-a="e-rv-conf" data-v="${c}" aria-pressed="${v===c}"><kbd>${j+1}</kbd>${l}</button>`).join('')}</div></div></div>
+     <input class="input" data-rvnote="${cur}" value="${esc(a.note||'')}" placeholder="Eén zin: waarom deze inschatting?" aria-label="Toelichting">
+     <div class="e-coach">${I('spark')}<span>${gave.length?`${esc(member(gave[0].owner)?.name||'')} leverde “${esc(gave[0].title)}” op. <button class="link" data-a="e-proof" data-id="${k.id}">Als bewijs vastleggen</button> · `:''}Volgende stap voor maandag:</span><input class="input" data-rvnext="${cur}" value="${esc(a.next||'')}" placeholder="optioneel" aria-label="Volgende stap voor maandag"></div>`}
+  const left=cards.length-1-i;
+  return `<div class="page e-page e-week">
+   <div class="e-top"><h1>Week ${isoWeek(ws)}</h1><span class="muted">review</span><span class="spacer"></span><a class="link" href="#/week">Terug naar de kalender</a></div>
+   <div class="e-rgrid"><div><div class="e-stack" style="--n:${Math.min(left,2)}">${left>1?'<i class="g2"></i>':''}${left>0?'<i class="g1"></i>':''}<section class="e-card">${body}</section></div>
+     <div class="row" style="margin-top:16px">${i>0?`<button class="btn ghost" data-a="e-rv-go" data-v="${i-1}">Vorige</button>`:''}<span class="spacer"></span>${cur==='_end'?`<button class="btn primary lg" data-a="e-rv-finish">Rond review af</button>`:`<button class="btn primary lg" data-a="e-rv-go" data-v="${i+1}">Volgende</button>`}</div></div>${summary}</div></div>`}
+document.addEventListener('input',e=>{const el=e.target;
+  if(el.dataset.rvnote){(E.rvAns[el.dataset.rvnote]??={}).note=el.value;return}
+  if(el.dataset.rvnext){(E.rvAns[el.dataset.rvnext]??={}).next=el.value;return}
+  if(el.dataset.rvend){E.rvEnd[el.dataset.rvend]=el.value}});
+document.addEventListener('keydown',e=>{if(layer||!$('#focus').hidden||['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)||e.metaKey||e.ctrlKey||e.altKey)return;
+  const k=e.key.toLowerCase(),stop=()=>{e.preventDefault();e.stopImmediatePropagation()};
+  if(route.view==='week'&&route.sub==='review'){const m={'1':'on','2':'risk','3':'blocked'}[k];if(m&&$('[data-a=e-rv-conf]')){stop();ACT['e-rv-conf']({dataset:{v:m}});return}}
+  const nav={v:'/',w:'/week',r:'/resultaten',s:'/samen'}[k];if(nav){stop();go(nav);return}
+  if(k==='f'||k==='a'||k==='t'||k==='c'){stop();return}
+  if(/^[1-9]$/.test(k)){stop();const o=objs()[+k-1];if(o)go('/resultaten/'+o.id)}},true);
+function eRvFinish(){const ws=weekStart(),krs=wkKRs(ws),items=[],nws=addDays(ws,7);let made=0,changed=0;
+  commit(()=>{for(const id of krs){const r=krById(id);if(!r)continue;const a=E.rvAns[id]||{};
+      if(a.v&&a.v!==r.k.confidence){r.k.confidence=a.v;changed++;log('measure',`${r.o.name} · ${krName(r.k)}: ${STATE[a.v]||confL(a.v)}`,r.o.id)}
+      if(a.note)r.k.confNote=clean(a.note);
+      const nx=clean(a.next);if(nx){db.tasks.push({id:uid(),title:nx,objectiveId:r.o.id,krId:id,notes:'Volgende stap uit weekreview '+fmt(iso()),due:'',done:false,focus:false,waiting:false,blocker:'',today:'',rank:Date.now(),doneAt:null,steps:[],created:iso(),status:'todo',planDay:'',week:nws,owner:'',level:0,followUp:'',handover:''});made++}
+      items.push({krId:id,confidence:a.v||r.k.confidence,note:clean(a.note)||undefined})}
+    const cid=uid();db.checkins.unshift({id:cid,date:iso(),ws,weekKrs:krs,items,notes:{},wins:clean(E.rvEnd.wins),learned:clean(E.rvEnd.learned),next:clean(E.rvEnd.next),stop:'',help:''});
+    ensureWeek(ws).reviewed=cid;const nw=ensureWeek(nws);if(!nw.krs.length)nw.krs=krs.filter(id=>!achieved(krById(id).k));
+    log('checkin','Weekreview week '+isoWeek(ws))},{msg:`Review vastgelegd${changed?' · '+plural(changed,'inschatting','inschattingen')+' bijgewerkt':''}${made?' · '+plural(made,'stap','stappen')+' klaar voor maandag':''}`});
+  E.rv=0;E.rvAns={};E.rvEnd={};go('/week')}
+
+/* ---------- Resultaten ---------- */
+function eRes(){const list=objs();
+  if(!list.length)return `<div class="page e-page"><h1>Resultaten</h1><p class="muted">Nog geen objectives.</p><button class="btn primary" data-a="new-obj">${I('plus')} Objective</button></div>`;
+  const o=obj(route.id)&&!obj(route.id).archived?obj(route.id):obj(E.obj)&&!obj(E.obj).archived?obj(E.obj):list[0];E.obj=o.id;
+  if(route.kr&&E.krFor!==route.kr){E.kr=route.kr;E.krFor=route.kr}
+  const qs=[...new Set(db.objectives.flatMap(x=>x.krs.map(k=>k.quarter)).filter(Boolean))].sort(qSort),q=E.q||(qs.includes(quarter())?quarter():'Alles');
+  const inQ=k=>q==='Alles'||!k.quarter||k.quarter===q,krs=o.krs.filter(inQ),later=o.krs.filter(k=>!inQ(k));
+  if(!krs.some(k=>k.id===E.kr)&&E.kr!=='')E.kr=krs[0]?.id||null;
+  const arch=db.objectives.filter(x=>x.archived);
+  return `<div class="page e-page e-res"><div class="e-rgrid2">
+   <aside class="e-objs">${qs.length?`<div class="e-qseg" role="group" aria-label="Kwartaal">${[...qs,'Alles'].map(x=>`<button data-a="e-q" data-v="${x}" aria-pressed="${q===x}">${esc(x)}</button>`).join('')}</div>`:''}
+    <div class="lbl">Objectives</div>${list.map(x=>`<a class="e-obj ${x.id===o.id?'on':''}" href="#/resultaten/${x.id}"><span class="dot" style="--c:${x.color}"></span><span><b>${esc(x.name)}</b><span class="small">${plural(x.krs.filter(inQ).length,'KR','KR\'s')}</span></span></a>`).join('')}
+    ${arch.length?`<div class="small e-arch">${arch.map(x=>esc(x.name)).join(', ')} · gearchiveerd</div>`:''}
+    <button class="link" data-a="new-obj">+ Objective</button></aside>
+   <section class="e-omain" style="--c:${o.color}">
+    <div class="e-ometa"><span class="dot" style="--c:${o.color}"></span>${esc(o.name)} · ${plural(o.krs.length,'Key Result','Key Results')}${o.context||o.achieved?` · <button class="link" data-a="e-why" aria-expanded="${E.why}">waarom en bereikt</button>`:''}<span class="spacer"></span>${membersOf(o.id).map(m=>avatar(m,22)).join('')}<button class="btn sm" data-a="e-objedit" data-id="${o.id}">Bewerk</button></div>
+    <h1 class="e-otitle">${esc(o.objective||o.name)}</h1>
+    ${E.why?`<div class="e-why">${o.context?`<p><b>Waarom</b> · ${esc(o.context)}</p>`:''}${o.achieved?`<p><b>Bereikt</b> · ${esc(o.achieved)}</p>`:''}</div>`:''}
+    <div class="e-krs">${krs.map(k=>eKr(o,k)).join('')||'<p class="small">Geen Key Results in dit kwartaal.</p>'}</div>
+    <div class="row e-krfoot">${later.length?`<button class="link quiet" data-a="e-q" data-v="Alles">${later.map(k=>esc(k.quarter||'')).filter((v,i,a)=>a.indexOf(v)===i).join(', ')} · ${plural(later.length,'KR','KR\'s')}</button>`:''}<span class="spacer"></span><button class="link" data-a="e-kradd" data-id="${o.id}">+ Key Result</button></div>
+   </section></div></div>`}
+function eKr(o,k){const on=E.kr===k.id,r={o,k},opn=open().filter(t=>t.krId===k.id).length;
+  const headH=`<button class="e-krh" data-a="e-kr" data-id="${k.id}" aria-expanded="${on}"><span class="e-car">${on?'▾':'▸'}</span><span class="e-krn"><b>${esc(krN(r))}</b><span class="small">${esc(k.title)}</span></span>${pipsE(k)}${confTag(achieved(k)?'done':k.confidence)}<span class="small e-krc">${opn?plural(opn,'actie','acties'):''}</span></button>`;
+  if(!on)return `<div class="e-kr">${headH}</div>`;
+  const mine=krOpenMine(k),nx=mine[0],theirs=open().filter(t=>t.krId===k.id&&(t.owner||t.waiting)),done=db.tasks.filter(t=>t.krId===k.id&&t.done&&t.doneAt>=addDays(iso(),-14)).slice(0,4);
+  return `<div class="e-kr on">${headH}<div class="e-krb">
+   <div class="e-krl">
+    ${nx?`<div class="e-next"><div><div class="e-next-l">Volgende stap${nx.planDay?' · '+esc(dayLabel(nx.planDay))+(nx.slot?' '+nx.slot.start:''):''}</div><button class="e-tt inv" data-a="open-task" data-id="${nx.id}">${esc(nx.title)}</button></div><button class="btn primary sm" data-a="e-done" data-id="${nx.id}">${I('check')} Gedaan</button></div>`:`<div class="e-next empty"><div class="e-next-l">Volgende stap</div><span>Wat is de eerstvolgende stap? Voeg hem hieronder toe.</span></div>`}
+    <div class="lbl">Acties</div><ul class="e-list">${mine.slice(nx?1:0).map(t=>eRow(t,{meta:false})).join('')}${theirs.map(t=>eRow(t,{meta:false})).join('')}${done.map(t=>eRow(t,{meta:false,menu:false})).join('')}</ul>
+    <form class="e-add" data-form="e-kr-add" data-o="${o.id}" data-kr="${k.id}">${I('plus')}<input name="title" placeholder="Actie toevoegen…" aria-label="Actie toevoegen bij ${esc(krN(r))}" maxlength="250" autocomplete="off"></form></div>
+   <div class="e-krr">
+    <div><div class="lbl">Bewijs</div><div class="e-evs">${k.evidence.map(e=>`<button class="e-ev ${e.done?'on':''}" data-a="ev" data-id="${k.id}" data-e="${e.id}" aria-pressed="${e.done}"><span class="e-ck">${e.done?I('check'):''}</span>${esc(e.title)}</button>`).join('')}</div>
+     <form class="e-add sm" data-form="ev-add" data-id="${k.id}">${I('plus')}<input name="title" placeholder="bewijsstuk" aria-label="Bewijsstuk toevoegen" maxlength="200" autocomplete="off"></form></div>
+    <div><div class="lbl">Hoe staat het?</div>${achieved(k)?confTag('done'):`<div class="e-conf3">${CONF3.map(([c,l])=>`<button class="${confC(c)}" data-a="e-conf" data-id="${k.id}" data-v="${c}" aria-pressed="${k.confidence===c}">${l}</button>`).join('')}</div>`}${k.confNote?`<div class="small" style="margin-top:6px">“${esc(k.confNote)}”</div>`:''}</div>
+    <div class="e-krlinks"><button class="link" data-a="e-proof" data-id="${k.id}">Meting of bewijs vastleggen</button><button class="link" data-a="e-krview" data-id="${k.id}">Alles over deze KR</button><button class="link quiet" data-a="e-kredit" data-o="${o.id}" data-id="${k.id}">Bewerk</button></div>
+   </div></div></div>`}
+
+/* ---------- Samen ---------- */
+function eSamen(){const ms=team(),sel=member(route.id)||member(E.person)||ms.find(m=>waitMeList().some(t=>t.owner===m.id))||ms[0];if(sel)E.person=sel.id;
+  const cnt=m=>{const w=waitMeList().filter(t=>t.owner===m.id).length,o=open().filter(t=>t.owner===m.id).length;return w?`<span class="warn">${w} wacht op jou</span>`:o?`${o} lopend`:'<span class="dim">niets lopend</span>'};
+  let right='<p class="muted">Voeg links iemand toe. Daarna delegeer je via ⋯ bij een actie.</p>';
+  if(sel){const mine=db.tasks.filter(t=>t.owner===sel.id&&!t.dropped),wait=mine.filter(t=>!t.done&&t.waitMe),bij=mine.filter(t=>!t.done&&!t.waitMe),klaar=mine.filter(t=>t.done&&t.doneAt>=addDays(iso(),-30));
+    const item=t=>{const r=krOf(t),[l,c]=dStat(t);return `<li class="e-sitem" style="--c:${obj(t.objectiveId)?.color||'var(--line-2)'}"><div class="e-row-m"><button class="e-tt" data-a="e-deleg" data-id="${t.id}">${esc(t.title)}</button><div class="e-sub">${r?esc(krN(r)):esc(obj(t.objectiveId)?.name||'')}${!t.done&&t.followUp?` · terug ${esc(dayLabel(t.followUp))}`:''}</div></div><span class="e-st ${c}">${esc(l)}</span>${t.waitMe?`<button class="link" data-a="e-deleg" data-id="${t.id}">Beslis</button>`:''}</li>`};
+    const pts=[...wait.map(t=>`${esc(t.title)} <span class="small">(jij beslist)</span>`),...bij.filter(t=>t.followUp&&t.followUp<=addDays(iso(),7)).map(t=>`Stand van ${esc(t.title)}`),'Wat heb je van mij nodig?'];
+    right=`<div class="e-ph">${avatar(sel,44)}<div><h1>${esc(sel.name)}</h1><div class="small">${[sel.role,...sel.objectives.map(id=>obj(id)?.name)].filter(Boolean).map(esc).join(' · ')||'Nog aan geen objective gekoppeld'}</div></div><span class="spacer"></span><button class="btn sm" data-a="member-edit" data-id="${sel.id}">Bewerk</button></div>
+     ${wait.length?`<div class="lbl warn">Wacht op jou</div><ul class="e-list">${wait.map(item).join('')}</ul>`:''}
+     <div class="lbl">Bij ${esc(sel.name.split(' ')[0])}</div>${bij.length?`<ul class="e-list">${bij.map(item).join('')}</ul>`:'<p class="small">Niets lopend.</p>'}
+     ${klaar.length?`<div class="lbl">Afgerond deze maand</div><ul class="e-list">${klaar.map(item).join('')}</ul>`:''}
+     <div class="e-1on1"><div class="lbl">Voor je volgende gesprek</div><ol>${pts.map(p=>`<li>${p}</li>`).join('')}</ol><button class="link" data-a="e-1on1-copy" data-id="${sel.id}">Kopieer</button></div>`}
+  return `<div class="page e-page e-samen"><div class="e-top"><h1>Samen</h1><span class="muted">wat ligt er bij wie, en wat wacht op jou</span></div>
+   <div class="e-sgrid"><aside><form class="e-add box" data-form="e-person">${I('plus')}<input name="name" placeholder="Naam…" aria-label="Persoon toevoegen" maxlength="60" autocomplete="off"></form><p class="small" style="margin:4px 2px 10px">Alleen een naam; de rest kan later.</p>
+    ${ms.map(m=>`<a class="e-person ${m===sel?'on':''}" href="#/samen/${m.id}">${avatar(m,30)}<span><b>${esc(m.name)}</b><span class="small">${cnt(m)}</span></span></a>`).join('')}</aside>
+    <section class="e-sright">${right}</section></div></div>`}
+
+/* ---------- Outlook-abonnement ---------- */
+function eToken(){const a=new Uint8Array(24);crypto.getRandomValues(a);return btoa(String.fromCharCode(...a)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
+const agendaUrl=()=>{const a=db.settings.agenda;return a?.token?`${location.origin}/agenda/${a.token}.ics`:''};
+function agendaFeed(){const a=db.settings.agenda;if(!a?.on)return [];const from=addDays(iso(),-14),to=addDays(iso(),70),priv=a.privacy==='private';
+  const out=db.tasks.filter(t=>!t.dropped&&!t.owner&&t.planDay&&t.slot?.start&&t.planDay>=from&&t.planDay<=to).map(t=>{const r=krOf(t),o=obj(t.objectiveId);
+    return{id:t.id,d:t.planDay,s:t.slot.start,m:Number(t.slot.dur)||60,t:priv?'Focusblok':(t.done?'✓ ':'')+t.title,x:priv?'':[r?'Key Result: '+krN(r):'',o?o.name:''].filter(Boolean).join(' · ')}});
+  const c=db.settings.rhythm?.checkin;if(c?.on)for(let w=weekStart(from);w<=to;w=addDays(w,7)){const d=addDays(w,(Number(c.day)||5)-1);if(d>=from&&d<=to)out.push({id:'review-'+d,d,s:c.time||'16:00',m:Number(c.dur)||20,t:'Weekreview',x:priv?'':'Focus · per resultaat een kaart'})}
+  return out}
+const _saveE=save;save=function(){try{db.agendaFeed=agendaFeed()}catch{}_saveE()};
+function eAgendaSheet(){const a=db.settings.agenda||{},url=agendaUrl(),local=location.protocol==='file:';
+  openLayer('eagenda',head('Je Focus-agenda in Outlook')+`<div class="sheet-body">
+   <p style="margin:0">Eén vaste link. Alles wat je in Focus met een tijd plant of verschuift, komt vanzelf in je Outlook.</p>
+   ${!sess?`<div class="note">Het abonnement leest je planning uit je Focus-account. Log eerst in via Gegevens en back-up.<div class="row" style="margin-top:8px"><button class="btn sm" data-a="settings">Inloggen</button></div></div>`:''}
+   ${a.on&&url?`<div class="field"><span class="lbl">Abonnementslink</span><div class="row"><input class="input e-mono" readonly value="${esc(url)}" aria-label="Abonnementslink" onclick="this.select()"><button class="btn" data-a="e-agenda-copy">Kopieer</button></div>${local?'<span class="hint">Je opent Focus nu als bestand; de link werkt pas op je online Focus-adres.</span>':''}</div>
+    <div class="field"><span class="lbl">In Outlook</span><ol class="e-ol"><li>Outlook op het web: Agenda → Agenda toevoegen → <b>Abonneren via internet</b> → plak de link.</li><li>Outlook op Windows: Agenda → Agenda toevoegen → <b>Van internet</b> → plak de link.</li><li>Outlook op Mac: Bestand → Nieuw → <b>Agenda-abonnement</b>.</li></ol></div>
+    <div class="field"><span class="lbl">Wat Outlook ziet</span><div class="seg" role="radiogroup">${[['titles','Titel en Key Result'],['private','Alleen “Focusblok”']].map(([v,l])=>`<button data-a="e-agenda-priv" data-v="${v}" aria-pressed="${(a.privacy||'titles')===v}">${l}</button>`).join('')}</div></div>
+    <div class="note">Eenrichtingsverkeer: van Focus naar Outlook. Outlook haalt de agenda zelf op, meestal een paar keer per dag; een wijziging staat er dus niet meteen in. Je werkaccount kan abonneren op internetagenda's blokkeren; probeer het eerst.</div>`
+   :`<div class="note">Na het aanzetten krijg je een geheime link. Wie de link heeft, ziet je ingeplande focusblokken; je kunt hem altijd intrekken.</div>`}
+  </div><footer class="sheet-foot">${a.on?`<button class="btn ghost danger" data-a="e-agenda-off">Link intrekken</button><span class="spacer"></span><button class="btn" data-a="e-agenda-ics">Eenmalig .ics</button><button class="btn primary" data-a="close">Klaar</button>`:`<button class="btn" data-a="e-agenda-ics">Eenmalig .ics</button><span class="spacer"></span><button class="btn primary" data-a="e-agenda-on" ${sess?'':'disabled'}>Maak abonnementslink</button>`}</footer>`,{cls:'dialog',label:'Agenda-abonnement'})}
+function feedIcs(items,name='Focus'){const st=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+/,''),dt=(d,s)=>d.replace(/-/g,'')+'T'+s.replace(':','')+'00';
+  const ev=items.flatMap(i=>{const e=fromMin(toMin(i.s)+i.m);return['BEGIN:VEVENT','UID:'+i.id+'@focus','DTSTAMP:'+st,'DTSTART;TZID=Europe/Amsterdam:'+dt(i.d,i.s),'DTEND;TZID=Europe/Amsterdam:'+dt(i.d,toMin(i.s)+i.m>=1440?'23:59':e),'SUMMARY:'+icsEsc(i.t),...(i.x?['DESCRIPTION:'+icsEsc(i.x)]:[]),'TRANSP:OPAQUE','END:VEVENT']});
+  return ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Focus//NL','CALSCALE:GREGORIAN','X-WR-CALNAME:'+name,...VTZ,...ev,'END:VCALENDAR'].map(icsFold).join('\r\n')+'\r\n'}
+
+/* ---------- acties ---------- */
+Object.assign(ACT,{
+  'e-menu':(b)=>eMenu(b),
+  'e-done':(b)=>{closeMenu();toggleTask(b.dataset.id)},
+  'e-notnow':(b)=>{const t=task(b.dataset.id);commit(()=>{t.notNow=iso()},{msg:'Later vandaag of morgen',undo:true})},
+  'e-today':(b)=>{const t=task(b.dataset.id);closeMenu();commit(()=>placeTask(t,iso(),t.slot?.start||'',t.slot?.dur||60),{msg:'Op vandaag gezet',undo:true})},
+  'e-plan':(b)=>ePlanSheet(b.dataset.id),
+  'e-unslot':(b)=>{const t=task(b.dataset.id);closeLayer(true);commit(()=>{delete t.slot},{msg:'Uit de kalender gehaald; de dag blijft',undo:true})},
+  'e-link-kr':(b)=>eKrPick(b.dataset.id),
+  'e-set-kr':(b)=>{const t=task(b.dataset.id),r=b.dataset.kr?krById(b.dataset.kr):null;closeLayer(true);commit(()=>{t.krId=r?r.k.id:'';if(r)t.objectiveId=r.o.id},{msg:r?'Gekoppeld aan '+krN(r):'Ontkoppeld',undo:true})},
+  'e-drop':(b)=>{const t=task(b.dataset.id);closeMenu();commit(()=>{t.dropped=true;t.today='';delete t.slot},{msg:'Losgelaten',undo:true})},
+  'e-deleg':(b)=>eDelegSheet(b.dataset.id),
+  'e-brief':(b)=>{const t=task(b.dataset.id),f=b.closest('form');copyText(eBrief(t,eDelegRead(f)),'Briefing gekopieerd. Plak hem in je mail of chat.')},
+  'e-dstat':(b)=>{const t=task(b.dataset.id),v=b.dataset.v;commit(()=>{if(v==='klaar'){if(!t.done)setDone(t,true);t.waitMe=false}else{if(t.done)setDone(t,false);t.waitMe=v==='wacht'}},{msg:v==='klaar'?'Klaar':v==='wacht'?'Wacht op jou':'Weer bij '+(member(t.owner)?.name||''),undo:true});eDelegSheet(t.id)},
+  'e-takeback':(b)=>{const t=task(b.dataset.id);closeLayer(true);commit(()=>{setOwner(t,'');t.waitMe=false},{msg:'Terug bij jou',undo:true})},
+  'e-open-kr':(b)=>{const r=krById(b.dataset.id);if(!r)return;E.kr=r.k.id;E.krFor=r.k.id;go(`/resultaten/${r.o.id}/${r.k.id}`)},
+  'e-more-today':()=>{E.more=!E.more;render()},
+  'e-wk':(b)=>{E.wsOff=Number(b.dataset.v);E.week='plan';E.pick=null;render()},
+  'e-pick':(b)=>{const id=b.dataset.id;E.pick=E.pick.includes(id)?E.pick.filter(x=>x!==id):E.pick.length>=3?(toast('Maximaal drie. Haal er eerst één weg.'),E.pick):[...E.pick,id];render()},
+  'e-pick-edit':()=>{E.week='kies';E.pick=null;render()},
+  'e-pick-cancel':()=>{E.week='plan';E.pick=null;render()},
+  'e-pick-save':()=>{const ws=addDays(weekStart(),7*E.wsOff),p=[...E.pick];E.week='plan';E.pick=null;commit(()=>{const w=ensureWeek(ws);w.krs=p;w.confirmed=true},{msg:'Week gekozen. Sleep de stappen naar je kalender.'})},
+  'e-rv-go':(b)=>{E.rv=Math.max(0,Number(b.dataset.v));render();window.scrollTo(0,0)},
+  'e-rv-conf':(b)=>{const ws=weekStart(),cards=[...wkKRs(ws),'_end'],cur=cards[Math.min(E.rv,cards.length-1)];if(cur==='_end')return;(E.rvAns[cur]??={}).v=b.dataset.v;render();$(`[data-rvnote="${cur}"]`)?.focus()},
+  'e-rv-finish':()=>eRvFinish(),
+  'e-q':(b)=>{E.q=b.dataset.v;render()},
+  'e-kr':(b)=>{E.kr=E.kr===b.dataset.id?'':b.dataset.id;render()},
+  'e-why':()=>{E.why=!E.why;render()},
+  'e-objedit':(b)=>objSheet(b.dataset.id),
+  'e-kradd':(b)=>krSheet(b.dataset.id),
+  'e-kredit':(b)=>krSheet(b.dataset.o,b.dataset.id),
+  'e-krview':(b)=>krView(b.dataset.id),
+  'e-proof':(b)=>proofSheet(b.dataset.id),
+  'e-conf':(b)=>{const r=krById(b.dataset.id),v=b.dataset.v;if(r.k.confidence===v)return;commit(()=>{r.k.confidence=v;log('measure',`${r.o.name} · ${krName(r.k)}: ${confL(v)}`,r.o.id)},{msg:confL(v),undo:true})},
+  'e-1on1-copy':(b)=>{const m=member(b.dataset.id);copyText($$('.e-1on1 li').map((li,i)=>`${i+1}. ${li.textContent}`).join('\n'),'Gesprekspunten gekopieerd')},
+  'e-agenda':()=>eAgendaSheet(),
+  'e-agenda-on':()=>{db.settings.agenda={privacy:'titles',...(db.settings.agenda||{}),on:true,token:db.settings.agenda?.token||eToken(),since:iso()};save();if(typeof syncNow==='function')syncNow();eAgendaSheet();render();toast('Link gemaakt. Kopieer hem naar Outlook.')},
+  'e-agenda-off':()=>{if(!confirm('Link intrekken? Outlook krijgt daarna geen nieuwe blokken meer; het abonnement kun je in Outlook verwijderen.'))return;db.settings.agenda={...(db.settings.agenda||{}),on:false,token:''};save();if(typeof syncNow==='function')syncNow();closeLayer(true);render();toast('Link ingetrokken')},
+  'e-agenda-priv':(b)=>{db.settings.agenda.privacy=b.dataset.v;save();if(typeof syncNow==='function')syncNow();eAgendaSheet()},
+  'e-agenda-copy':()=>copyText(agendaUrl(),'Link gekopieerd. Plak hem in Outlook bij “Abonneren via internet”.'),
+  'e-agenda-ics':()=>{const was=db.settings.agenda;db.settings.agenda={privacy:'titles',...(was||{}),on:true};const list=agendaFeed();db.settings.agenda=was;
+    if(!list.length){toast('Nog niets met een tijd gepland.');return}const blob=new Blob([feedIcs(list)],{type:'text/calendar'}),u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='focus-agenda.ics';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);toast('Agenda-bestand gedownload. Open het om de blokken toe te voegen.')},
+});
+document.addEventListener('submit',e=>{const f=e.target,k=f.dataset.form;if(!k||!k.startsWith('e-'))return;e.preventDefault();e.stopImmediatePropagation();
+  const fd=new FormData(f),g=x=>clean(fd.get(x));
+  const nt=(title,x={})=>({id:uid(),title,objectiveId:'',krId:'',notes:'',due:'',done:false,focus:false,waiting:false,blocker:'',today:'',rank:Date.now(),doneAt:null,steps:[],created:iso(),status:'todo',planDay:'',week:'',owner:'',level:0,followUp:'',handover:'',...x});
+  if(k==='e-today'){const title=g('title');if(!title)return;let id;commit(()=>{const t=nt(title,{today:iso(),planDay:iso(),week:weekStart()});id=t.id;db.tasks.push(t);log('create',title)});
+    toastActs('Op vandaag gezet',[{label:'Koppel aan KR',fn:()=>eKrPick(id)}]);$('[data-form=e-today] input')?.focus();return}
+  if(k==='e-kr-add'||k==='e-step'){const title=g('title');if(!title)return;commit(()=>{db.tasks.push(nt(title,{objectiveId:f.dataset.o,krId:f.dataset.kr,week:f.dataset.ws||''}));log('create',title,f.dataset.o)},{msg:'Toegevoegd',undo:true});
+    $(`[data-form=${k}][data-kr="${f.dataset.kr}"] input`)?.focus();return}
+  if(k==='e-plan'){const t=task(f.dataset.id),day=fd.get('day')||'',time=fd.get('time')||'',dur=fd.get('dur')||60;closeLayer(true);
+    commit(()=>placeTask(t,day,day?time:'',dur),{msg:day?`Gepland: ${dayLabel(day)}${time?' '+time:''}`:'Geen dag meer',undo:true});return}
+  if(k==='e-deleg'){const t=task(f.dataset.id),v=eDelegRead(f);if(!v.who&&!v.newname){toast('Kies wie het oppakt, of typ een naam.');return}
+    closeLayer(true);const name=v.newname?(team().find(m=>m.name.toLowerCase()===v.newname.toLowerCase())?.name||v.newname):member(v.who)?.name||'';
+    commit(()=>{const id=eWhoId(t,v),m=member(id);if(t.objectiveId&&m&&!m.objectives.includes(t.objectiveId))m.objectives.push(t.objectiveId);
+      setOwner(t,id);t.level=v.room;t.followUp=v.back||t.followUp;t.result=v.result;t.waitMe=false;t.slot&&delete t.slot;if(!t.handover)t.handover=eBrief(t,{...v,who:id})},{msg:`Bij ${name}${v.back?' · terug '+dayLabel(v.back):''}`,undo:true});return}
+  if(k==='e-person'){const name=g('name');if(!name)return;const id=uid();commit(()=>{db.team.push({id,name,role:'',objectives:[],color:MEMBER_COLORS[team().length%MEMBER_COLORS.length],created:iso()})},{msg:name+' toegevoegd',undo:true});go('/samen/'+id);return}
+},true);
+
 /* boot */
-captureAuthHash();sessInit();load();save();route=parseHash();render();startSync();if(pinLocked())showLock();if(contentNotice)toast(contentNotice);
+captureAuthHash();sessInit();load();save();route=parseHash();render();startSync();if(pinLocked())showLock();if(contentNotice||okrNotice)toast(okrNotice||contentNotice);
 if(route.focusNow&&!pinLocked())setTimeout(()=>{const n=nextAction2()||suggestToday(1)[0];if(n)startFocus(n.t.id)},300);
 if(db.activeSession)renderSessionPill();
 setInterval(()=>{if(db.activeSession&&$('#focus').hidden)renderSessionPill()},30000);
