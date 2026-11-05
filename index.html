@@ -1081,7 +1081,7 @@ body.e{--bg:#F6F3EC;--rail:#FFFFFF;--surface:#FFFFFF;--sunken:#EFEBE2;--hover:#F
 .e .save-state{font-size:0;padding:0;justify-content:center}
 .e-plus{width:42px;height:42px;border-radius:13px;background:var(--accent);color:#fff;display:grid;place-items:center;box-shadow:0 8px 18px -10px var(--accent);margin-bottom:6px}
 .e-plus svg{width:20px;height:20px;stroke-width:2}
-.e .page.e-page{max-width:1180px;padding:30px 44px 120px}
+.e .page.e-page{max-width:1640px;padding:30px 48px 120px}
 .e h1{letter-spacing:-.02em}
 .e .lbl{font-size:11px;font-weight:650;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
 .e .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}
@@ -1121,7 +1121,8 @@ body.e{--bg:#F6F3EC;--rail:#FFFFFF;--surface:#FFFFFF;--sunken:#EFEBE2;--hover:#F
 /* Week */
 .e-wnav{display:inline-flex;align-items:center;gap:2px}
 .btn.e-ok{color:var(--ok);font-weight:600}.e-live{width:7px;height:7px;border-radius:50%;background:var(--ok)}
-.e-wgrid{display:grid;grid-template-columns:260px minmax(0,1fr);gap:20px;align-items:start}
+.e-wgrid{display:grid;grid-template-columns:360px minmax(0,1fr);gap:24px;align-items:start}
+.e-wgrid.choosing{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
 .e-wleft{display:flex;flex-direction:column;gap:12px;min-height:200px;border-radius:12px;transition:background .15s}
 .e-wleft.e-drop{background:var(--accent-soft)}
 .e-wkr{background:var(--surface);border-radius:12px;box-shadow:0 0 0 1px var(--line);padding:11px 12px 6px}
@@ -1144,7 +1145,7 @@ body.e{--bg:#F6F3EC;--rail:#FFFFFF;--surface:#FFFFFF;--sunken:#EFEBE2;--hover:#F
 .e-allday.e-drop,.e-dcol.e-drop{background:var(--accent-soft)}
 .e-chip{font-size:10.5px;text-align:left;padding:3px 6px;border-radius:5px;background:var(--sunken);box-shadow:inset 3px 0 0 var(--c);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:grab}
 .e-chip.fu{background:none;box-shadow:inset 0 0 0 1px var(--line-2);border-style:dashed;color:var(--ink-3);cursor:pointer}
-.e-dcol{position:relative;background:repeating-linear-gradient(to bottom,transparent 0 45px,var(--line) 45px 46px)}
+.e-dcol{position:relative;background:repeating-linear-gradient(to bottom,transparent 0 51px,var(--line) 51px 52px)}
 .e-day.today .e-dcol{background-color:color-mix(in srgb,var(--accent-soft) 35%,transparent)}
 .e-blk{position:absolute;left:3px;right:3px;border-radius:6px;padding:3px 6px;font-size:11px;line-height:1.3;text-align:left;overflow:hidden;background:var(--accent-soft);color:var(--ink);box-shadow:inset 3px 0 0 var(--c);cursor:grab;text-decoration:none}
 .e-blk b{font-weight:650;font-variant-numeric:tabular-nums}.e-blk.tiny{white-space:nowrap;text-overflow:ellipsis}.e-blk.done{opacity:.55;text-decoration:line-through}
@@ -1239,6 +1240,29 @@ body.e{--bg:#F6F3EC;--rail:#FFFFFF;--surface:#FFFFFF;--sunken:#EFEBE2;--hover:#F
 .e-allday{background:color-mix(in srgb,var(--sunken) 55%,transparent)}
 .e-hours .e-allday small{font-size:9.5px;color:var(--ink-4);display:block;text-align:right;padding-right:3px}
 .e-card-l .spacer{flex:1}
+
+/* Week-flow en kiezen per objective */
+.e-flow{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.e-flow li{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);color:var(--ink-3)}
+.e-flow li b{display:block;font-size:13.5px;color:var(--ink-2)}.e-flow li small{font-size:11.5px}
+.e-flow .n{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;background:var(--sunken);color:var(--ink-3);flex:none}.e-flow .n svg{width:13px;height:13px}
+.e-flow li.done .n{background:var(--ok);color:#fff}
+.e-flow li.cur{box-shadow:0 0 0 2px var(--accent);background:var(--accent-soft)}.e-flow li.cur b{color:var(--ink)}.e-flow li.cur .n{background:var(--accent);color:#fff}
+.e-ogroups{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.e-og{display:flex;flex-direction:column;gap:8px;padding:14px;border-radius:14px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line),inset 0 3px 0 var(--c)}
+.e-og header{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;align-items:center;margin-bottom:4px}.e-og header b{font-size:14.5px}.e-og header .small{grid-column:2;line-height:1.4}
+.e-og .e-cand{align-items:flex-start;background:var(--bg)}
+.e-cbox{width:20px;height:20px;border-radius:6px;box-shadow:inset 0 0 0 1.6px var(--line-2);display:grid;place-items:center;flex:none;margin-top:1px}.e-cand.on .e-cbox{background:var(--accent);box-shadow:none;color:#fff}.e-cbox svg{width:12px;height:12px}
+.e-cand-m{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}.e-cand-f{font-size:12px;color:var(--ink-2);line-height:1.4}
+.e-choose-foot{margin-top:16px;gap:8px}.e-choose-h{gap:10px;align-items:center}
+.e-wkr{box-shadow:0 0 0 1px var(--line),inset 3px 0 0 var(--c);padding:12px 14px 8px}
+.e-wkr-top{display:flex;flex-direction:column;gap:0;margin-bottom:6px}.e-wkr-h{font-size:14.5px}
+.e-step{font-size:13px}.e-step .e-tt{font-size:13px}.e-grip{color:var(--ink-4);font-size:12px;cursor:grab}
+.e-nostep{margin:4px 0 6px}
+.e-add.hot{box-shadow:0 0 0 1.5px var(--accent);border-radius:9px;padding:0 8px;background:var(--accent-soft)}
+.e-wblk{margin:8px 0 4px;padding:8px 10px;border-radius:9px;border:1.5px dashed var(--accent-line);color:var(--accent-ink);font-size:12.5px;font-weight:600;cursor:grab;display:flex;gap:8px;align-items:center}.e-wblk .small{font-weight:400}
+.e-wblk:hover{background:var(--accent-soft)}
+@media (max-width:1100px){.e-wgrid.choosing{grid-template-columns:minmax(0,1fr)}.e-flow{grid-template-columns:minmax(0,1fr)}}
 
 </style>
 </head>
@@ -3341,15 +3365,17 @@ function render(){
 }
 
 /* ---------- Nu ---------- */
-function eFocus(){const t0=iso(),ok=x=>mineOpen(x)&&x.notNow!==t0;
-  const today=open().filter(x=>ok(x)&&(x.planDay===t0||x.today===t0)).sort((a,b)=>(a.slot?toMin(a.slot.start):9999)-(b.slot?toMin(b.slot.start):9999)||(a.rank||0)-(b.rank||0));
+function eFocus(){const t0=iso(),ws=weekStart(),wk=wkKRs(ws),df=dayFocus(),ok=x=>mineOpen(x)&&x.notNow!==t0;
+  const bySlot=(a,b)=>(a.slot?toMin(a.slot.start):9999)-(b.slot?toMin(b.slot.start):9999)||(a.rank||0)-(b.rank||0);
+  const today=open().filter(x=>ok(x)&&(x.planDay===t0||x.today===t0)).sort(bySlot);
+  const late=open().filter(x=>ok(x)&&x.planDay&&x.planDay<t0&&x.planDay>=ws).sort((a,b)=>a.planDay.localeCompare(b.planDay)||bySlot(a,b));
+  const now=new Date(),nm=now.getHours()*60+now.getMinutes();
+  const current=today.find(x=>x.slot&&toMin(x.slot.start)<=nm&&toMin(x.slot.start)+(Number(x.slot.dur)||60)>nm)||today.find(x=>x.slot&&toMin(x.slot.start)>nm)||today[0];
   const doing=open().find(x=>ok(x)&&x.status==='doing');
-  const df=dayFocus(),kd=x=>krOf(x)?.k.due||'9999';
-  const pool=open().filter(x=>ok(x)&&x.krId&&krOf(x)&&!achieved(krOf(x).k)&&(!x.planDay||x.planDay<=t0)).sort((a,b)=>(weekKRs().includes(b.krId)-weekKRs().includes(a.krId))||((df&&inBucket(b,df))-(df&&inBucket(a,df)))||kd(a).localeCompare(kd(b))||(a.rank||0)-(b.rank||0));
-  const sugg=[...suggestToday(4).map(s=>s.t).filter(ok),...pool].filter((x,i,a)=>a.indexOf(x)===i);
-  const first=doing||today[0]||sugg[0]||null;
-  const rest=today.filter(x=>x!==first);
-  return{first,rest,sugg:rest.length?[]:sugg.filter(x=>x!==first).slice(0,2)}}
+  const kd=x=>krOf(x)?.k.due||'9999';
+  const pool=open().filter(x=>ok(x)&&!x.planDay&&wk.includes(x.krId)).sort((a,b)=>((df&&inBucket(b,df))-(df&&inBucket(a,df)))||wk.indexOf(a.krId)-wk.indexOf(b.krId)||kd(a).localeCompare(kd(b))||(a.rank||0)-(b.rank||0));
+  const first=doing||current||late[0]||pool[0]||null;
+  return{first,today:today.filter(x=>x!==first),late:late.filter(x=>x!==first),sugg:today.length?[]:pool.filter(x=>x!==first).slice(0,2),planned:wk.length>0}}
 function eRow(t,{meta=true,menu=true}={}){const r=krOf(t),o=obj(t.objectiveId),m=member(t.owner);
   const when=t.owner?dStat(t)[0]:t.planDay?dayLabel(t.planDay)+(t.slot?' '+t.slot.start:''):'';
   return `<li class="e-row ${t.done?'done':''}" data-tid="${t.id}" draggable="${!t.done&&!t.owner}">
@@ -3362,28 +3388,30 @@ function eWaitRow(t){const m=member(t.owner),od=t.followUp&&t.followUp<=iso();
   return `<li class="e-wrow">${m?avatar(m,28):`<span class="av me" style="width:28px;height:28px;font-size:11px">…</span>`}<div class="e-row-m"><button class="e-tt" data-a="${t.owner?'e-deleg':'open-task'}" data-id="${t.id}">${esc(t.title)}</button><div class="e-sub ${t.waitMe||od?'warn':''}">${sub}</div></div><button class="link" data-a="${t.owner?'e-deleg':'open-task'}" data-id="${t.id}">${t.waitMe?'Beslis':'Volg op'}</button></li>`}
 function eNu(){
   if(!objs().length&&!db.tasks.length)return `<div class="page e-page">${loginCard()||'<p class="muted">Nog geen objectives. Begin bij Resultaten.</p>'}</div>`;
-  const {first:f,rest,sugg}=eFocus(),d=new Date(),df=dayFocus(d),date=d.toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'});
-  const r=f&&krOf(f),k=r?.k,wl=waitingList(),shown=E.more?rest:rest.slice(0,3),wk=weekKRs().map(krById).filter(Boolean);
+  const {first:f,today,late,sugg,planned}=eFocus(),d=new Date(),df=dayFocus(d),date=d.toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'});
+  const r=f&&krOf(f),k=r?.k,wl=waitingList(),wk=weekKRs().map(krById).filter(Boolean),onToday=f&&(f.planDay===iso()||f.today===iso());
+  const lab=!f?'':onToday&&f.slot?`Nu in je agenda · ${f.slot.start}–${endOf(f.slot)}`:onToday?'Gepland voor vandaag':f.planDay&&f.planDay<iso()?`Blijven liggen van ${dayLabel(f.planDay)}`:'Voorstel uit je weekresultaten';
   const card=f?`<section class="e-focus" aria-labelledby="eFocT">
-    <div class="e-focus-l">Dit verdient nu je aandacht${f.slot&&f.planDay===iso()?` · vandaag ${f.slot.start}–${endOf(f.slot)}`:''}</div>
+    <div class="e-focus-l">Dit verdient nu je aandacht · ${esc(lab)}</div>
     <h1 class="e-focus-t" id="eFocT">${esc(f.title)}</h1>
     <div class="e-focus-m">${r?`<span class="dot" style="--c:${r.o.color}"></span>Brengt dichterbij: <b>${esc(krN(r))}</b>${k.evidence.length?`<span class="dim"> · bewijs ${evCount(k)} van ${k.evidence.length}</span>`:''}`:`<button class="link inv" data-a="e-link-kr" data-id="${f.id}">Koppel aan een Key Result</button>`}</div>
-    <div class="e-focus-a"><button class="btn primary lg" data-a="e-done" data-id="${f.id}">${I('check')} Gedaan</button>${r?`<button class="btn lg e-ghost" data-a="e-open-kr" data-id="${k.id}">Open KR</button>`:`<button class="btn lg e-ghost" data-a="open-task" data-id="${f.id}">Open</button>`}<span class="spacer"></span><button class="link inv" data-a="e-notnow" data-id="${f.id}">Niet nu</button><button class="e-more inv" data-a="e-menu" data-id="${f.id}" aria-label="Meer">${I('dots')}</button></div></section>`
-   :`<section class="e-focus" aria-labelledby="eFocT"><div class="e-focus-l">Nu</div><h1 class="e-focus-t" id="eFocT">Niets gepland voor nu</h1><div class="e-focus-m">Kies iets uit je week of leg een actie vast.</div><div class="e-focus-a"><a class="btn primary lg" href="#/week">Naar je week</a><button class="btn lg e-ghost" data-a="capture">${I('plus')} Vastleggen</button></div></section>`;
+    <div class="e-focus-a"><button class="btn primary lg" data-a="e-done" data-id="${f.id}">${I('check')} Gedaan</button>${onToday?'':`<button class="btn lg e-ghost" data-a="e-plan" data-id="${f.id}">Plan in vandaag</button>`}${r?`<button class="btn lg e-ghost" data-a="e-open-kr" data-id="${k.id}">Open KR</button>`:''}<span class="spacer"></span><button class="link inv" data-a="e-notnow" data-id="${f.id}">Niet nu</button><button class="e-more inv" data-a="e-menu" data-id="${f.id}" aria-label="Meer">${I('dots')}</button></div></section>`
+   :`<section class="e-focus" aria-labelledby="eFocT"><div class="e-focus-l">Nu</div><h1 class="e-focus-t" id="eFocT">${planned?'Niets meer gepland voor vandaag':'Waar werk je deze week aan?'}</h1><div class="e-focus-m">${planned?'Kies een volgende stap in je week of leg een actie vast.':'Kies eerst drie resultaten uit je objectives. Daarna plan je de stappen in je agenda, en verschijnen ze hier.'}</div><div class="e-focus-a"><a class="btn primary lg" href="#/week">${planned?'Naar je week':'Plan je week'}</a><button class="btn lg e-ghost" data-a="capture">${I('plus')} Vastleggen</button></div></section>`;
+  const tl=today.length?`<ul class="e-list">${today.map(t=>eRow(t)).join('')}</ul>`:'';
   return `<div class="page e-page e-nu">
    <div class="e-date">${esc(date[0].toUpperCase()+date.slice(1))}${df?` · ${df.loc} · ${esc(df.label)}`:''}</div>
    ${eReviewDue()?`<a class="e-banner" href="#/week/review"><b>Weekreview</b><span>Vijf minuten: per resultaat een kaart. Daarna staat maandag klaar.</span><span class="spacer"></span><span class="link">Start review</span></a>`:''}
    ${card}
    <div class="e-cols">
-    <section><div class="e-h"><span class="lbl">Daarna vandaag</span><span class="small">${rest.length?`${Math.min(rest.length,3)} van max. 3`:''}</span></div>
-     <ul class="e-list">${shown.map(t=>eRow(t)).join('')}</ul>
-     ${sugg.length?`<div class="small" style="margin:10px 0 2px">Voorstel · zet op vandaag via ⋯</div><ul class="e-list e-sugg">${sugg.map(t=>eRow(t)).join('')}</ul>`:''}
-     ${rest.length>3?`<button class="link quiet" data-a="e-more-today">${E.more?'Minder tonen':`+ ${rest.length-3} meer`}</button>`:''}
+    <section><div class="e-h"><span class="lbl">Vandaag</span><a class="small link quiet" href="#/week">Week →</a></div>
+     ${tl||(planned&&!sugg.length?'<p class="small">Nog niets gepland voor vandaag. Sleep stappen naar vandaag in Week.</p>':'')}
+     ${sugg.length?`<div class="small" style="margin:10px 0 2px">Voorstel uit je weekresultaten</div><ul class="e-list e-sugg">${sugg.map(t=>eRow(t)).join('')}</ul>`:''}
+     ${late.length?`<div class="small warn" style="margin:12px 0 2px">Blijven liggen deze week</div><ul class="e-list">${late.map(t=>eRow(t)).join('')}</ul>`:''}
      <form class="e-add" data-form="e-today">${I('plus')}<input name="title" placeholder="Actie voor vandaag…" aria-label="Actie voor vandaag" maxlength="250" autocomplete="off"></form></section>
     <section><div class="e-h"><span class="lbl">Wacht op anderen</span><span class="small">${wl.length||''}</span></div>
      ${wl.length?`<ul class="e-list">${wl.slice(0,6).map(eWaitRow).join('')}</ul>`:`<p class="small">Niets uitstaand. Delegeren doe je via ⋯ bij een actie.</p>`}</section>
    </div>
-   ${wk.length?`<div class="e-weekline"><span>Deze week:</span>${wk.map(r=>`<a href="#/resultaten/${r.o.id}/${r.k.id}"><span class="dot" style="--c:${r.o.color}"></span>${esc(krN(r))}</a>`).join('')}</div>`:`<div class="e-weekline"><a href="#/week">Kies de resultaten van deze week →</a></div>`}
+   ${wk.length?`<div class="e-weekline"><span>Deze week:</span>${wk.map(r=>`<a href="#/resultaten/${r.o.id}/${r.k.id}"><span class="dot" style="--c:${r.o.color}"></span>${esc(krN(r))}</a>`).join('')}</div>`:''}
   </div>`}
 
 /* ---------- actiemenu (⋯) ---------- */
@@ -3443,7 +3471,7 @@ function eBrief(t,v){const m=member(v.who)||{name:v.newname},r=krOf(t),o=obj(t.o
   return [`Hoi ${m?.name||''},`,'',`Wat moet eruit komen: ${v.result||t.title}.`,`Waarom: ${r?`het draagt bij aan "${r.k.title}"`:o?`het hoort bij ${o.name}`:'—'}.`,`Ruimte: ${R?R[1].toLowerCase()+'. '+R[2]:'—'}`,`Terugkoppelen: ${v.back?fmt(v.back):'—'}.`].join('\n')}
 
 /* ---------- Week ---------- */
-const H0=8,H1=18,PX=46;
+const H0=8,H1=18,PX=52;
 function eWeek(){
   if(route.sub==='review')return eReview();
   const ws=addDays(weekStart(),7*E.wsOff),krs=wkKRs(ws),choosing=E.week==='kies'||!krs.length,a=db.settings.agenda||{};
@@ -3453,32 +3481,48 @@ function eWeek(){
     <span class="spacer"></span>
     ${E.wsOff===0&&krs.length?`<a class="btn ${eReviewDue()?'primary':''}" href="#/week/review">Weekreview</a>`:''}
     <button class="btn ${a.on?'e-ok':''}" data-a="e-agenda">${a.on?'<span class="e-live"></span>In je Outlook':I('cal')+' Zet in Outlook'}</button></div>
-   <div class="e-wgrid">
+   ${E.wsOff>=0?eFlow(ws,krs,choosing):''}
+   <div class="e-wgrid ${choosing?'choosing':''}">
     <aside class="e-wleft" data-drop-unplan>${choosing?eChoose(ws):eWeekLeft(ws,krs)}</aside>
     <div class="e-wright">${eCal(ws)}${eBalance(ws)}</div>
    </div></div>`}
-function eChoose(ws){const prev=wkKRs(addDays(ws,-7));if(!E.pick)E.pick=wkKRs(ws).length?wkKRs(ws):prev.filter(id=>!achieved(krById(id).k)).slice(0,3);
+function eFlow(ws,krs,choosing){const days=weekDays(ws);
+  const hasSteps=krs.length&&krs.every(id=>open().some(t=>t.krId===id&&mineOpen(t))),timed=db.tasks.some(t=>days.includes(t.planDay)&&t.slot&&!t.dropped);
+  const st=[[!!krs.length&&!choosing,'Kies drie resultaten','uit je objectives'],[hasSteps,'Bepaal de stappen','per resultaat minstens één'],[timed,'Zet ze in je agenda','sleep naar een dag en tijd']];
+  const cur=choosing||!krs.length?0:!hasSteps?1:2;
+  return `<ol class="e-flow">${st.map(([d,l,h],i)=>`<li class="${d?'done':''} ${i===cur?'cur':''}"><span class="n">${d?I('check'):i+1}</span><span><b>${l}</b><small>${h}</small></span></li>`).join('')}</ol>`}
+function eChoose(ws){const prev=wkKRs(addDays(ws,-7));if(!E.pick)E.pick=wkKRs(ws).length?wkKRs(ws):prev.filter(id=>krById(id)&&!achieved(krById(id).k)).slice(0,3);
   const q=quarter(),soon=addDays(ws,28);
-  const cands=objs().flatMap(o=>o.krs.filter(k=>!achieved(k)&&(!k.quarter||k.quarter===q)).map(k=>({o,k})));
-  const why=({k})=>k.due&&k.due<=soon?'deadline '+fmt(k.due):['risk','blocked'].includes(k.confidence)?confL(k.confidence).toLowerCase():prev.includes(k.id)?'vorige week ook':(krOpenMine(k).length?plural(krOpenMine(k).length,'actie','acties'):'nog geen actie');
-  return `<div class="e-h"><span class="lbl">Welke drie resultaten krijgen deze week je aandacht?</span></div>
-   <div class="e-cands">${cands.map(c=>{const on=E.pick.includes(c.k.id);return `<button class="e-cand ${on?'on':''}" data-a="e-pick" data-id="${c.k.id}" aria-pressed="${on}"><span class="dot" style="--c:${c.o.color}"></span><span class="e-cand-t">${esc(krName(c.k))}</span><span class="e-cand-w">${esc(why(c))}</span></button>`}).join('')||'<p class="small">Geen open Key Results in dit kwartaal.</p>'}</div>
-   <div class="row" style="margin-top:12px"><span class="small">${E.pick.length} van max. 3</span><span class="spacer"></span>${wkKRs(ws).length?`<button class="btn ghost" data-a="e-pick-cancel">Annuleren</button>`:''}<button class="btn primary" data-a="e-pick-save" ${E.pick.length?'':'disabled'}>${!E.pick.length?'Kies resultaten':E.pick.length===1?'Plan dit resultaat':'Plan deze '+E.pick.length}</button></div>`}
+  const why=k=>{const n=krOpenMine(k).length;return [k.due&&k.due<=soon?'deadline '+fmt(k.due):'',['risk','blocked'].includes(k.confidence)?confL(k.confidence).toLowerCase():'',prev.includes(k.id)?'vorige week ook':'',n?plural(n,'open actie','open acties'):'nog geen actie'].filter(Boolean).join(' · ')};
+  const groups=objs().map(o=>({o,krs:o.krs.filter(k=>!achieved(k)&&(!k.quarter||k.quarter===q))})).filter(g=>g.krs.length);
+  const btn=`${wkKRs(ws).length?`<button class="btn ghost" data-a="e-pick-cancel">Annuleren</button>`:''}<button class="btn primary" data-a="e-pick-save" ${E.pick.length?'':'disabled'}>${!E.pick.length?'Kies resultaten':'Verder: stappen plannen →'}</button>`;
+  return `<div class="e-h e-choose-h"><span class="lbl">Stap 1 · Welke resultaten krijgen deze week je aandacht?</span><span class="small">${E.pick.length} van max. 3</span><span class="spacer"></span>${btn}</div>
+   <p class="small" style="margin:0 0 12px">Loop je objectives langs en kies er drie. Je doelverdeling: ${esc(Object.entries(weekTargets()).map(([b,v])=>bucketName(b)+' '+v+'%').join(', ')||'—')}.</p>
+   <div class="e-ogroups">${groups.map(g=>`<section class="e-og" style="--c:${g.o.color}"><header><span class="dot" style="--c:${g.o.color}"></span><b>${esc(g.o.name)}</b>${g.o.objective?`<span class="small">${esc(g.o.objective)}</span>`:''}</header>
+     ${g.krs.map(k=>{const on=E.pick.includes(k.id);return `<button class="e-cand ${on?'on':''}" data-a="e-pick" data-id="${k.id}" aria-pressed="${on}"><span class="e-cbox">${on?I('check'):''}</span><span class="e-cand-m"><span class="e-cand-t">${esc(krName(k))}</span><span class="e-cand-f">${esc(k.title)}</span><span class="e-cand-w">${esc(why(k))}</span></span></button>`}).join('')}</section>`).join('')||'<p class="small">Geen open Key Results in dit kwartaal.</p>'}</div>
+   <div class="row e-choose-foot"><span class="spacer"></span>${btn}</div>`}
 function eWeekLeft(ws,krs){const days=weekDays(ws);
-  const card=id=>{const r=krById(id),k=r.k,steps=krOpenMine(k).slice(0,7),other=open().filter(t=>t.krId===k.id&&t.owner);
-    return `<div class="e-wkr"><a class="e-wkr-h" href="#/resultaten/${r.o.id}/${k.id}"><span class="dot" style="--c:${r.o.color}"></span>${esc(krN(r))}</a>
-     <ul class="e-steps">${steps.map(t=>`<li class="e-step" draggable="true" data-tid="${t.id}"><span class="e-bar" style="--c:${t.planDay&&days.includes(t.planDay)?r.o.color:'var(--line-2)'}"></span><button class="e-tt" data-a="open-task" data-id="${t.id}">${esc(t.title)}</button>${t.planDay&&days.includes(t.planDay)?`<button class="e-when" data-a="e-plan" data-id="${t.id}">${esc(DAYNAMES[new Date(t.planDay+'T12:00').getDay()])}${t.slot?' '+t.slot.start:''}</button>`:`<button class="e-when go" data-a="e-plan" data-id="${t.id}" title="Sleep naar de kalender of klik om te plannen">plan →</button>`}</li>`).join('')}
+  const lbl=t=>t.planDay&&days.includes(t.planDay)?`<button class="e-when" data-a="e-plan" data-id="${t.id}">${esc(DAYNAMES[new Date(t.planDay+'T12:00').getDay()])}${t.slot?' '+t.slot.start:''}</button>`:`<button class="e-when go" data-a="e-plan" data-id="${t.id}" title="Sleep naar de kalender of klik om te plannen">plan →</button>`;
+  const card=id=>{const r=krById(id),k=r.k,steps=krOpenMine(k),other=open().filter(t=>t.krId===k.id&&t.owner);
+    return `<div class="e-wkr" style="--c:${r.o.color}"><div class="e-wkr-top"><a class="e-wkr-h" href="#/resultaten/${r.o.id}/${k.id}"><span class="dot" style="--c:${r.o.color}"></span>${esc(krN(r))}</a><span class="small">${esc(r.o.name)}</span></div>
+     <ul class="e-steps">${steps.map(t=>`<li class="e-step" draggable="true" data-tid="${t.id}"><span class="e-grip" aria-hidden="true">⠿</span><span class="e-bar" style="--c:${t.planDay&&days.includes(t.planDay)?r.o.color:'var(--line-2)'}"></span><button class="e-tt" data-a="open-task" data-id="${t.id}">${esc(t.title)}</button>${lbl(t)}</li>`).join('')}
       ${other.map(t=>`<li class="e-step dim">${avatar(member(t.owner),16)}<button class="e-tt" data-a="e-deleg" data-id="${t.id}">${esc(t.title)}</button><span class="e-when">${esc(dStat(t)[0])}</span></li>`).join('')}</ul>
-     <form class="e-add sm" data-form="e-step" data-o="${r.o.id}" data-kr="${k.id}" data-ws="${ws}">${I('plus')}<input name="title" placeholder="stap" aria-label="Stap toevoegen bij ${esc(krN(r))}" maxlength="250" autocomplete="off"></form></div>`};
+     ${steps.length?'':`<p class="small e-nostep">Nog geen stap. Wat is de eerstvolgende stap voor dit resultaat?</p>`}
+     <form class="e-add sm ${steps.length?'':'hot'}" data-form="e-step" data-o="${r.o.id}" data-kr="${k.id}" data-ws="${ws}">${I('plus')}<input name="title" placeholder="${steps.length?'Stap toevoegen':'Eerste stap…'}" aria-label="Stap toevoegen bij ${esc(krN(r))}" maxlength="250" autocomplete="off"></form>
+     <div class="e-wblk" draggable="true" data-krdrag="${k.id}" title="Sleep naar de kalender voor een werkblok aan dit resultaat">⠿ Sleep een werkblok naar de kalender</div></div>`};
   const loose=open().filter(t=>mineOpen(t)&&!krs.includes(t.krId)&&(t.week===ws||days.includes(t.planDay)));
-  return `<div class="e-h"><span class="lbl">Drie resultaten</span><button class="link" data-a="e-pick-edit">Wijzig</button></div>${krs.map(card).join('')}
-   ${loose.length?`<div class="e-h" style="margin-top:6px"><span class="lbl">Ook deze week</span></div><ul class="e-steps">${loose.slice(0,8).map(t=>`<li class="e-step" draggable="true" data-tid="${t.id}"><span class="e-bar" style="--c:${obj(t.objectiveId)?.color||'var(--line-2)'}"></span><button class="e-tt" data-a="open-task" data-id="${t.id}">${esc(t.title)}</button><button class="e-when ${t.planDay?'':'go'}" data-a="e-plan" data-id="${t.id}">${t.planDay?esc(DAYNAMES[new Date(t.planDay+'T12:00').getDay()])+(t.slot?' '+t.slot.start:''):'plan →'}</button></li>`).join('')}</ul>`:''}
-   <p class="small e-tip">Sleep een stap naar de kalender, of klik op “plan”.</p>`}
+  return `<div class="e-h"><span class="lbl">Jouw resultaten deze week</span><button class="link" data-a="e-pick-edit">Wijzig</button></div>${krs.map(card).join('')}
+   ${loose.length?`<div class="e-h" style="margin-top:6px"><span class="lbl">Ook deze week</span></div><ul class="e-steps">${loose.slice(0,8).map(t=>`<li class="e-step" draggable="true" data-tid="${t.id}"><span class="e-grip" aria-hidden="true">⠿</span><span class="e-bar" style="--c:${obj(t.objectiveId)?.color||'var(--line-2)'}"></span><button class="e-tt" data-a="open-task" data-id="${t.id}">${esc(t.title)}</button>${lbl(t)}</li>`).join('')}</ul>`:''}
+   <p class="small e-tip">Sleep stappen of werkblokken naar een dag en tijd. Alles met een tijd komt in Nu en in je Outlook.</p>`}
+
 function eCal(ws){const days=weekDays(ws),wk=db.settings.week||{},hrs=[];for(let h=H0;h<H1;h++)hrs.push(h);const today=iso(),c=db.settings.rhythm?.checkin;
   const col=(d,i)=>{const th=wk[i+1],tn=th?.o==='rest'?'overig':obj(th?.o)?.name||'';
     const timed=db.tasks.filter(t=>t.planDay===d&&t.slot?.start&&!t.dropped&&!t.owner),all=db.tasks.filter(t=>t.planDay===d&&!t.slot?.start&&!t.dropped&&!t.done&&!t.owner),fu=open().filter(t=>t.owner&&t.followUp===d);
-    const blk=t=>{const s=Math.max(toMin(t.slot.start),H0*60),top=(s-H0*60)/60*PX,hh=Math.max(20,(Number(t.slot.dur)||60)/60*PX-3),o=obj(t.objectiveId);
-      return `<button class="e-blk ${t.done?'done':''} ${hh<34?'tiny':''}" style="top:${top}px;height:${hh}px;--c:${o?.color||'var(--ink-4)'}" draggable="true" data-tid="${t.id}" data-a="e-plan" data-id="${t.id}" title="${esc(t.slot.start+'–'+endOf(t.slot)+' · '+t.title)}"><b>${esc(t.slot.start)}</b> ${esc(t.title)}</button>`};
+    const lay=new Map();{const ev=timed.map(t=>({t,s:toMin(t.slot.start),e:toMin(t.slot.start)+(Number(t.slot.dur)||60)})).sort((a,b)=>a.s-b.s);let cl=[],lanes=[],end=-1;
+      const flush=()=>{cl.forEach(x=>lay.set(x.t.id,[x.l,lanes.length]));cl=[];lanes=[]};
+      for(const x of ev){if(cl.length&&x.s>=end){flush();end=-1}let li=lanes.findIndex(le=>le<=x.s);if(li<0){li=lanes.length;lanes.push(0)}lanes[li]=x.e;x.l=li;cl.push(x);end=Math.max(end,x.e)}flush()}
+    const blk=t=>{const s=Math.max(toMin(t.slot.start),H0*60),top=(s-H0*60)/60*PX,hh=Math.max(20,(Number(t.slot.dur)||60)/60*PX-3),o=obj(t.objectiveId),[l,n]=lay.get(t.id)||[0,1];
+      return `<button class="e-blk ${t.done?'done':''} ${hh<34?'tiny':''}" style="top:${top}px;height:${hh}px;left:calc(${l*100/n}% + 3px);right:calc(${(n-l-1)*100/n}% + 3px);--c:${o?.color||'var(--ink-4)'}" draggable="true" data-tid="${t.id}" data-a="e-plan" data-id="${t.id}" title="${esc(t.slot.start+'–'+endOf(t.slot)+' · '+t.title)}"><b>${esc(t.slot.start)}</b> ${esc(t.title)}</button>`};
     const rv=c?.on&&Number(c.day)===i+1?`<a class="e-blk rv" href="#/week/review" style="top:${(toMin(c.time||'16:00')-H0*60)/60*PX}px;height:${Math.max(20,(c.dur||20)/60*PX-3)}px">Weekreview</a>`:'';
     const now=d===today?(()=>{const n=new Date(),m=n.getHours()*60+n.getMinutes();return m>H0*60&&m<H1*60?`<i class="e-now" style="top:${(m-H0*60)/60*PX}px"></i>`:''})():'';
     return `<div class="e-day ${d===today?'today':''}"><div class="e-dh"><b>${esc(DAYNAMES[i+1])} ${new Date(d+'T12:00').getDate()}</b><span>${esc([th?.loc,tn].filter(Boolean).join(' · '))}</span></div>
@@ -3493,14 +3537,17 @@ function eBalance(ws){const days=weekDays(ws),acc={};let tot=0;
 
 /* slepen naar de kalender */
 let eDrag=null;
-document.addEventListener('dragstart',e=>{const el=e.target.closest?.('[data-tid]');if(!el||!document.body.classList.contains('e'))return;eDrag=el.dataset.tid;e.dataTransfer.effectAllowed='move';try{e.dataTransfer.setData('text/plain',eDrag)}catch{}el.classList.add('dragging')});
-document.addEventListener('dragend',e=>{e.target.closest?.('[data-tid]')?.classList.remove('dragging');$$('.e-drop').forEach(x=>x.classList.remove('e-drop'));$('#eGhost')?.remove();eDrag=null});
+document.addEventListener('dragstart',e=>{const el=e.target.closest?.('[data-tid],[data-krdrag]');if(!el||!document.body.classList.contains('e'))return;eDrag=el.dataset.krdrag?'kr:'+el.dataset.krdrag:el.dataset.tid;e.dataTransfer.effectAllowed='move';try{e.dataTransfer.setData('text/plain',eDrag)}catch{}el.classList.add('dragging')});
+document.addEventListener('dragend',e=>{e.target.closest?.('[data-tid],[data-krdrag]')?.classList.remove('dragging');$$('.e-drop').forEach(x=>x.classList.remove('e-drop'));$('#eGhost')?.remove();eDrag=null});
 const eSlotAt=(col,y)=>Math.min((H1*60)-15,Math.max(H0*60,H0*60+Math.round(y/PX*60/15)*15));
 document.addEventListener('dragover',e=>{if(!eDrag)return;const z=e.target.closest?.('[data-drop-day],[data-drop-unplan]');if(!z)return;e.preventDefault();
   $$('.e-drop').forEach(x=>x!==z&&x.classList.remove('e-drop'));z.classList.add('e-drop');
-  if(z.classList.contains('e-dcol')){const r=z.getBoundingClientRect(),m=eSlotAt(z,e.clientY-r.top),t=task(eDrag),dur=Number(t?.slot?.dur)||60;let g=$('#eGhost');if(!g||g.parentElement!==z){g?.remove();g=document.createElement('div');g.id='eGhost';g.className='e-ghost-blk';z.append(g)}
+  if(z.classList.contains('e-dcol')){const r=z.getBoundingClientRect(),m=eSlotAt(z,e.clientY-r.top),t=eDrag.startsWith('kr:')?null:task(eDrag),dur=Number(t?.slot?.dur)||60;let g=$('#eGhost');if(!g||g.parentElement!==z){g?.remove();g=document.createElement('div');g.id='eGhost';g.className='e-ghost-blk';z.append(g)}
     g.style.top=(m-H0*60)/60*PX+'px';g.style.height=dur/60*PX-3+'px';g.textContent=fromMin(m)}else $('#eGhost')?.remove()});
-document.addEventListener('drop',e=>{if(!eDrag)return;const z=e.target.closest?.('[data-drop-day],[data-drop-unplan]');if(!z)return;e.preventDefault();const t=task(eDrag);eDrag=null;if(!t)return;
+document.addEventListener('drop',e=>{if(!eDrag)return;const z=e.target.closest?.('[data-drop-day],[data-drop-unplan]');if(!z)return;e.preventDefault();const dk=eDrag;eDrag=null;
+  if(dk.startsWith('kr:')){const r=krById(dk.slice(3));if(!r||!z.dataset.dropDay)return;const d=z.dataset.dropDay,col=z.classList.contains('e-dcol'),rc=z.getBoundingClientRect(),m=col?eSlotAt(z,e.clientY-rc.top):0;
+    commit(()=>{const t={id:uid(),title:'Werken aan '+krN(r),objectiveId:r.o.id,krId:r.k.id,notes:'',due:'',done:false,focus:false,waiting:false,blocker:'',today:'',rank:Date.now(),doneAt:null,steps:[],created:iso(),status:'todo',planDay:'',week:'',owner:'',level:0,followUp:'',handover:''};db.tasks.push(t);placeTask(t,d,col?fromMin(m):'',90)},{msg:`Werkblok: ${dayLabel(d)}${col?' '+fromMin(m):''}`,undo:true});return}
+  const t=task(dk);if(!t)return;
   if(z.dataset.dropDay&&z.classList.contains('e-dcol')){const r=z.getBoundingClientRect(),m=eSlotAt(z,e.clientY-r.top),d=z.dataset.dropDay;commit(()=>placeTask(t,d,fromMin(m),t.slot?.dur||60),{msg:`Gepland: ${dayLabel(d)} ${fromMin(m)}`,undo:true})}
   else if(z.dataset.dropDay){const d=z.dataset.dropDay;commit(()=>placeTask(t,d,'',0),{msg:`Op ${dayLabel(d)}, zonder tijd`,undo:true})}
   else if(t.planDay){commit(()=>placeTask(t,'','',0),{msg:'Uit de kalender gehaald',undo:true})}});
