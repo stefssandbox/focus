@@ -1265,6 +1265,46 @@ body.e{--bg:#F6F3EC;--rail:#FFFFFF;--surface:#FFFFFF;--sunken:#EFEBE2;--hover:#F
 @media (max-width:1100px){.e-wgrid.choosing{grid-template-columns:minmax(0,1fr)}.e-flow{grid-template-columns:minmax(0,1fr)}}
 .e-krs{grid-template-columns:minmax(0,1fr)}.e-kr{min-width:0}
 
+/* ===== Focus F ===== */
+.rail-foot [data-a=ai],.mobile-head [data-a=ai]{display:none}
+.f-cols{grid-template-columns:1.25fr 1fr}
+.f-ress{display:grid;gap:12px}
+.f-res{background:var(--surface);border-radius:14px;box-shadow:0 0 0 1px var(--line),inset 3px 0 0 var(--c);padding:12px 16px 8px}
+.f-res-h{display:flex;align-items:center;gap:8px;margin-bottom:4px}.f-res-h a{display:inline-flex;align-items:center;gap:8px;font-weight:650;font-size:14px;color:var(--ink);text-decoration:none;flex:1;min-width:0}.f-res-h a:hover{color:var(--accent-ink)}
+.f-steps{list-style:none;margin:0;padding:0}
+.f-step{display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px solid var(--line);font-size:13.5px}.f-step .e-tt{flex:1;min-width:0;text-align:left;font-size:13.5px}.f-step.done .e-tt{text-decoration:line-through;color:var(--ink-3)}
+.f-who{color:inherit;text-decoration:underline;text-underline-offset:2px}.f-who:hover{color:var(--accent-ink)}
+.f-choose{max-width:1100px}
+.f-slots{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.f-slot{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:12px;background:var(--surface);box-shadow:0 0 0 1px var(--line),inset 3px 0 0 var(--c);font-size:13.5px;font-weight:650;color:var(--ink);text-decoration:none}
+.f-slot.add{box-shadow:inset 0 0 0 1.5px var(--line-2);color:var(--ink-3);font-weight:500;background:none}
+.f-tray{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:10px 12px;border-radius:12px;background:var(--surface);box-shadow:0 0 0 1px var(--line);margin-bottom:16px}
+.f-tray.e-drop,.f-day.e-drop{box-shadow:0 0 0 2px var(--accent)}
+.f-chip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 11px;border-radius:14px;background:var(--sunken);font-size:12.5px;cursor:grab;max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.f-chip.dragging,.f-it.dragging{opacity:.4}
+.f-add{display:inline-flex;align-items:center;gap:6px;margin-left:auto}.f-add select,.f-add input{height:28px;border-radius:8px;border:1px solid var(--line);background:var(--bg);padding:0 8px;font-size:12.5px;color:var(--ink)}.f-add input{width:190px}.f-add select{max-width:170px}
+.f-days{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-items:start}
+.f-day{display:flex;flex-direction:column;gap:8px;min-height:300px;padding:8px;border-radius:14px;background:var(--sunken)}.f-day.today{background:var(--accent-soft)}
+.f-dh{display:flex;flex-direction:column;gap:1px;padding:2px 4px 4px;font-size:13px}
+.f-it{display:flex;align-items:flex-start;gap:8px;padding:9px 10px;border-radius:10px;background:var(--surface);box-shadow:0 0 0 1px var(--line),inset 3px 0 0 var(--c);cursor:grab}
+.f-it .e-chk{margin-top:1px}.f-it-m{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}.f-it .e-tt{font-size:13px;line-height:1.3;text-align:left}.f-it.done .e-tt{text-decoration:line-through;color:var(--ink-3)}.f-it-k{font-size:11.5px;color:var(--ink-3)}
+.f-time{font-size:11.5px;color:var(--ink-3);white-space:nowrap;padding:1px 6px;border-radius:6px}.f-time.on{background:var(--sunken);color:var(--ink-2);font-weight:600}.f-time:hover{color:var(--accent-ink)}
+.f-empty{margin-top:4px;padding:18px 8px;border-radius:10px;box-shadow:inset 0 0 0 1.5px var(--line-2);font-size:12px;color:var(--ink-3);text-align:center}
+.f-rv{display:block;padding:9px 10px;border-radius:10px;background:var(--ink);color:#fff;font-size:12.5px;text-decoration:none}.f-rv small{display:block;font-size:11px;opacity:.7}
+.f-fu{text-align:left;padding:6px 8px;border-radius:8px;box-shadow:inset 0 0 0 1px var(--line-2);font-size:12px;color:var(--ink-3)}
+.f-note{margin:12px 0 0}
+.f-rgrid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:32px;align-items:start}
+.f-rleft{display:grid;gap:12px}
+.f-rr{background:var(--surface);border-radius:14px;box-shadow:0 0 0 1px var(--line),inset 3px 0 0 var(--c);padding:14px 18px;display:grid;gap:10px}.f-rr-h{display:flex;align-items:center;gap:8px;font-size:15px}
+.f-pills{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.f-pills button{padding:9px 10px;border-radius:10px;box-shadow:inset 0 0 0 1px var(--line);font-size:13.5px;font-weight:500}
+.f-pills button[aria-pressed=true].ok{background:var(--ok);color:#fff;box-shadow:none;font-weight:650}.f-pills button[aria-pressed=true].warn{background:var(--warn-mid);color:#fff;box-shadow:none;font-weight:650}.f-pills button[aria-pressed=true].bad{background:var(--bad);color:#fff;box-shadow:none;font-weight:650}
+.f-rright{display:grid;gap:20px}
+.f-keep{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:13.5px}.f-keep-t{flex:1;min-width:0}
+.f-tog{display:inline-flex;gap:4px}.f-tog button{height:26px;padding:0 10px;border-radius:13px;font-size:12px;font-weight:600;background:var(--sunken);color:var(--ink-3)}.f-tog button[aria-pressed=true]{background:var(--accent-soft);color:var(--accent-ink)}.f-tog button.bad[aria-pressed=true]{background:#FBE9DA;color:#9A4A12}
+.f-nchips{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}.f-nchip{display:inline-flex;align-items:center;gap:6px;min-height:30px;padding:4px 12px;border-radius:15px;background:var(--sunken);font-size:12.5px;text-align:left}.f-nchip.on{background:var(--accent-soft);color:var(--accent-ink);box-shadow:inset 0 0 0 1.5px var(--accent);font-weight:650}
+.f-rfoot{margin-top:22px;align-items:center}
+@media (max-width:1100px){.f-cols{grid-template-columns:minmax(0,1fr)}.f-rgrid{grid-template-columns:minmax(0,1fr)}.f-days{grid-template-columns:minmax(0,1fr)}.f-day{min-height:0}.f-add{margin-left:0;width:100%}.f-add input{flex:1;width:auto}}
+
 </style>
 </head>
 <body>
@@ -3495,13 +3535,13 @@ function eFlow(ws,krs,choosing){const days=weekDays(ws);
 function eChoose(ws){const prev=wkKRs(addDays(ws,-7));if(!E.pick)E.pick=wkKRs(ws).length?wkKRs(ws):prev.filter(id=>krById(id)&&!achieved(krById(id).k)).slice(0,3);
   const q=quarter(),soon=addDays(ws,28);
   const why=k=>{const n=krOpenMine(k).length;return [k.due&&k.due<=soon?'deadline '+fmt(k.due):'',['risk','blocked'].includes(k.confidence)?confL(k.confidence).toLowerCase():'',prev.includes(k.id)?'vorige week ook':'',n?plural(n,'open actie','open acties'):'nog geen actie'].filter(Boolean).join(' · ')};
-  const groups=objs().map(o=>({o,krs:o.krs.filter(k=>!achieved(k)&&(!k.quarter||k.quarter===q))})).filter(g=>g.krs.length);
+  const groups=objs().filter(o=>E.onb||!isOnb(o)).map(o=>({o,krs:o.krs.filter(k=>!achieved(k)&&(!k.quarter||k.quarter===q))})).filter(g=>g.krs.length);
   const btn=`${wkKRs(ws).length?`<button class="btn ghost" data-a="e-pick-cancel">Annuleren</button>`:''}<button class="btn primary" data-a="e-pick-save" ${E.pick.length?'':'disabled'}>${!E.pick.length?'Kies resultaten':'Verder: stappen plannen →'}</button>`;
   return `<div class="e-h e-choose-h"><span class="lbl">Stap 1 · Welke resultaten krijgen deze week je aandacht?</span><span class="small">${E.pick.length} van max. 3</span><span class="spacer"></span>${btn}</div>
    <p class="small" style="margin:0 0 12px">Loop je objectives langs en kies er drie. Je doelverdeling: ${esc(Object.entries(weekTargets()).map(([b,v])=>bucketName(b)+' '+v+'%').join(', ')||'—')}.</p>
    <div class="e-ogroups">${groups.map(g=>`<section class="e-og" style="--c:${g.o.color}"><header><span class="dot" style="--c:${g.o.color}"></span><b>${esc(g.o.name)}</b>${g.o.objective?`<span class="small">${esc(g.o.objective)}</span>`:''}</header>
      ${g.krs.map(k=>{const on=E.pick.includes(k.id);return `<button class="e-cand ${on?'on':''}" data-a="e-pick" data-id="${k.id}" aria-pressed="${on}"><span class="e-cbox">${on?I('check'):''}</span><span class="e-cand-m"><span class="e-cand-t">${esc(krName(k))}</span><span class="e-cand-f">${esc(k.title)}</span><span class="e-cand-w">${esc(why(k))}</span></span></button>`}).join('')}</section>`).join('')||'<p class="small">Geen open Key Results in dit kwartaal.</p>'}</div>
-   <div class="row e-choose-foot"><span class="spacer"></span>${btn}</div>`}
+   <div class="row e-choose-foot">${!E.onb&&objs().some(isOnb)?'<button class="link quiet" data-a="f-onb">Onboarding (persoonlijk) tonen</button>':''}<span class="spacer"></span>${btn}</div>`}
 function eWeekLeft(ws,krs){const days=weekDays(ws);
   const lbl=t=>t.planDay&&days.includes(t.planDay)?`<button class="e-when" data-a="e-plan" data-id="${t.id}">${esc(DAYNAMES[new Date(t.planDay+'T12:00').getDay()])}${t.slot?' '+t.slot.start:''}</button>`:`<button class="e-when go" data-a="e-plan" data-id="${t.id}" title="Sleep naar de kalender of klik om te plannen">plan →</button>`;
   const card=id=>{const r=krById(id),k=r.k,steps=krOpenMine(k),other=open().filter(t=>t.krId===k.id&&t.owner);
@@ -3550,7 +3590,7 @@ document.addEventListener('drop',e=>{if(!eDrag)return;const z=e.target.closest?.
     commit(()=>{const t={id:uid(),title:'Werken aan '+krN(r),objectiveId:r.o.id,krId:r.k.id,notes:'',due:'',done:false,focus:false,waiting:false,blocker:'',today:'',rank:Date.now(),doneAt:null,steps:[],created:iso(),status:'todo',planDay:'',week:'',owner:'',level:0,followUp:'',handover:''};db.tasks.push(t);placeTask(t,d,col?fromMin(m):'',90)},{msg:`Werkblok: ${dayLabel(d)}${col?' '+fromMin(m):''}`,undo:true});return}
   const t=task(dk);if(!t)return;
   if(z.dataset.dropDay&&z.classList.contains('e-dcol')){const r=z.getBoundingClientRect(),m=eSlotAt(z,e.clientY-r.top),d=z.dataset.dropDay;commit(()=>placeTask(t,d,fromMin(m),t.slot?.dur||60),{msg:`Gepland: ${dayLabel(d)} ${fromMin(m)}`,undo:true})}
-  else if(z.dataset.dropDay){const d=z.dataset.dropDay;commit(()=>placeTask(t,d,'',0),{msg:`Op ${dayLabel(d)}, zonder tijd`,undo:true})}
+  else if(z.dataset.dropDay){const d=z.dataset.dropDay;commit(()=>placeTask(t,d,t.slot?.start||'',t.slot?.dur||60),{msg:`Op ${dayLabel(d)}${t.slot?' '+t.slot.start:''}`,undo:true})}
   else if(t.planDay){commit(()=>placeTask(t,'','',0),{msg:'Uit de kalender gehaald',undo:true})}});
 
 /* ---------- Weekreview: gestapelde kaarten ---------- */
@@ -3630,8 +3670,8 @@ function eKr(o,k){const on=E.kr===k.id,r={o,k},opn=open().filter(t=>t.krId===k.i
    <div class="e-krr">
     <div><div class="lbl">Bewijs</div><div class="e-evs">${k.evidence.map(e=>`<button class="e-ev ${e.done?'on':''}" data-a="ev" data-id="${k.id}" data-e="${e.id}" aria-pressed="${e.done}"><span class="e-ck">${e.done?I('check'):''}</span>${esc(e.title)}</button>`).join('')}</div>
      <form class="e-add sm" data-form="ev-add" data-id="${k.id}">${I('plus')}<input name="title" placeholder="bewijsstuk" aria-label="Bewijsstuk toevoegen" maxlength="200" autocomplete="off"></form></div>
-    <div><div class="lbl">Hoe staat het?</div>${achieved(k)?confTag('done'):`<div class="e-conf3">${CONF3.map(([c,l])=>`<button class="${confC(c)}" data-a="e-conf" data-id="${k.id}" data-v="${c}" aria-pressed="${k.confidence===c}">${l}</button>`).join('')}</div>`}${k.confNote?`<div class="small" style="margin-top:6px">“${esc(k.confNote)}”</div>`:''}</div>
-    <div class="e-krlinks"><button class="link" data-a="e-proof" data-id="${k.id}">Meting of bewijs vastleggen</button><button class="link" data-a="e-krview" data-id="${k.id}">Alles over deze KR</button><button class="link quiet" data-a="e-kredit" data-o="${o.id}" data-id="${k.id}">Bewerk</button></div>
+    <div><div class="lbl">Hoe staat het?</div>${confTag(achieved(k)?'done':k.confidence)}<div class="small" style="margin-top:4px">Zet je in de weekreview.</div>${k.confNote?`<div class="small" style="margin-top:6px">“${esc(k.confNote)}”</div>`:''}</div>
+    <div class="e-krlinks"><button class="link quiet" data-a="e-kredit" data-o="${o.id}" data-id="${k.id}">Bewerk</button></div>
    </div></div></div>`}
 
 /* ---------- Samen ---------- */
@@ -3646,7 +3686,7 @@ function eSamen(){const ms=team(),sel=member(route.id)||member(E.person)||ms.fin
      <div class="lbl">Bij ${esc(sel.name.split(' ')[0])}</div>${bij.length?`<ul class="e-list">${bij.map(item).join('')}</ul>`:'<p class="small">Niets lopend.</p>'}
      ${klaar.length?`<div class="lbl">Afgerond deze maand</div><ul class="e-list">${klaar.map(item).join('')}</ul>`:''}
      <div class="e-1on1"><div class="lbl">Voor je volgende gesprek</div><ol>${pts.map(p=>`<li>${p}</li>`).join('')}</ol><button class="link" data-a="e-1on1-copy" data-id="${sel.id}">Kopieer</button></div>`}
-  return `<div class="page e-page e-samen"><div class="e-top"><h1>Samen</h1><span class="muted">wat ligt er bij wie, en wat wacht op jou</span></div>
+  return `<div class="page e-page e-samen"><div class="e-top"><a class="link quiet" href="#/">← Nu</a><h1>Samen</h1><span class="muted">wat ligt er bij wie, en wat wacht op jou</span></div>
    <div class="e-sgrid"><aside><form class="e-add box" data-form="e-person">${I('plus')}<input name="name" placeholder="Naam…" aria-label="Persoon toevoegen" maxlength="60" autocomplete="off"></form><p class="small" style="margin:4px 2px 10px">Alleen een naam; de rest kan later.</p>
     ${ms.map(m=>`<a class="e-person ${m===sel?'on':''}" href="#/samen/${m.id}">${avatar(m,30)}<span><b>${esc(m.name)}</b><span class="small">${cnt(m)}</span></span></a>`).join('')}</aside>
     <section class="e-sright">${right}</section></div></div>`}
@@ -3732,6 +3772,144 @@ document.addEventListener('submit',e=>{const f=e.target,k=f.dataset.form;if(!k||
       setOwner(t,id);t.level=v.room;t.followUp=v.back||t.followUp;t.result=v.result;t.waitMe=false;t.slot&&delete t.slot;if(!t.handover)t.handover=eBrief(t,{...v,who:id})},{msg:`Bij ${name}${v.back?' · terug '+dayLabel(v.back):''}`,undo:true});return}
   if(k==='e-person'){const name=g('name');if(!name)return;const id=uid();commit(()=>{db.team.push({id,name,role:'',objectives:[],color:MEMBER_COLORS[team().length%MEMBER_COLORS.length],created:iso()})},{msg:name+' toegevoegd',undo:true});go('/samen/'+id);return}
 },true);
+
+/* ---- 96-f.js ---- */
+/* ================= Focus F · vereenvoudigd: Nu draagt je week, Week als dagen, review in één scherm ================= */
+// Bouwt voort op stream E (95-e.js) en overschrijft: navigatie (drie plekken), Nu, Week, Weekreview.
+// Samen blijft bereikbaar via de naam van een persoon op Nu (#/samen/<id>), maar staat niet meer in de rail.
+// Nieuwe velden: geen. Gebruikt t.planDay, t.slot (optioneel), t.week, week.krs en checkins zoals E.
+Object.assign(E,{rvDrop:{},rvNext:null,onb:false});
+const isOnb=o=>/onboarding/i.test(o?.name||'');
+const inWeekD=(d,ws)=>!!d&&d>=ws&&d<=addDays(ws,6);
+const dnum=d=>new Date(d+'T12:00').getDate();
+
+/* ---------- navigatie: Nu, Week, Resultaten ---------- */
+function renderRail(){renderQuarter();
+  const v=route.view,item=(h,ic,l,cur,badge='')=>`<a class="nav-item e-nav" href="#${h}" ${cur?'aria-current="page"':''}>${I(ic)}<span class="nm">${l}</span>${badge}</a>`,wm=waitMeList().length;
+  $('#nav').innerHTML=item('/','home','Nu',v==='home'||v==='samen',wm?`<span class="e-badge warn" title="${wm} wacht op jou"></span>`:'')+item('/week','cal','Week',v==='week',eReviewDue()?'<span class="e-badge" title="Weekreview staat klaar"></span>':'')
+    +item('/resultaten','target','Resultaten',v==='res');
+  $('#objNav').innerHTML='';
+  if(!$('#ePlus')){const b=document.createElement('button');b.id='ePlus';b.className='e-plus';b.dataset.a='capture';b.setAttribute('aria-label','Vastleggen (N)');b.title='Vastleggen (N)';b.innerHTML=I('plus');$('.rail-foot').prepend(b)}
+}
+function renderTabbar(){const v=route.view,t=(h,ic,l,cur)=>`<a href="#${h}" ${cur?'aria-current="page"':''}>${I(ic)}${l}</a>`;
+  $('#tabbar').innerHTML=t('/','home','Nu',v==='home'||v==='samen')+t('/week','cal','Week',v==='week')+`<button class="plus" data-a="capture" aria-label="Vastleggen"><span>${I('plus')}</span></button>`+t('/resultaten','target','Resultaten',v==='res')}
+
+/* ---------- Nu ---------- */
+function eWaitRow(t){const m=member(t.owner),od=t.followUp&&t.followUp<=iso(),fn=m?esc(m.name.split(' ')[0]):'';
+  const who=m?`<a class="f-who" href="#/samen/${m.id}">${fn}</a>`:'';
+  const sub=t.owner?(t.waitMe?`${who} wacht op jouw besluit`:`${who} · terug ${t.followUp?dayLabel(t.followUp):'—'}`):`Wacht${t.blocker?': '+esc(t.blocker):''}`;
+  return `<li class="e-wrow">${m?avatar(m,28):`<span class="av me" style="width:28px;height:28px;font-size:11px">…</span>`}<div class="e-row-m"><button class="e-tt" data-a="${t.owner?'e-deleg':'open-task'}" data-id="${t.id}">${esc(t.title)}</button><div class="e-sub ${t.waitMe||od?'warn':''}">${sub}</div></div><button class="link" data-a="${t.owner?'e-deleg':'open-task'}" data-id="${t.id}">${t.waitMe?'Beslis':'Volg op'}</button></li>`}
+function fStepRow(t,t0){const when=t.done?'':t.planDay===t0?'<span class="e-when">Vandaag</span>':t.planDay?`<button class="e-when" data-a="e-plan" data-id="${t.id}">${esc(dayLabel(t.planDay))}${t.slot?' '+t.slot.start:''}</button>`:`<button class="e-when go" data-a="e-today" data-id="${t.id}" title="Zet op vandaag">→ vandaag</button>`;
+  return `<li class="f-step ${t.done?'done':''}" data-tid="${t.id}" draggable="${!t.done}"><button class="e-chk" data-a="toggle" data-id="${t.id}" aria-pressed="${t.done}" aria-label="${t.done?'Heropen':'Markeer als gedaan'}">${t.done?I('check'):''}</button><button class="e-tt" data-a="open-task" data-id="${t.id}">${esc(t.title)}</button>${when}${t.done?'':`<button class="e-more" data-a="e-menu" data-id="${t.id}" aria-label="Meer voor ${esc(t.title)}">${I('dots')}</button>`}</li>`}
+function eNu(){
+  if(!objs().length&&!db.tasks.length)return `<div class="page e-page">${loginCard()||'<p class="muted">Nog geen objectives. Begin bij Resultaten.</p>'}</div>`;
+  const {first:f,today,late,planned}=eFocus(),d=new Date(),t0=iso(),ws=weekStart(),df=dayFocus(d),date=d.toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'});
+  const r=f&&krOf(f),k=r?.k,wl=waitingList(),wk=wkKRs(ws).map(krById).filter(Boolean),onToday=f&&(f.planDay===t0||f.today===t0);
+  const lab=!f?'':onToday&&f.slot?`Nu in je agenda · ${f.slot.start}–${endOf(f.slot)}`:onToday?'Vandaag gepland':f.planDay&&f.planDay<t0?`Blijven liggen van ${dayLabel(f.planDay)}`:'Volgende stap uit je week';
+  const card=f?`<section class="e-focus" aria-labelledby="eFocT">
+    <div class="e-focus-l">${esc(lab)}</div>
+    <h1 class="e-focus-t" id="eFocT">${esc(f.title)}</h1>
+    <div class="e-focus-m">${r?`<span class="dot" style="--c:${r.o.color}"></span>Brengt dichterbij: <b>${esc(krN(r))}</b>${k.evidence.length?`<span class="dim"> · bewijs ${evCount(k)} van ${k.evidence.length}</span>`:''}`:`<button class="link inv" data-a="e-link-kr" data-id="${f.id}">Koppel aan een Key Result</button>`}</div>
+    <div class="e-focus-a"><button class="btn primary lg" data-a="e-done" data-id="${f.id}">${I('check')} Gedaan</button>${onToday?'':`<button class="btn lg e-ghost" data-a="e-today" data-id="${f.id}">Doe vandaag</button>`}${r?`<button class="btn lg e-ghost" data-a="e-open-kr" data-id="${k.id}">Open KR</button>`:''}<span class="spacer"></span><button class="link inv" data-a="e-notnow" data-id="${f.id}">Volgende stap</button><button class="e-more inv" data-a="e-menu" data-id="${f.id}" aria-label="Meer">${I('dots')}</button></div></section>`
+   :`<section class="e-focus" aria-labelledby="eFocT"><div class="e-focus-l">Nu</div><h1 class="e-focus-t" id="eFocT">${planned?'Alle stappen van deze week zijn gedaan':'Waar werk je deze week aan?'}</h1><div class="e-focus-m">${planned?'Voeg een stap toe bij een resultaat, of leg iets vast.':'Kies tot drie resultaten uit je objectives en bepaal de eerste stap.'}</div><div class="e-focus-a"><a class="btn primary lg" href="#/week">${planned?'Naar je week':'Kies je week'}</a><button class="btn lg e-ghost" data-a="capture">${I('plus')} Vastleggen</button></div></section>`;
+  const resCard=r2=>{const kk=r2.k,steps=krOpenMine(kk),dn=db.tasks.filter(t=>t.krId===kk.id&&t.done&&!t.owner&&inWeekD(t.doneAt,ws)),tot=steps.length+dn.length;
+    return `<div class="f-res" style="--c:${r2.o.color}"><div class="f-res-h"><a href="#/resultaten/${r2.o.id}/${kk.id}"><span class="dot" style="--c:${r2.o.color}"></span>${esc(krN(r2))}</a><span class="small">${dn.length} van ${tot}</span></div>
+     <ul class="f-steps">${dn.map(t=>fStepRow(t,t0)).join('')}${steps.map(t=>fStepRow(t,t0)).join('')}</ul>
+     <form class="e-add sm" data-form="e-step" data-o="${r2.o.id}" data-kr="${kk.id}" data-ws="${ws}">${I('plus')}<input name="title" placeholder="${steps.length?'Volgende stap':'Eerste stap…'}" aria-label="Stap toevoegen bij ${esc(krN(r2))}" maxlength="250" autocomplete="off"></form></div>`};
+  const tl=today.length?`<ul class="e-list">${today.map(t=>eRow(t,{meta:false})).join('')}</ul>`:'';
+  return `<div class="page e-page e-nu">
+   <div class="e-date">${esc(date[0].toUpperCase()+date.slice(1))}${df?` · ${df.loc} · ${esc(df.label)}`:''}</div>
+   ${eReviewDue()?`<a class="e-banner" href="#/week/review"><b>Weekreview</b><span>Eén scherm, drie minuten. Daarna staat volgende week klaar.</span><span class="spacer"></span><span class="link">Start review</span></a>`:''}
+   ${card}
+   <div class="e-cols f-cols">
+    <section><div class="e-h"><span class="lbl">Jouw week</span><span class="small">${wk.length?plural(wk.length,'resultaat','resultaten'):''}</span><a class="small link quiet" href="#/week">Week →</a></div>
+     ${wk.length?`<div class="f-ress">${wk.map(resCard).join('')}</div>`:'<p class="small">Nog geen resultaten gekozen voor deze week.</p>'}</section>
+    <section><div class="e-h"><span class="lbl">Vandaag</span></div>
+     ${tl||'<p class="small">Nog niets op vandaag. Kies “→ vandaag” bij een stap.</p>'}
+     ${late.length?`<div class="small warn" style="margin:12px 0 2px">Blijven liggen deze week</div><ul class="e-list">${late.map(t=>eRow(t,{meta:false})).join('')}</ul>`:''}
+     <form class="e-add" data-form="e-today">${I('plus')}<input name="title" placeholder="Actie voor vandaag…" aria-label="Actie voor vandaag" maxlength="250" autocomplete="off"></form>
+     <div class="e-h" style="margin-top:22px"><span class="lbl">Wacht op anderen</span><span class="small">${wl.length||''}</span></div>
+     ${wl.length?`<ul class="e-list">${wl.slice(0,6).map(eWaitRow).join('')}</ul>`:`<p class="small">Niets uitstaand. Delegeren doe je via ⋯ bij een actie.</p>`}</section>
+   </div></div>`}
+
+/* ---------- Week: kies resultaten, zet stappen op een dag ---------- */
+function fWeekTop(ws,krs){const a=db.settings.agenda||{};
+  return `<div class="e-top"><h1>Week ${isoWeek(ws)}</h1><span class="muted">${fmt(ws)} – ${fmt(addDays(ws,4))}</span>
+    <span class="e-wnav"><button class="btn ghost icon" data-a="e-wk" data-v="-1" aria-label="Vorige week" ${E.wsOff<=-1?'disabled':''}>‹</button>${E.wsOff?`<button class="link quiet" data-a="e-wk" data-v="0">Deze week</button>`:''}<button class="btn ghost icon" data-a="e-wk" data-v="1" aria-label="Volgende week" ${E.wsOff>=1?'disabled':''}>›</button></span>
+    <span class="spacer"></span>
+    ${E.wsOff===0&&krs.length?`<a class="btn ${eReviewDue()?'primary':''}" href="#/week/review">Weekreview</a>`:''}
+    <button class="btn ${a.on?'e-ok':''}" data-a="e-agenda">${a.on?'<span class="e-live"></span>In je Outlook':I('cal')+' Zet in Outlook'}</button></div>`}
+function eWeek(){
+  if(route.sub==='review')return eReview();
+  const ws=addDays(weekStart(),7*E.wsOff),krs=wkKRs(ws),choosing=E.week==='kies'||!krs.length;
+  if(choosing)return `<div class="page e-page e-week">${fWeekTop(ws,krs)}<div class="f-choose">${eChoose(ws)}</div></div>`;
+  const days=weekDays(ws),t0=iso(),c=db.settings.rhythm?.checkin,wk=db.settings.week||{};
+  const mine=db.tasks.filter(t=>!t.owner&&!t.dropped);
+  const tray=mine.filter(t=>!t.done&&(!t.planDay||!days.includes(t.planDay))&&(krs.includes(t.krId)||t.week===ws)&&(!t.planDay||t.planDay<=addDays(ws,6)));
+  const colorOf=t=>obj(t.objectiveId)?.color||'var(--ink-4)';
+  const it=t=>`<div class="f-it ${t.done?'done':''}" draggable="${!t.done}" data-tid="${t.id}" style="--c:${colorOf(t)}"><button class="e-chk" data-a="toggle" data-id="${t.id}" aria-pressed="${t.done}" aria-label="${t.done?'Heropen':'Markeer als gedaan'}">${t.done?I('check'):''}</button><span class="f-it-m"><button class="e-tt" data-a="open-task" data-id="${t.id}">${esc(t.title)}</button>${krOf(t)?`<span class="f-it-k">${esc(krN(krOf(t)))}</span>`:''}</span><button class="f-time ${t.slot?'on':''}" data-a="e-plan" data-id="${t.id}" title="Tijd, duur of verplaatsen">${t.slot?esc(t.slot.start):'+ tijd'}</button></div>`;
+  const col=(d,i)=>{const items=mine.filter(t=>t.planDay===d).sort((a,b)=>(a.slot?toMin(a.slot.start):9999)-(b.slot?toMin(b.slot.start):9999)||(a.rank||0)-(b.rank||0)),fu=open().filter(t=>t.owner&&t.followUp===d),th=wk[i+1],tn=th?.o==='rest'?'':obj(th?.o)?.name||'';
+    const rv=c?.on&&Number(c.day)===i+1&&E.wsOff===0;
+    return `<div class="f-day ${d===t0?'today':''}" data-drop-day="${d}"><div class="f-dh"><b>${esc(DAYNAMES[i+1])} ${dnum(d)}</b><span class="small">${esc([th?.loc,tn].filter(Boolean).join(' · '))}</span></div>
+     ${items.map(it).join('')}${fu.map(t=>`<button class="f-fu" data-a="e-deleg" data-id="${t.id}">↩ ${esc(member(t.owner)?.name||'')}: ${esc(t.title)}</button>`).join('')}
+     ${rv?`<a class="f-rv" href="#/week/review"><small>Vaste afspraak</small>Weekreview · ${esc(c.time||'16:00')}</a>`:''}
+     ${!items.length&&!fu.length&&!rv?'<div class="f-empty">Sleep hierheen</div>':''}</div>`};
+  const slots=krs.map(id=>{const r=krById(id);return `<a class="f-slot" href="#/resultaten/${r.o.id}/${r.k.id}" style="--c:${r.o.color}"><span class="dot" style="--c:${r.o.color}"></span>${esc(krN(r))}</a>`}).join('')+(krs.length<3?`<button class="f-slot add" data-a="e-pick-edit">+ Resultaat kiezen</button>`:'<button class="link quiet" data-a="e-pick-edit">Wijzig</button>');
+  return `<div class="page e-page e-week f-week">${fWeekTop(ws,krs)}
+   <div class="e-h"><span class="lbl">Jouw resultaten deze week</span><span class="small">${krs.length} van max. 3</span></div>
+   <div class="f-slots">${slots}</div>
+   <div class="f-tray" data-drop-unplan><span class="lbl">Nog te plannen · ${tray.length}</span>${tray.map(t=>`<button class="f-chip" draggable="true" data-tid="${t.id}" data-a="e-plan" data-id="${t.id}" style="--c:${colorOf(t)}"><span class="dot" style="--c:${colorOf(t)}"></span>${esc(t.title)}</button>`).join('')}
+     <form class="f-add" data-form="f-step" data-ws="${ws}">${I('plus')}<select name="kr" aria-label="Bij welk resultaat">${krs.map(id=>`<option value="${id}">${esc(krN(krById(id)))}</option>`).join('')}</select><input name="title" placeholder="Stap toevoegen…" aria-label="Stap toevoegen" maxlength="250" autocomplete="off"></form></div>
+   <div class="f-days">${days.map(col).join('')}</div>
+   <p class="small f-note">Sleep stappen naar een dag. Een tijd is optioneel; alleen stappen met een tijd komen in je Outlook-agenda.</p></div>`}
+
+/* ---------- Weekreview: één scherm ---------- */
+const fStale=(ws,krs)=>db.tasks.filter(t=>mineOpen(t)&&(t.planDay?inWeekD(t.planDay,ws):(krs.includes(t.krId)||t.week===ws)));
+function eReview(){const ws=addDays(weekStart(),0),krs=wkKRs(ws),nws=addDays(ws,7);
+  if(!krs.length)return `<div class="page e-page"><div class="e-top"><h1>Weekreview</h1><span class="spacer"></span><a class="link" href="#/week">Terug naar de week</a></div><p class="muted">Deze week zijn nog geen resultaten gekozen. Kies ze in Week; de review loopt daarlangs.</p></div>`;
+  if(!E.rvNext)E.rvNext=krs.filter(id=>!achieved(krById(id).k)).slice(0,3);
+  const q=quarter(),inW=d=>inWeekD(d,ws);
+  const row=id=>{const r=krById(id),k=r.k,a=E.rvAns[id]||{},v=a.v||(['on','risk','blocked'].includes(k.confidence)?k.confidence:'');
+    const all=db.tasks.filter(t=>t.krId===k.id&&!t.owner&&!t.dropped&&(inW(t.planDay)||t.week===ws||inW(t.doneAt))),dn=all.filter(t=>t.done).length,gave=db.tasks.filter(t=>t.krId===k.id&&t.owner&&t.done&&inW(t.doneAt));
+    return `<section class="f-rr" style="--c:${r.o.color}"><div class="f-rr-h"><span class="dot" style="--c:${r.o.color}"></span><b>${esc(krN(r))}</b><span class="spacer"></span><span class="small">${dn} van ${all.length} stappen gedaan${gave.length?` · ${gave.length} door anderen`:''}</span></div>
+     <div class="f-pills" role="group" aria-label="Hoe staat ${esc(krN(r))}">${CONF3.map(([c,l])=>`<button class="${confC(c)}" data-a="f-rv-conf" data-id="${id}" data-v="${c}" aria-pressed="${v===c}">${l}</button>`).join('')}</div>
+     <input class="input" data-rvnote="${id}" value="${esc(a.note||'')}" placeholder="Eén regel, optioneel" aria-label="Toelichting bij ${esc(krN(r))}"></section>`};
+  const stale=fStale(ws,krs),loose=open().filter(t=>mineOpen(t)&&!t.krId&&!stale.includes(t));
+  const keep=t=>{const dr=!!E.rvDrop[t.id];return `<div class="f-keep"><span class="f-keep-t">${esc(t.title)}</span><span class="f-tog" role="group" aria-label="${esc(t.title)}"><button data-a="f-rv-drop" data-id="${t.id}" data-v="0" aria-pressed="${!dr}">Houd</button><button data-a="f-rv-drop" data-id="${t.id}" data-v="1" aria-pressed="${dr}" class="bad">Laat los</button></span></div>`};
+  const cands=db.objectives.filter(o=>!o.archived&&(E.onb||!isOnb(o))).flatMap(o=>o.krs.filter(k=>!achieved(k)&&(!k.quarter||k.quarter===q)).map(k=>({o,k})));
+  const chips=cands.map(({o,k})=>{const on=E.rvNext.includes(k.id);return `<button class="f-nchip ${on?'on':''}" data-a="f-rv-next" data-id="${k.id}" aria-pressed="${on}"><span class="dot" style="--c:${o.color}"></span>${esc(krN({o,k}))}</button>`}).join('');
+  return `<div class="page e-page e-week f-review">
+   <div class="e-top"><h1>Week ${isoWeek(ws)}</h1><span class="muted">review</span><span class="spacer"></span><a class="link" href="#/week">Terug naar de week</a></div>
+   <div class="f-rgrid"><div class="f-rleft"><div class="lbl">Hoe staat het?</div>${krs.map(row).join('')}
+     <div class="field" style="margin-top:6px"><label for="rv-wins" class="lbl">Eén zin terug <span class="small">optioneel</span></label><input class="input" id="rv-wins" data-rvend="wins" value="${esc(E.rvEnd.wins||'')}" placeholder="Wat ging goed of wat leerde je?" maxlength="300"></div></div>
+    <aside class="f-rright">
+     <div><div class="lbl">Wat bleef liggen · ${stale.length}</div>${stale.length?stale.map(keep).join(''):'<p class="small">Alles is afgerond of ingepland.</p>'}</div>
+     ${loose.length?`<div><div class="lbl">Losse acties zonder KR · ${loose.length}</div><ul class="e-list">${loose.slice(0,4).map(t=>eRow(t,{meta:false})).join('')}</ul>${loose.length>4?`<p class="small">en ${loose.length-4} meer</p>`:''}</div>`:''}
+     <div><div class="lbl">Volgende week · kies tot 3</div><div class="f-nchips">${chips}</div>${!E.onb&&db.objectives.some(isOnb)?'<button class="link quiet" data-a="f-onb">Onboarding (persoonlijk) tonen</button>':''}</div>
+    </aside></div>
+   <div class="row f-rfoot"><span class="small">Duurt ongeveer drie minuten.</span><span class="spacer"></span><button class="btn primary lg" data-a="e-rv-finish">Klaar · volgende week staat klaar</button></div></div>`}
+function eRvFinish(){const ws=weekStart(),krs=wkKRs(ws),items=[],nws=addDays(ws,7);let changed=0,moved=0,dropped=0;
+  commit(()=>{for(const id of krs){const r=krById(id);if(!r)continue;const a=E.rvAns[id]||{};
+      if(a.v&&a.v!==r.k.confidence){r.k.confidence=a.v;changed++;log('measure',`${r.o.name} · ${krName(r.k)}: ${STATE[a.v]||confL(a.v)}`,r.o.id)}
+      if(a.note)r.k.confNote=clean(a.note);
+      items.push({krId:id,confidence:a.v||r.k.confidence,note:clean(a.note)||undefined})}
+    for(const t of fStale(ws,krs)){if(E.rvDrop[t.id]){t.dropped=true;t.today='';delete t.slot;dropped++}else{t.week=nws;t.planDay='';t.today='';delete t.slot;moved++}}
+    const cid=uid();db.checkins.unshift({id:cid,date:iso(),ws,weekKrs:krs,items,notes:{},wins:clean(E.rvEnd.wins),learned:'',next:'',stop:'',help:''});
+    ensureWeek(ws).reviewed=cid;const nw=ensureWeek(nws),nx=(E.rvNext||[]).filter(id=>krById(id));nw.krs=nx.length?nx:krs.filter(id=>!achieved(krById(id).k)).slice(0,3);nw.confirmed=true;
+    log('checkin','Weekreview week '+isoWeek(ws))},{msg:`Review vastgelegd${changed?' · '+plural(changed,'inschatting','inschattingen')+' bijgewerkt':''}${moved?' · '+plural(moved,'stap','stappen')+' mee naar volgende week':''}${dropped?' · '+dropped+' losgelaten':''}`});
+  E.rvAns={};E.rvEnd={};E.rvDrop={};E.rvNext=null;E.wsOff=1;E.week='plan';go('/week')}
+
+/* ---------- acties ---------- */
+Object.assign(ACT,{
+  'f-rv-conf':(b)=>{(E.rvAns[b.dataset.id]??={}).v=b.dataset.v;render();$(`[data-rvnote="${b.dataset.id}"]`)?.focus()},
+  'f-rv-drop':(b)=>{if(b.dataset.v==='1')E.rvDrop[b.dataset.id]=true;else delete E.rvDrop[b.dataset.id];render()},
+  'f-rv-next':(b)=>{const id=b.dataset.id;E.rvNext=E.rvNext.includes(id)?E.rvNext.filter(x=>x!==id):E.rvNext.length>=3?(toast('Maximaal drie. Haal er eerst één weg.'),E.rvNext):[...E.rvNext,id];render()},
+  'f-onb':()=>{E.onb=true;render()},
+});
+document.addEventListener('submit',e=>{const f=e.target;if(f.dataset.form!=='f-step')return;e.preventDefault();e.stopImmediatePropagation();
+  const fd=new FormData(f),title=clean(fd.get('title')),r=krById(fd.get('kr'));if(!title)return;
+  commit(()=>{db.tasks.push({id:uid(),title,objectiveId:r?r.o.id:'',krId:r?r.k.id:'',notes:'',due:'',done:false,focus:false,waiting:false,blocker:'',today:'',rank:Date.now(),doneAt:null,steps:[],created:iso(),status:'todo',planDay:'',week:f.dataset.ws||'',owner:'',level:0,followUp:'',handover:''});log('create',title,r?.o.id)},{msg:'Toegevoegd',undo:true});
+  $('[data-form=f-step] input')?.focus()},true);
 
 /* boot */
 captureAuthHash();sessInit();load();save();route=parseHash();render();startSync();if(pinLocked())showLock();if(contentNotice||okrNotice)toast(okrNotice||contentNotice);
