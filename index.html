@@ -1323,6 +1323,87 @@ body.e{--bg:#F6F3EC;--rail:#FFFFFF;--surface:#FFFFFF;--sunken:#EFEBE2;--hover:#F
 .g-quarter{max-width:980px}
 .g-hint{margin-top:6px;font-size:12.5px;line-height:1.45;color:var(--ink-3)}.g-hint.warn{color:var(--warn)}.g-hint.ok{color:var(--ok)}.g-hint .small{display:block;margin-top:2px}
 @media (max-width:1100px){.g-ssc{grid-template-columns:minmax(0,1fr)}}
+.f-it-m{overflow-wrap:anywhere}.f-time{flex:none}
+
+/* ================= Focus H · de Keten ================= */
+svg.i .t{fill:currentColor;fill-opacity:0}
+[aria-current] svg.i .t,svg.i.hi .t,.h-badge svg.i .t{fill-opacity:.16}
+svg.i.hi{width:14px;height:14px;vertical-align:-2px;color:var(--ink-3)}
+.rail .nav-item svg.i,.rail .e-nav svg.i{width:20px;height:20px}
+.h-crumb{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--ink-3);min-width:0;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.h-crumb b{font-weight:600;color:var(--ink-2)}.h-crumb i{font-style:normal;color:var(--ink-4)}.h-crumb .dot{width:7px;height:7px;flex:none}
+.h-chip{display:inline-flex;align-items:center;height:20px;padding:0 8px;border-radius:10px;font-size:11px;font-weight:600;background:var(--accent-soft);color:var(--accent-ink);white-space:nowrap}
+.h-chip.ok{background:var(--ok-soft);color:var(--ok)}.h-chip.w{background:var(--warn-soft);color:var(--warn)}.h-chip.bad{background:var(--bad-soft);color:var(--bad)}
+.h-bar{flex:1;position:relative;height:6px;border-radius:3px;background:var(--sunken);overflow:hidden;min-width:60px}
+.h-bar i{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:var(--ok)}.h-bar i.aft{background:var(--ok-mid);opacity:.55}
+.h-prog{display:flex;align-items:center;gap:10px;margin-top:8px}.h-prog b{font-size:12.5px;white-space:nowrap}
+.up{color:var(--ok)}
+.h-cols{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
+.h-side{display:flex;flex-direction:column;gap:22px}
+.h-chain{position:relative;display:flex;flex-direction:column}
+.h-chain::before{content:"";position:absolute;left:14px;top:30px;bottom:30px;width:3px;border-radius:2px;background:var(--line)}
+.h-node{position:relative;margin-left:44px}
+.h-badge{position:absolute;left:-44px;top:11px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--surface);color:var(--c);box-shadow:0 0 0 2px var(--c),0 0 0 5px var(--bg)}
+.h-badge svg.i{width:16px;height:16px}
+.h-card{background:var(--surface);border-radius:14px;box-shadow:0 0 0 1px var(--line);padding:11px 16px 12px}
+.h-lvl{display:flex;align-items:center;gap:8px}
+.h-t{font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.25;margin-top:2px;overflow-wrap:anywhere}
+.h-sub{font-size:12px;color:var(--ink-3);margin-top:6px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.h-link{margin:0 0 0 44px;padding:6px 0 6px 12px;font-size:12px;color:var(--ink-2);position:relative}
+.h-link b{color:var(--accent);font-weight:700}
+.h-node.active .h-badge{background:var(--accent);color:#fff;box-shadow:0 0 0 2px var(--accent),0 0 0 5px var(--bg)}
+.h-node.active .h-card{box-shadow:0 0 0 2px var(--accent),0 18px 36px -22px rgba(38,74,107,.6)}
+.h-node.active .h-t{font-size:20px;margin-top:4px}
+.h-acts{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}
+.h-acts .btn.lg{height:38px}
+.h-prev{font-size:12px;color:var(--ok);margin-top:9px}.h-prev b{font-weight:700}
+.h-week{background:var(--surface);border-radius:14px;box-shadow:0 0 0 1px var(--line);padding:12px 16px;display:flex;flex-direction:column;gap:6px}
+.h-big{font-size:24px;font-weight:700}.h-big span{font-size:13px;font-weight:500;color:var(--ink-3)}
+.h-cand .h-crumb{margin-bottom:2px}.h-cand .e-cand-t{display:block;line-height:1.3}.h-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px}
+.h-sum{margin-top:16px;background:var(--navy);color:#fff;border-radius:14px;padding:12px 18px}.h-sum .lbl{color:#A9C4DC}.h-sum-t{font-size:13.5px;margin-top:4px;line-height:1.6}.h-sum-t b{color:#fff}
+/* Week plannen */
+.h-sumrow{display:flex;align-items:center;gap:10px;margin:2px 0 10px;flex-wrap:wrap}.h-sumrow h2{margin:0;font-size:20px;letter-spacing:-.02em}
+.h-ban{display:flex;align-items:center;gap:10px;background:var(--warn-soft);border-radius:12px;padding:9px 14px;margin-bottom:12px;font-size:13px;color:var(--warn);flex-wrap:wrap}
+.h-wgrid{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:20px;align-items:start}
+.h-left{display:flex;flex-direction:column;gap:12px}
+.h-mcard{background:var(--surface);border-radius:14px;box-shadow:0 0 0 1px var(--line),inset 3px 0 0 var(--c);padding:12px 16px 8px}
+.h-mh{display:flex;align-items:flex-start;gap:10px}.h-mh>svg.i{width:20px;height:20px;margin-top:2px;color:var(--accent)}.h-mt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.h-mt b{font-size:15px}
+.h-steps{margin-top:6px}
+.h-srow{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;padding:8px 0;border-top:1px solid var(--line)}
+.h-srow.open{background:var(--accent-soft);margin:0 -8px;padding:8px;border-radius:10px;border-top-color:transparent}
+.h-srow.done .e-tt{color:var(--ink-4);text-decoration:line-through}.h-srow .e-chk.off{box-shadow:inset 0 0 0 1.6px var(--line);opacity:.5}
+.h-srow.done .e-chk{background:var(--ok);box-shadow:none}
+.h-st{flex:1;min-width:140px}.h-st .e-tt{font-size:13px;text-align:left}.h-nod{font-size:11.5px;color:var(--warn);font-weight:600}
+.h-more{font-size:11.5px;color:var(--ink-3);min-width:48px;text-align:right}.h-more:hover{color:var(--accent)}
+.h-days{display:flex;gap:4px}
+.h-day{width:32px;height:26px;border-radius:8px;font-size:11.5px;font-weight:600;color:var(--ink-2);background:var(--surface);box-shadow:inset 0 0 0 1px var(--line-2);display:grid;place-items:center}
+.h-day:hover:not(:disabled){box-shadow:inset 0 0 0 1.5px var(--accent);color:var(--accent)}
+.h-day.on{background:var(--accent);color:#fff;box-shadow:none}.h-day:disabled{background:var(--sunken);color:var(--ink-4);box-shadow:none;cursor:default;opacity:.7}
+.h-panel{flex-basis:100%;display:flex;flex-direction:column;gap:10px;padding-top:6px}
+.h-opts{display:flex;gap:6px}.h-opt{flex:1;border-radius:10px;padding:7px 4px;text-align:center;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line-2);display:flex;flex-direction:column;gap:1px}
+.h-opt b{font-size:13px}.h-opt span{font-size:11px;color:var(--ink-3)}.h-opt.on{box-shadow:inset 0 0 0 2px var(--accent)}.h-opt.sug span{color:var(--ok);font-weight:650}.h-opt:disabled{opacity:.5}
+.h-prow{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--ink-3)}
+.h-prow input,.h-prow select{height:30px;border-radius:8px;border:1px solid var(--line-2);background:var(--surface);padding:0 8px;font-size:12.5px}
+.h-dur{display:inline-flex;align-items:center;gap:6px}.h-dur button{width:26px;height:26px;border-radius:8px;box-shadow:inset 0 0 0 1px var(--line-2);background:var(--surface);text-align:center;font-weight:700}.h-dur b{color:var(--ink);min-width:54px;text-align:center}
+.h-right{display:flex;flex-direction:column;gap:8px}
+.h-dcol{background:var(--surface);border-radius:12px;box-shadow:inset 0 0 0 1px var(--line);padding:9px 12px}.h-dcol.today{box-shadow:inset 0 0 0 2px var(--accent);background:var(--accent-soft)}.h-dcol.past{opacity:.65}
+.h-dh{display:flex;align-items:center;gap:8px;font-size:13px}.h-dh .small.warn{color:var(--warn);font-weight:650}
+.h-lbar{height:6px;border-radius:3px;margin-top:6px;background:var(--sunken);overflow:hidden}.h-lbar i{display:block;height:100%;background:var(--accent)}.h-lbar i.w{background:var(--warn-mid)}
+.h-dit{display:flex;align-items:center;gap:6px;font-size:12px;margin-top:5px;line-height:1.25}.h-dit span:nth-child(2){flex:1;min-width:0}.h-dit small{color:var(--ink-3);font-size:11px}.h-dit.done span:nth-child(2){text-decoration:line-through;color:var(--ink-4)}.h-dit .dot{width:6px;height:6px}
+/* Resultaten */
+.h-krb{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:22px}
+.h-mss{display:flex;flex-direction:column;gap:6px}.h-ms{padding:8px 0;border-top:1px solid var(--line)}.h-ms.done .h-ms-t{color:var(--ink-3)}
+.h-ms-h{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.h-ms-t{font-weight:650;font-size:13.5px;flex:1;min-width:140px}.h-ms.cur .h-ms-t{color:var(--ink)}
+.h-ms-b{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:var(--ink-4)}.h-ms-b svg.i{width:20px;height:20px}.h-ms-b:hover{color:var(--ok)}.h-ms-b.on{color:var(--ok)}.h-ms-b.on svg.i .t{fill-opacity:.55}
+.h-ms-l{margin:4px 0 0 38px}.h-ms .e-add{margin-left:38px}
+.h-due input{height:28px;border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:0 6px;font-size:12px;color:var(--ink-3)}.h-due.late input{border-color:var(--warn-mid);color:var(--warn);font-weight:650}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.h-krs{display:flex;flex-direction:column;gap:14px}.h-tip{background:var(--accent-soft);border-radius:10px;padding:9px 12px;font-size:12.5px;color:var(--ink-2)}
+.h-ic{color:var(--ink-3)}.h-mc{white-space:nowrap}
+.h-oprog{display:flex;align-items:center;gap:10px;margin:6px 0 4px;max-width:520px}.h-oprog b{font-size:13px}
+.h-rsum{display:flex;gap:10px;flex-wrap:wrap}.h-rsum>div{flex:1;min-width:130px;background:var(--surface);border-radius:12px;box-shadow:0 0 0 1px var(--line);padding:9px 14px;display:flex;flex-direction:column}.h-rsum b{font-size:19px}.h-rsum small{font-size:12px;color:var(--ink-3);font-weight:500}
+.h-delta{font-size:12.5px;color:var(--ink-3);white-space:nowrap}.h-delta b{color:var(--ink)}.h-delta b.up{color:var(--ok)}
+@media (max-width:900px){.h-cols,.h-wgrid,.h-krb{grid-template-columns:1fr}.h-node.active .h-t{font-size:18px}.h-srow .h-days{flex-basis:100%;margin-left:28px}.h-more{margin-left:auto}}
 
 </style>
 </head>
@@ -1991,7 +2072,7 @@ function krSheet(oid,kid){const r=kid?krById(kid):null,k=r?.k,o=r?.o||obj(oid);
   <div class="field"><label for="kf-t">Gewenst resultaat</label><textarea class="textarea" id="kf-t" name="title" required rows="2">${esc(k?.title||'')}</textarea><span class="hint">Een aantoonbare verandering, geen activiteit.</span></div>
   <div class="field"><label for="kf-s">Korte naam</label><input class="input" id="kf-s" name="short" maxlength="34" value="${esc(k?krName(k):'')}" placeholder="Twee à drie woorden, bijv. Samenwerking ICM"><span class="hint">Zo heet dit resultaat op kaarten, in je planning en in de check-in.</span></div>
   <div class="field"><label for="kf-d">Wanneer is het behaald?</label><textarea class="textarea" id="kf-d" name="description" rows="6">${esc(k?.description||'')}</textarea></div>
-  <div class="field"><span class="lbl">Bewijs — wat moet er liggen om dit behaald te noemen?</span><div class="ev-edit">${(k?.evidence||[]).map(e=>`<div class="row"><input type="hidden" name="ev_id" value="${e.id}"><input class="input" name="ev_title" value="${esc(e.title)}" aria-label="Bewijsstuk">${e.done?'<span class="sbadge done">✓</span>':''}</div>`).join('')}${[0,1].map(()=>`<div class="row"><input type="hidden" name="ev_id" value=""><input class="input" name="ev_title" placeholder="Nieuw bewijsstuk" aria-label="Nieuw bewijsstuk"></div>`).join('')}</div><span class="hint">Maak een veld leeg om het te verwijderen.</span></div>
+  <div class="field"><span class="lbl">Mijlpalen — wat moet er liggen om dit behaald te noemen? Met datum.</span><div class="ev-edit">${(k?.evidence||[]).map(e=>`<div class="row"><input type="hidden" name="ev_id" value="${e.id}"><input class="input" name="ev_title" value="${esc(e.title)}" aria-label="Mijlpaal"><input class="input" type="date" name="ev_due" value="${esc(e.due||'')}" aria-label="Datum van de mijlpaal" style="max-width:150px">${e.done?'<span class="sbadge done">✓</span>':''}</div>`).join('')}${[0,1].map(()=>`<div class="row"><input type="hidden" name="ev_id" value=""><input class="input" name="ev_title" placeholder="Nieuwe mijlpaal" aria-label="Nieuwe mijlpaal"><input class="input" type="date" name="ev_due" aria-label="Datum van de mijlpaal" style="max-width:150px"></div>`).join('')}</div><span class="hint">Maak een veld leeg om het te verwijderen.</span></div>
   <div class="field"><span class="lbl">Soort Key Result</span><div class="ciseg" role="radiogroup" aria-label="Soort Key Result" style="justify-self:start"><label><input type="radio" name="kind" value="outcome" ${(k?.kind||'outcome')==='outcome'?'checked':''}><span>Uitkomst</span></label><label><input type="radio" name="kind" value="learning" ${k?.kind==='learning'?'checked':''}><span>Leerdoel</span></label></div><span class="hint">Leerdoel: voor nieuw of complex werk waar de aanpak nog niet vaststaat, bijv. "3 aanpakken getest en gekozen". Daar werkt een leerdoel beter dan een harde uitkomst.</span></div>
   <div class="grid2"><div class="field"><label for="kf-due">Streefdatum</label><input class="input" id="kf-due" type="date" name="due" value="${esc(k?.due||'')}"></div><div></div></div>
   <div class="field"><span class="lbl">Hangt af van</span><span class="hint">Alleen als dit KR echt pas kan bewegen nadat een ander KR staat.</span><div class="deps-pick">${objs().map(oo=>oo.krs.filter(x=>x.id!==k?.id).map(x=>`<label class="dep-opt"><input type="checkbox" name="dep" value="${x.id}" ${(k?.dependsOn||[]).includes(x.id)?'checked':''}><span><b>${oo.id===o.id?'':esc(oo.name)+' · '}${esc(krName(x))}</b> ${esc(x.title)}</span></label>`).join('')).join('')}</div></div>
@@ -2208,7 +2289,7 @@ document.addEventListener('submit',e=>{
   if(k==='review'){const r={id:uid(),date:iso(),wins:g('wins'),learned:g('learned'),stop:g('stop'),next:g('next')};if(!r.wins&&!r.learned&&!r.stop&&!r.next){toast('Schrijf minstens één observatie op.');return}commit(()=>{db.reviews.unshift(r);log('review','Weekreview')},{msg:'Review vastgelegd'});return}
   if(k==='obj'){const o=obj(f.dataset.id),v={name:g('name'),objective:g('objective'),color:fd.get('color')||COLORS[0]};if(!v.name||!v.objective)return;let id=o?.id;closeLayer(true);commit(()=>{if(o)Object.assign(o,v);else{id=uid();db.objectives.push({id,...v,archived:false,krs:[],initiatives:[]})}},{msg:o?'Opgeslagen':'Objective gemaakt. Voeg een Key Result toe.'});if(!o)go('/o/'+id);return}
   if(k==='kr'){const o=obj(f.dataset.o),kk=o.krs.find(x=>x.id===f.dataset.id),v={title:g('title'),short:g('short'),description:g('description'),target:Number(fd.get('target'))||1,unit:g('unit')||'mijlpaal',due:g('due'),dependsOn:fd.getAll('dep'),kind:g('kind')||'outcome'};if(!v.title)return;
-    const ids=fd.getAll('ev_id'),titles=fd.getAll('ev_title').map(clean),old=kk?.evidence||[],ev=[];titles.forEach((tt,ix)=>{if(!tt)return;const prev=old.find(e=>e.id===ids[ix]);ev.push(prev?{...prev,title:tt}:{id:uid(),title:tt,done:false,doneAt:null})});
+    const ids=fd.getAll('ev_id'),titles=fd.getAll('ev_title').map(clean),dues=fd.getAll('ev_due'),old=kk?.evidence||[],ev=[];titles.forEach((tt,ix)=>{if(!tt)return;const prev=old.find(e=>e.id===ids[ix]),due=dues[ix]||'';ev.push(prev?{...prev,title:tt,due}:{id:uid(),title:tt,done:false,doneAt:null,due})});
     const seededSame=kk&&kk.evidenceSeeded&&JSON.stringify(ev.map(e=>e.title))===JSON.stringify(old.map(e=>e.title));
     closeLayer(true);commit(()=>{if(kk)Object.assign(kk,v,{evidence:ev,evidenceSeeded:!!seededSame});else o.krs.push({id:uid(),...v,evidence:ev,current:null,confidence:'unknown'})},{msg:'Key Result opgeslagen'});return}
   if(k==='init'){const o=obj(f.dataset.o),x=o.initiatives.find(i=>i.id===f.dataset.id),v={title:g('title'),description:g('description'),krId:g('krId'),status:g('status'),start:g('start'),end:g('end')};if(!v.title)return;if(v.start&&v.end&&v.end<v.start){toast('De einddatum ligt vóór de start.');return}closeLayer(true);commit(()=>{if(x)Object.assign(x,v);else o.initiatives.push({id:uid(),...v})},{msg:'Initiatief opgeslagen'});return}
@@ -3673,7 +3754,7 @@ function eRes(){const list=objs();
     <button class="link" data-a="new-obj">+ Objective</button></aside>
    <section class="e-omain" style="--c:${o.color}">
     <div class="e-ometa"><span class="dot" style="--c:${o.color}"></span>${esc(o.name)} · ${plural(o.krs.length,'Key Result','Key Results')}${o.context||o.achieved?` · <button class="link" data-a="e-why" aria-expanded="${E.why}">waarom en bereikt</button>`:''}<span class="spacer"></span>${membersOf(o.id).map(m=>avatar(m,22)).join('')}<button class="btn sm" data-a="e-objedit" data-id="${o.id}">Bewerk</button></div>
-    <h1 class="e-otitle">${esc(o.objective||o.name)}</h1>${objSentence(o)}
+    <h1 class="e-otitle">${esc(o.objective||o.name)}</h1>${objBar(o)}${objSentence(o)}
     ${E.why?`<div class="e-why">${o.context?`<p><b>Waarom</b> · ${esc(o.context)}</p>`:''}${o.achieved?`<p><b>Bereikt</b> · ${esc(o.achieved)}</p>`:''}</div>`:''}
     <div class="e-krs">${krs.map(k=>eKr(o,k)).join('')||'<p class="small">Geen Key Results in dit kwartaal.</p>'}</div>
     <div class="row e-krfoot">${later.length?`<button class="link quiet" data-a="e-q" data-v="Alles">${later.map(k=>esc(k.quarter||'')).filter((v,i,a)=>a.indexOf(v)===i).join(', ')} · ${plural(later.length,'KR','KR\'s')}</button>`:''}<span class="spacer"></span><button class="link" data-a="e-kradd" data-id="${o.id}">+ Key Result</button></div>
@@ -3806,13 +3887,13 @@ const dnum=d=>new Date(d+'T12:00').getDate();
 /* ---------- navigatie: Nu, Week, Resultaten ---------- */
 function renderRail(){renderQuarter();
   const v=route.view,item=(h,ic,l,cur,badge='')=>`<a class="nav-item e-nav" href="#${h}" ${cur?'aria-current="page"':''}>${I(ic)}<span class="nm">${l}</span>${badge}</a>`,wm=waitMeList().length;
-  $('#nav').innerHTML=item('/','home','Nu',v==='home'||v==='samen',wm?`<span class="e-badge warn" title="${wm} wacht op jou"></span>`:'')+item('/week','cal','Week',v==='week',eReviewDue()?'<span class="e-badge" title="Weekreview staat klaar"></span>':'')
-    +item('/resultaten','target','Resultaten',v==='res'||v==='kwartaal');
+  $('#nav').innerHTML=item('/','nu','Nu',v==='home'||v==='samen',wm?`<span class="e-badge warn" title="${wm} wacht op jou"></span>`:'')+item('/week','week','Week',v==='week',eReviewDue()?'<span class="e-badge" title="Weekreview staat klaar"></span>':'')
+    +item('/resultaten','res','Resultaten',v==='res'||v==='kwartaal');
   $('#objNav').innerHTML='';
   if(!$('#ePlus')){const b=document.createElement('button');b.id='ePlus';b.className='e-plus';b.dataset.a='capture';b.setAttribute('aria-label','Vastleggen (N)');b.title='Vastleggen (N)';b.innerHTML=I('plus');$('.rail-foot').prepend(b)}
 }
 function renderTabbar(){const v=route.view,t=(h,ic,l,cur)=>`<a href="#${h}" ${cur?'aria-current="page"':''}>${I(ic)}${l}</a>`;
-  $('#tabbar').innerHTML=t('/','home','Nu',v==='home'||v==='samen')+t('/week','cal','Week',v==='week')+`<button class="plus" data-a="capture" aria-label="Vastleggen"><span>${I('plus')}</span></button>`+t('/resultaten','target','Resultaten',v==='res'||v==='kwartaal')}
+  $('#tabbar').innerHTML=t('/','nu','Nu',v==='home'||v==='samen')+t('/week','week','Week',v==='week')+`<button class="plus" data-a="capture" aria-label="Vastleggen"><span>${I('plus')}</span></button>`+t('/resultaten','res','Resultaten',v==='res'||v==='kwartaal')}
 
 /* ---------- Nu ---------- */
 function eWaitRow(t){const m=member(t.owner),od=t.followUp&&t.followUp<=iso(),fn=m?esc(m.name.split(' ')[0]):'';
@@ -3836,7 +3917,7 @@ function eNu(){
     return `<div class="f-res" style="--c:${r2.o.color}"><div class="f-res-h"><a href="#/resultaten/${r2.o.id}/${kk.id}"><span class="dot" style="--c:${r2.o.color}"></span>${esc(krN(r2))}</a><span class="small">${dn.length} van ${tot}</span></div>
      <ul class="f-steps">${dn.map(t=>fStepRow(t,t0)).join('')}${steps.map(t=>fStepRow(t,t0)).join('')}</ul>
      <form class="e-add sm" data-form="e-step" data-o="${r2.o.id}" data-kr="${kk.id}" data-ws="${ws}">${I('plus')}<input name="title" placeholder="${steps.length?'Volgende stap':'Eerste stap…'}" aria-label="Stap toevoegen bij ${esc(krN(r2))}" maxlength="250" autocomplete="off"></form></div>`};
-  const tl=today.length?`<ul class="e-list">${today.map(t=>eRow(t,{meta:false})).join('')}</ul>`:'';
+  const todayAll=open().filter(x=>mineOpen(x)&&x.notNow!==t0&&(x.planDay===t0||x.today===t0)).sort((a,b)=>(a.slot?toMin(a.slot.start):9999)-(b.slot?toMin(b.slot.start):9999)),tl=todayAll.length?`<ul class="e-list">${todayAll.map(t=>eRow(t,{meta:false})).join('')}</ul>`:'';
   return `<div class="page e-page e-nu">
    <div class="e-date">${esc(date[0].toUpperCase()+date.slice(1))}${df?` · ${df.loc} · ${esc(df.label)}`:''}</div>
    ${quarterLine()}
@@ -3935,7 +4016,7 @@ function eReview(){const ws=weekStart(),krs=wkKRs(ws),nws=addDays(ws,7),q=quarte
   if(!E.rvOrder||E.rvOrder.some(id=>!krs.includes(id)))E.rvOrder=[...krs].sort((a,b)=>rvRank(stored(a))-rvRank(stored(b)));
   const ans=id=>E.rvAns[id]||{},val=id=>ans(id).v||stored(id);
   const row=id=>{const r=krById(id),k=r.k,a=ans(id),v=val(id),dn=db.tasks.filter(t=>t.krId===k.id&&!t.owner&&!t.dropped&&(inW(t.planDay)||t.week===ws||inW(t.doneAt))),done=dn.filter(t=>t.done).length,gave=db.tasks.filter(t=>t.krId===k.id&&t.owner&&t.done&&inW(t.doneAt)).length,bad=v==='risk'||v==='blocked',n=rvStreak(id);
-    const head=`<div class="f-rr-h"><span class="dot" style="--c:${r.o.color}"></span><b>${esc(krN(r))}</b>${progG(k)}${stripG(k)}<span class="spacer"></span><span class="small">${done} van ${dn.length} stappen${gave?` · ${gave} door anderen`:''}</span></div>`;
+    const head=`<div class="f-rr-h"><span class="dot" style="--c:${r.o.color}"></span><b>${esc(krN(r))}</b>${hDelta(k,ws)}${stripG(k)}<span class="spacer"></span><span class="small">${done} van ${dn.length} stappen${gave?` · ${gave} door anderen`:''}</span></div>`;
     const pills=`<div class="f-pills" role="group" aria-label="Hoe staat ${esc(krN(r))}">${CONF3.map(([c,l])=>`<button class="${confC(c)}" data-a="f-rv-conf" data-id="${id}" data-v="${c}" aria-pressed="${v===c}">${l}</button>`).join('')}</div>`;
     if(v==='on'&&!E.rvOpen[id]&&!a.note&&!a.next)return `<section class="f-rr compact" style="--c:${r.o.color}">${head}${pills}<button class="link quiet" data-a="g-rv-open" data-id="${id}">Toelichting of volgende stap toevoegen</button></section>`;
     const warn=v==='risk'&&n>=1?`<div class="g-warn" role="alert"><b>${n===1?'Tweede week op rij op Risico.':'Derde week op rij op Risico. Dat mag niet.'}</b> De gids: twee keer geel, dan beslis je. <span class="g-opts"><button class="btn sm" data-a="g-rv-red" data-id="${id}">Noem het rood</button><button class="btn sm" data-a="g-rv-help" data-id="${id}">Vraag hulp</button><button class="btn sm" data-a="e-kredit" data-o="${r.o.id}" data-id="${id}">Pas het plan aan</button></span></div>`:'';
@@ -3949,7 +4030,7 @@ function eReview(){const ws=weekStart(),krs=wkKRs(ws),nws=addDays(ws,7),q=quarte
   const bad=E.rvOrder.filter(id=>['risk','blocked'].includes(val(id))).length;
   return `<div class="page e-page e-week f-review">
    <div class="e-top"><h1>Week ${isoWeek(ws)}</h1><span class="muted">review</span><span class="spacer"></span><a class="link" href="#/week">Terug naar de week</a></div>
-   <div class="f-rgrid"><div class="f-rleft"><div class="lbl">Hoe staat het? ${bad?`<span class="warn">· ${plural(bad,'resultaat','resultaten')} met aandacht`:'· rode en gele eerst'}</span></div>${E.rvOrder.map(row).join('')}
+   <div class="f-rgrid"><div class="f-rleft">${rvSummaryH(ws,krs)}<div class="lbl">Hoe staat het? ${bad?`<span class="warn">· ${plural(bad,'resultaat','resultaten')} met aandacht`:'· rode en gele eerst'}</span></div>${E.rvOrder.map(row).join('')}
      <details class="g-guide"><summary>Wat is een goede update?</summary><div><p>Vier vragen: <b>waar sta je</b> (getal of stap), <b>haal je het</b> (kleur), <b>wat veranderde</b>, <b>wat nu</b> (stap en hulp).</p><p class="g-ex"><span>Zwak:</span> “Goede voortgang, veel gesproken, volgende week meer.”<br><span>Sterk:</span> “Twee van de vier criteria klaar. Risico: de sessie schuift. Volgende stap: deelnemers uitnodigen; ik heb een besluit van Tom nodig vóór woensdag.”</p></div></details>
      <div class="field" style="margin-top:6px"><label for="rv-wins" class="lbl">Eén zin terug <span class="small">optioneel</span></label><input class="input" id="rv-wins" data-rvend="wins" value="${esc(E.rvEnd.wins||'')}" placeholder="Wat ging goed of wat leerde je?" maxlength="300"></div></div>
     <aside class="f-rright">
@@ -4037,6 +4118,218 @@ function hintKr(el){const t=el.value.trim(),h=hintBox(el);if(t.length<8){h.textC
 function hintObj(el){const t=el.value.trim(),h=hintBox(el);if(t.length<8){h.textContent='';h.className='g-hint';return}
   if(/\d/.test(t)||/^(lever|implementeer|bouw|ontwikkel|lanceer|organiseer)\w*/i.test(t)){h.className='g-hint warn';h.textContent='Een objective is een richting, geen taak of getal. Zet getallen in de Key Results.'}
   else{h.className='g-hint ok';h.innerHTML=`Leest als: “We willen ${esc(t.charAt(0).toLowerCase()+t.slice(1))}, gemeten aan …”. Maak daarna drie of vier Key Results.`}}
+
+/* ---- 98-h.js ---- */
+/* ================= Focus H · de Keten: stap → mijlpaal → key result → objective ================= */
+// Bewijsstappen zijn mijlpalen (k.evidence[], nu met optionele datum e.due). Een stap hoort bij een mijlpaal (t.msId);
+// zonder msId telt een open stap bij de eerstvolgende open mijlpaal van zijn KR. Voortgang wordt afgeleid, niet ingetypt.
+// Nieuwe optionele velden: e.due (mijlpaal), t.msId, t.dur (duur zonder kalendertijd).
+Object.assign(E,{hOpen:null,hSug:null});
+Object.assign(P,{
+  nu:'<circle class="t" cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.7" fill="currentColor" stroke="none"/>',
+  week:'<rect class="t" x="3.5" y="5" width="17" height="15.5" rx="3.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/><g fill="currentColor" stroke="none"><circle cx="8" cy="14" r="1.1"/><circle cx="12" cy="14" r="1.1"/><circle cx="16" cy="14" r="1.1"/><circle cx="8" cy="17.3" r="1.1"/><circle cx="12" cy="17.3" r="1.1"/></g>',
+  res:'<path d="M3 20.5h5.2v-4.6h5.2v-4.6h5.2"/><path d="M18.6 11.3V3.4"/><path class="t" d="M18.6 3.4l3.4 2.1-3.4 2.1z"/>',
+  obj:'<path d="M6 21V3.8"/><path class="t" d="M6 4.5h11.5l-2.6 3.9 2.6 3.9H6"/>',
+  kr:'<rect class="t" x="2.8" y="8.6" width="18.4" height="6.8" rx="3.4"/><rect x="5.2" y="11" width="8.2" height="2" rx="1" fill="currentColor" stroke="none"/>',
+  ms:'<path class="t" d="M12 3.3l8.7 8.7-8.7 8.7L3.3 12z"/>',
+  step:'<rect class="t" x="3.5" y="3.5" width="17" height="17" rx="5"/><path d="m8 12.4 2.9 2.9 5.3-6"/>'});
+
+/* ---------- model: mijlpalen, stappen, voortgang ---------- */
+const FOCUS_MIN=360;
+const stepDur=t=>Number(t.slot?.dur)||Number(t.dur)||30;
+const firstOpen=k=>(k.evidence||[]).find(e=>!e.done)||null;
+const stepsOfKr=k=>db.tasks.filter(t=>!t.dropped&&t.krId===k.id&&krOf(t));
+const msOfTask=(t,k)=>(k.evidence||[]).find(e=>e.id===t.msId)||firstOpen(k);
+const counts=t=>t.done?!!t.msId||inWeekD(t.doneAt,weekStart()):true;
+const msSteps=(k,e)=>stepsOfKr(k).filter(t=>counts(t)&&msOfTask(t,k)===e);
+const simDone=(t,s)=>s&&s.undone?.has(t.id)?false:(s&&s.done?.has(t.id))||t.done;
+const simMs=(e,s)=>s&&s.evUn?.has(e.id)?false:(s&&s.ms?.has(e.id))||e.done;
+function msFrac(k,e,s){if(simMs(e,s))return 1;const st=msSteps(k,e);if(!st.length)return 0;return st.filter(t=>simDone(t,s)).length/st.length}
+const msPct=(k,e,s)=>Math.round(msFrac(k,e,s)*100);
+function krPct(k,s){if(achieved(k))return 100;
+  if(k.evidence.length)return Math.round(k.evidence.reduce((a,e)=>a+msFrac(k,e,s),0)/k.evidence.length*100);
+  if(isMilestone(k))return 0;return Math.max(0,Math.min(100,Math.round(Number(k.current||0)/Number(k.target||1)*100)))}
+const objKRs=o=>{const q=quarter();return o.krs.filter(k=>(!k.quarter||k.quarter===q)&&k.parkedQ!==q)};
+function objPct(o,s){const ks=objKRs(o);return ks.length?Math.round(ks.reduce((a,k)=>a+krPct(k,s),0)/ks.length):0}
+function progPct(k){return krPct(k)}
+function krSchema(k){const dated=(k.evidence||[]).filter(e=>e.due);if(!dated.length)return{s:'none'};
+  const late=dated.filter(e=>!e.done&&e.due<iso()).sort((a,b)=>a.due.localeCompare(b.due));
+  return late.length?{s:'late',n:late.length,e:late[0],days:dayDiff(iso(),late[0].due)}:{s:'ok'}}
+const schemaChip=k=>{const s=krSchema(k);return s.s==='late'?`<span class="h-chip w">${s.days>=7?Math.round(s.days/7)+' wk':s.days+' d'} achter</span>`:s.s==='ok'?'<span class="h-chip ok">op schema</span>':''};
+const wkSteps=k=>{const ws=weekStart();return stepsOfKr(k).filter(t=>!t.owner&&!t.done&&(inWeekD(t.planDay,ws)||t.week===ws))};
+const isUnplanned=(t,days,t0)=>!t.done&&(!t.planDay||!days.includes(t.planDay)||t.planDay<t0);
+
+/* ---------- bouwstenen ---------- */
+const hCrumb=(o,k,e)=>`<span class="h-crumb"><span class="dot" style="--c:${o.color}"></span><b>${esc(o.name)}</b>${k?`<i>›</i>${I('kr','hi')}${esc(krName(k))}`:''}${e?`<i>›</i>${I('ms','hi')}${esc(e.title)}`:''}</span>`;
+const hBar=(a,b,color)=>`<div class="h-prog"><div class="h-bar"><i class="aft" style="width:${b??a}%"></i><i style="width:${a}%;background:${color}"></i></div><b>${b!=null&&b!==a?`${a}% → <span class="up">${b}%</span>`:a+'%'}</b></div>`;
+const hNode=(lvl,ic,color,title,meta,body='',cls='')=>`<div class="h-node ${cls}" style="--c:${color}"><span class="h-badge">${I(ic)}</span><div class="h-card"><div class="h-lvl"><span class="lbl">${lvl}</span><span class="spacer"></span><span class="small">${meta}</span></div><div class="h-t">${title}</div>${body}</div></div>`;
+const hLink=txt=>`<div class="h-link"><b>↳</b> ${txt}</div>`;
+const hDelta=(k,ws)=>{const un=new Set(db.tasks.filter(t=>t.krId===k.id&&t.done&&inWeekD(t.doneAt,ws)).map(t=>t.id)),ev=new Set(k.evidence.filter(e=>e.done&&inWeekD(e.doneAt,ws)).map(e=>e.id)),a=krPct(k,{undone:un,evUn:ev}),b=krPct(k);return `<span class="h-delta">${a}% → <b class="${b>a?'up':''}">${b}%</b></span>`};
+
+/* ---------- Nu: de keten ---------- */
+function eNu(){
+  if(!objs().length&&!db.tasks.length)return `<div class="page e-page">${loginCard()||'<p class="muted">Nog geen objectives. Begin bij Resultaten.</p>'}</div>`;
+  const {first:f,today,late,planned}=eFocus(),d=new Date(),t0=iso(),ws=weekStart(),df=dayFocus(d),date=d.toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'});
+  const r=f&&krOf(f),k=r?.k,o=r?.o,wl=waitingList(),wk=wkKRs(ws).map(krById).filter(Boolean),onToday=f&&(f.planDay===t0||f.today===t0);
+  const lab=!f?'':onToday&&f.slot?`Nu in je agenda · ${f.slot.start}–${endOf(f.slot)}`:onToday?'Vandaag gepland':f.planDay&&f.planDay<t0?`Blijven liggen van ${dayLabel(f.planDay)}`:'Jouw volgende stap';
+  const acts=f?`<div class="h-acts"><button class="btn primary lg" data-a="e-done" data-id="${f.id}">${I('check')} Gedaan</button>${onToday?'':`<button class="btn lg e-ghost" data-a="e-today" data-id="${f.id}">Doe vandaag</button>`}${r?`<button class="btn lg e-ghost" data-a="e-open-kr" data-id="${k.id}">Open KR</button>`:`<button class="btn lg e-ghost" data-a="e-link-kr" data-id="${f.id}">Koppel aan een KR</button>`}<span class="spacer"></span><button class="link quiet" data-a="e-notnow" data-id="${f.id}">Volgende stap</button><button class="e-more" data-a="e-menu" data-id="${f.id}" aria-label="Meer">${I('dots')}</button></div>`:'';
+  let chain='';
+  if(f&&r){
+    const e=msOfTask(f,k),st=e?msSteps(k,e):[],dn=st.filter(t=>t.done).length,sim={done:new Set([f.id])},nK=objKRs(o).length;
+    const pv=`<div class="h-prev">Na afvinken: ${e?`mijlpaal ${msPct(k,e)} → <b>${msPct(k,e,sim)}%</b> · `:''}KR ${krPct(k)} → <b>${krPct(k,sim)}%</b> · objective ${objPct(o)} → <b>${objPct(o,sim)}%</b></div>`;
+    chain=`<div class="h-chain">${hNode('Objective','obj',o.color,esc(o.name),`${quarter()} · ${plural(nK,'key result','key results')}`,hBar(objPct(o),null,o.color))}
+      ${hLink(`bestaat uit ${plural(nK,'key result','key results')}; <b>${esc(krName(k))}</b> is jouw focus`)}
+      ${hNode('Key result','kr',o.color,esc(k.title),k.due?'streefdatum '+fmt(k.due):'',`${hBar(krPct(k),null,o.color)}<div class="h-sub">${k.evidence.length?`${evDone(k)} van ${k.evidence.length} mijlpalen`:'Nog geen mijlpalen'} ${schemaChip(k)}</div>`)}
+      ${e?`${hLink(`volgende mijlpaal: <b>${esc(e.title)}</b>${e.due?', '+fmt(e.due):''}`)}
+      ${hNode('Mijlpaal','ms',o.color,esc(e.title),`${dn} van ${st.length} stappen`,hBar(msPct(k,e),null,o.color))}
+      ${hLink(`na deze stap: <b>${Math.min(st.length,dn+1)} van ${st.length}</b>`)}`:hLink('deze KR heeft nog geen mijlpaal. <a class="link" href="#/resultaten/'+o.id+'/'+k.id+'">Leg er een vast</a>')}
+      ${hNode(lab,'step','var(--accent)',esc(f.title),'',acts+pv,'active')}</div>`;
+  }else if(f){
+    chain=`<div class="h-chain">${hNode(lab,'step','var(--accent)',esc(f.title),'<button class="link inv" data-a="e-link-kr" data-id="'+f.id+'">Koppel aan een Key Result</button>',acts,'active')}</div>`;
+  }else{
+    chain=`<div class="h-chain">${hNode('Nu','nu','var(--accent)',planned?'Alle stappen van deze week zijn gedaan':'Waar werk je deze week aan?',' ',`<div class="h-sub">${planned?'Voeg een stap toe bij een mijlpaal, of leg iets vast.':'Kies tot drie resultaten uit je objectives en bepaal de eerste stap.'}</div><div class="h-acts"><a class="btn primary lg" href="#/week">${planned?'Naar je week':'Kies je week'}</a><button class="btn lg e-ghost" data-a="capture">${I('plus')} Vastleggen</button></div>`,'active')}</div>`;
+  }
+  const todayAll=open().filter(x=>mineOpen(x)&&x.notNow!==t0&&(x.planDay===t0||x.today===t0)&&x!==f).sort((a,b)=>(a.slot?toMin(a.slot.start):9999)-(b.slot?toMin(b.slot.start):9999));
+  const after=open().filter(x=>mineOpen(x)&&x!==f&&!todayAll.includes(x)&&wk.some(w=>w.k.id===x.krId)).sort((a,b)=>(a.planDay||'9999').localeCompare(b.planDay||'9999')||(a.rank||0)-(b.rank||0)).slice(0,4);
+  const touched=wk.filter(w=>w.k.evidence.some(x=>x.done&&inWeekD(x.doneAt,ws))).length;
+  const addTo=f&&r?`<form class="e-add" data-form="h-step" data-o="${o.id}" data-kr="${k.id}" data-ms="${msOfTask(f,k)?.id||''}" data-ws="${ws}">${I('plus')}<input name="title" placeholder="Stap toevoegen bij ${esc(msOfTask(f,k)?.title||krName(k))}…" aria-label="Stap toevoegen" maxlength="250" autocomplete="off"></form>`:'';
+  return `<div class="page e-page e-nu h-nu">
+   <div class="e-date">${esc(date[0].toUpperCase()+date.slice(1))}${df?` · ${df.loc} · ${esc(df.label)}`:''}</div>
+   ${quarterLine()}
+   ${eReviewDue()?`<a class="e-banner" href="#/week/review"><b>Weekreview</b><span>Eén scherm, drie minuten. Daarna staat volgende week klaar.</span><span class="spacer"></span><span class="link">Start review</span></a>`:''}
+   <div class="h-cols"><section class="h-main">${chain}
+     ${after.length||addTo?`<div class="e-h" style="margin-top:22px"><span class="lbl">Daarna in je week</span><a class="small link quiet" href="#/week">Week →</a></div><ul class="e-list">${after.map(t=>eRow(t)).join('')}</ul>${addTo}`:''}</section>
+    <aside class="h-side">
+     <div><div class="e-h"><span class="lbl">Vandaag</span></div>${todayAll.length?`<ul class="e-list">${todayAll.map(t=>eRow(t)).join('')}</ul>`:`<p class="small">${f&&(f.planDay===t0||f.today===t0)?'Verder niets voor vandaag.':'Nog niets op vandaag. Kies “Doe vandaag” bij een stap.'}</p>`}
+      ${late.length?`<div class="small warn" style="margin:12px 0 2px">Blijven liggen deze week</div><ul class="e-list">${late.map(t=>eRow(t,{meta:false})).join('')}</ul>`:''}
+      <form class="e-add" data-form="e-today">${I('plus')}<input name="title" placeholder="Actie voor vandaag…" aria-label="Actie voor vandaag" maxlength="250" autocomplete="off"></form></div>
+     <div><div class="e-h"><span class="lbl">Wacht op anderen</span><span class="small">${wl.length||''}</span></div>${wl.length?`<ul class="e-list">${wl.slice(0,5).map(eWaitRow).join('')}</ul>`:`<p class="small">Niets uitstaand. Delegeren doe je via ⋯ bij een actie.</p>`}</div>
+     ${wk.length?`<div class="h-week"><span class="lbl">Deze week bijgedragen</span><div class="h-big">${touched} <span>van ${wk.length} resultaten bewogen</span></div><div class="h-bar"><i style="width:${Math.round(touched/wk.length*100)}%;background:var(--ok)"></i></div><a class="small link quiet" href="#/week">Bij Week staat de rest</a></div>`:''}
+    </aside></div></div>`}
+
+/* ---------- afvinken: wat bewoog het? ---------- */
+function afterDone(t,snap,wasLast){
+  const undo={label:'Ongedaan maken',fn:()=>{db=JSON.parse(snap);save();render();refreshOpenSheet()}};
+  if(!t.done){toastActs('Heropend',[undo]);return}
+  const r=krOf(t);if(!r){toastActs(t.objectiveId?`Afgerond · ${obj(t.objectiveId)?.name}`:'Afgerond',[undo]);return}
+  const {o,k}=r,e=msOfTask(t,k),s={undone:new Set([t.id])},acts=[undo];
+  const parts=[];if(e)parts.push(`${e.title} ${msPct(k,e,s)}→${msPct(k,e)}%`);parts.push(`${krName(k)} ${krPct(k,s)}→${krPct(k)}%`,`${o.name} ${objPct(o,s)}→${objPct(o)}%`);
+  if(e&&!e.done){const st=msSteps(k,e);if(st.length&&st.every(x=>x.done))acts.unshift({label:'Mijlpaal gehaald',fn:()=>ACT.ev({dataset:{id:k.id,e:e.id}})})}
+  toastActs('Gedaan · '+parts.join(' · '),acts,9500);
+}
+
+/* ---------- Week kiezen: mijlpalen die je deze week dichterbij brengt ---------- */
+function eChoose(ws){const prev=wkKRs(addDays(ws,-7));if(!E.pick)E.pick=wkKRs(ws).length?wkKRs(ws):prev.filter(id=>krById(id)&&!achieved(krById(id).k)).slice(0,3);
+  const q=quarter(),rank=k=>(krSchema(k).s==='late'?0:2)+((krStale(k)??0)>=14?-1:0);
+  const groups=objs().filter(o=>E.onb||!isOnb(o)).map(o=>({o,krs:o.krs.filter(k=>!achieved(k)&&(!k.quarter||k.quarter===q)&&k.parkedQ!==q).sort((a,b)=>rank(a)-rank(b))})).filter(g=>g.krs.length);
+  const cand=(o,k)=>{const e=firstOpen(k),on=E.pick.includes(k.id),stl=krStale(k),st=e?msSteps(k,e):[],dn=st.filter(t=>t.done).length,sc=krSchema(k);
+    const chips=(sc.s==='late'?schemaChip(k):'')+(stl!=null&&stl>=14?`<span class="h-chip bad">stilgevallen · ${Math.round(stl/7)} weken</span>`:'')+(prev.includes(k.id)?'<span class="h-chip">vorige week ook</span>':'')+(sc.s==='ok'?schemaChip(k):'');
+    return `<button class="e-cand h-cand ${on?'on':''}" data-a="e-pick" data-id="${k.id}" aria-pressed="${on}"><span class="e-cbox">${on?I('check'):''}</span><span class="e-cand-m">${hCrumb(o,k)}<span class="e-cand-t">${e?I('ms','hi')+' '+esc(e.title):esc(k.title)}</span><span class="e-cand-w">${e?`${e.due?'streefdatum '+fmt(e.due)+' · ':''}${st.length?`${dn} van ${st.length} stappen`:'nog geen stappen'}`:'nog geen mijlpalen'} · ${krPct(k)}%</span>${chips?`<span class="h-chips">${chips}</span>`:''}</span></button>`};
+  const sim={done:new Set(),ms:new Set()},picks=E.pick.map(id=>krById(id)).filter(Boolean);
+  picks.forEach(({k})=>{const e=firstOpen(k);if(e){sim.ms.add(e.id)}});
+  const ob=[...new Set(picks.map(p=>p.o))];
+  const sum=picks.length?`<div class="h-sum"><div class="lbl">Als je deze week alle gekozen mijlpalen haalt</div><div class="h-sum-t">${plural(picks.length,'mijlpaal','mijlpalen')} · ${picks.map(({o,k})=>`${esc(krName(k))} <b>${krPct(k)} → ${krPct(k,sim)}%</b>`).join(' · ')}${ob.length?' · '+ob.map(o=>`${esc(o.name)} <b>${objPct(o)} → ${objPct(o,sim)}%</b>`).join(' · '):''}</div></div>`:'';
+  const btn=`${wkKRs(ws).length?`<button class="btn ghost" data-a="e-pick-cancel">Annuleren</button>`:''}<button class="btn primary" data-a="e-pick-save" ${E.pick.length?'':'disabled'}>${!E.pick.length?'Kies resultaten':'Verder: stappen plannen →'}</button>`;
+  return `<div class="e-h e-choose-h"><span class="lbl">Welke mijlpalen breng je deze week dichterbij?</span><span class="small">${E.pick.length} van max. 3</span><span class="spacer"></span>${btn}</div>
+   <p class="small" style="margin:0 0 12px">Kies er één tot drie. Achterlopende en stilgevallen staan bovenaan. Je doelverdeling: ${esc(Object.entries(weekTargets()).map(([b,v])=>bucketName(b)+' '+v+'%').join(', ')||'—')}.</p>
+   <div class="e-ogroups">${groups.map(g=>`<section class="e-og" style="--c:${g.o.color}"><header><span class="dot" style="--c:${g.o.color}"></span><b>${esc(g.o.name)}</b>${g.o.objective?`<span class="small">${esc(g.o.objective)}</span>`:''}</header>${g.krs.map(k=>cand(g.o,k)).join('')}</section>`).join('')||'<p class="small">Geen open Key Results in dit kwartaal.</p>'}</div>
+   ${sum}
+   <div class="row e-choose-foot">${!E.onb&&objs().some(isOnb)?'<button class="link quiet" data-a="f-onb">Onboarding (persoonlijk) tonen</button>':''}<span class="spacer"></span>${btn}</div>`}
+
+/* ---------- Week plannen: per mijlpaal een dag kiezen ---------- */
+const DAYSHORT=['Ma','Di','Wo','Do','Vr'];
+function dayLoad(days,ws){const c=db.settings.rhythm?.checkin,L={};days.forEach((d,i)=>{const its=db.tasks.filter(t=>!t.dropped&&!t.owner&&t.planDay===d);let m=its.reduce((a,t)=>a+stepDur(t),0);const rv=!!(c?.on&&Number(c.day)===i+1&&ws===weekStart());if(rv)m+=Number(c.dur)||20;L[d]={its,m,rv}});return L}
+const loadTxt=(m)=>{const f=FOCUS_MIN-m;return f>=60?(Math.round(f/6)/10+'').replace('.',',')+' u vrij':f>0?f+' min vrij':'vol'};
+function hStepRow(t,days,t0,ws,L,msList,open_){
+  const m=member(t.owner),un=isUnplanned(t,days,t0);
+  if(t.owner)return `<div class="h-srow ext"><span class="e-chk off"></span><div class="h-st"><button class="e-tt" data-a="e-deleg" data-id="${t.id}">${esc(t.title)}</button><div class="small">${m?avatar(m,16):''} Bij ${esc(m?.name||'iemand')}${t.followUp?' · terug '+dayLabel(t.followUp):''}</div></div></div>`;
+  const chips=days.map((d,i)=>`<button class="h-day ${t.planDay===d?'on':''}" data-a="h-day" data-id="${t.id}" data-d="${d}" ${d<t0&&t.planDay!==d?'disabled':''} aria-pressed="${t.planDay===d}" aria-label="${DAYSHORT[i]}">${DAYSHORT[i]}</button>`).join('');
+  const panel=open_?`<div class="h-panel"><div class="lbl">Wanneer?</div><div class="h-opts">${days.map((d,i)=>{const sug=E.hSug?.[t.id]===d;return `<button class="h-opt ${t.planDay===d?'on':''} ${sug?'sug':''}" data-a="h-day" data-id="${t.id}" data-d="${d}" ${d<t0&&t.planDay!==d?'disabled':''}><b>${DAYSHORT[i]}</b><span>${d<t0?'voorbij':loadTxt(L[d].m)}</span></button>`}).join('')}</div>
+    <div class="h-prow"><label>Tijd <input type="time" step="900" data-hf="time" data-id="${t.id}" value="${esc(t.slot?.start||'')}" ${t.planDay?'':'disabled'}></label>
+     <span class="h-dur">Duur <button data-a="h-dur" data-id="${t.id}" data-v="-15" aria-label="Korter">−</button><b>${stepDur(t)} min</b><button data-a="h-dur" data-id="${t.id}" data-v="15" aria-label="Langer">+</button></span>
+     <label>Hoort bij <select data-hf="ms" data-id="${t.id}">${msList.map(e=>`<option value="${e.id}" ${msOfTask(t,krOf(t)?.k||{evidence:[]})===e?'selected':''}>${esc(e.title)}</option>`).join('')||'<option value="">—</option>'}</select></label></div>
+    <div class="h-prow"><button class="link quiet" data-a="e-deleg" data-id="${t.id}">Delegeren…</button><button class="link quiet bad" data-a="e-drop" data-id="${t.id}">Laat los</button><span class="spacer"></span><button class="btn sm primary" data-a="h-open" data-id="">Klaar</button></div></div>`:'';
+  if(t.done)return `<div class="h-srow done"><button class="e-chk" data-a="toggle" data-id="${t.id}" aria-pressed="true" aria-label="Heropen">${I('check')}</button><div class="h-st"><button class="e-tt" data-a="open-task" data-id="${t.id}">${esc(t.title)}</button></div><span class="small">gedaan ${dayLabel(t.doneAt)}</span></div>`;
+  return `<div class="h-srow ${open_?'open':''}"><button class="e-chk" data-a="toggle" data-id="${t.id}" aria-pressed="false" aria-label="Markeer als gedaan"></button><div class="h-st"><button class="e-tt" data-a="open-task" data-id="${t.id}">${esc(t.title)}</button>${un?`<div class="h-nod">● ${t.planDay&&t.planDay<t0?'was '+dayLabel(t.planDay):'nog geen dag'}</div>`:''}</div><button class="h-more" data-a="h-open" data-id="${t.id}" aria-expanded="${!!open_}" title="Tijd, duur en meer">${stepDur(t)} min</button><span class="h-days">${chips}</span>${panel}</div>`}
+function eWeek(){
+  if(route.sub==='review')return eReview();
+  const ws=addDays(weekStart(),7*E.wsOff),krs=wkKRs(ws),choosing=E.week==='kies'||!krs.length;
+  if(choosing)return `<div class="page e-page e-week">${fWeekTop(ws,krs)}<div class="f-choose">${eChoose(ws)}</div></div>`;
+  const days=weekDays(ws),t0=iso(),L=dayLoad(days,ws),mineT=t=>!t.dropped;
+  const groups=[];let unplanned=[];
+  krs.forEach(id=>{const r=krById(id),k=r.k,cur=firstOpen(k),by=new Map();if(cur)by.set(cur,[]);
+    stepsOfKr(k).forEach(t=>{const keep=t.done?inWeekD(t.doneAt,ws):(!t.owner||true);if(!keep)return;const e=msOfTask(t,k);
+      const rel=t.done||e===cur||inWeekD(t.planDay,ws)||t.owner;if(!rel)return;if(!by.has(e))by.set(e,[]);by.get(e).push(t)});
+    by.forEach((ts,e)=>{ts.sort((a,b)=>(a.rank||0)-(b.rank||0));groups.push({r,e,ts});ts.forEach(t=>{if(!t.owner&&isUnplanned(t,days,t0))unplanned.push(t)})})});
+  const loose=db.tasks.filter(t=>!t.dropped&&!t.owner&&(!krOf(t)||!krs.includes(t.krId))&&!t.done&&inWeekD(t.planDay,ws));
+  const nSteps=groups.reduce((a,g)=>a+g.ts.length,0)+loose.length,nMs=groups.filter(g=>g.e).length;
+  const card=g=>{const {r,e,ts}=g,k=r.k,st=e?msSteps(k,e):[],dn=st.filter(t=>t.done).length,after=e?krPct(k,{ms:new Set([e.id])}):null;
+    return `<section class="h-mcard" style="--c:${r.o.color}"><div class="h-mh">${I('ms','hi')}<div class="h-mt"><b>${e?esc(e.title):'Zonder mijlpaal'}</b>${hCrumb(r.o,k)}</div>${e?`<span class="h-chip ok" title="Als deze mijlpaal klaar is">Af = KR ${krPct(k)} → ${after}%</span>`:''}</div>
+     <div class="h-steps">${ts.map(t=>hStepRow(t,days,t0,ws,L,k.evidence.filter(x=>!x.done||x===e),E.hOpen===t.id)).join('')||'<p class="small" style="margin:6px 0">Nog geen stappen. Voeg de eerste toe.</p>'}</div>
+     <form class="e-add sm" data-form="h-step" data-o="${r.o.id}" data-kr="${k.id}" data-ms="${e?.id||''}" data-ws="${ws}">${I('plus')}<input name="title" placeholder="Stap toevoegen…" aria-label="Stap toevoegen bij ${esc(e?.title||krName(k))}" maxlength="250" autocomplete="off"></form></section>`};
+  const looseCard=loose.length?`<section class="h-mcard" style="--c:var(--ink-4)"><div class="h-mh"><div class="h-mt"><b>Overige stappen</b><span class="small">zonder gekozen resultaat</span></div></div><div class="h-steps">${loose.map(t=>hStepRow(t,days,t0,ws,L,[],E.hOpen===t.id)).join('')}</div></section>`:'';
+  const col=days.map((d,i)=>{const l=L[d],pct=Math.min(100,Math.round(l.m/FOCUS_MIN*100)),warn=l.m>=FOCUS_MIN*.85;
+    return `<div class="h-dcol ${d===t0?'today':''} ${d<t0?'past':''}"><div class="h-dh"><b>${DAYSHORT[i]} ${dnum(d)}</b>${d===t0?'<span class="small">vandaag</span>':''}<span class="spacer"></span><span class="small ${warn?'warn':''}">${d<t0?'voorbij':l.m>FOCUS_MIN?'te vol':warn?'bijna vol':loadTxt(l.m)}</span></div>
+     <div class="h-lbar"><i class="${warn?'w':''}" style="width:${pct}%"></i></div>
+     ${l.its.map(t=>`<div class="h-dit ${t.done?'done':''}"><span class="dot" style="--c:${obj(t.objectiveId)?.color||'var(--ink-4)'}"></span><span>${esc(t.title)}</span><small>${stepDur(t)}m</small></div>`).join('')}${l.rv?`<div class="h-dit rv"><span class="dot" style="--c:var(--ink-4)"></span><span>Weekreview</span><small>${db.settings.rhythm.checkin.time||'16:00'}</small></div>`:''}</div>`}).join('');
+  const ban=unplanned.length?`<div class="h-ban"><b>${plural(unplanned.length,'stap heeft','stappen hebben')} nog geen dag</b><span>Voorstel: ik verdeel ze over de dagen met de meeste ruimte.</span><span class="spacer"></span><button class="btn primary sm" data-a="h-suggest">Voorstel toepassen</button></div>`:'';
+  return `<div class="page e-page e-week h-week">${fWeekTop(ws,krs)}
+   <div class="h-sumrow"><h2>Plan je week</h2><span class="spacer"></span><span class="h-chip">${plural(nMs,'mijlpaal','mijlpalen')} · ${plural(nSteps,'stap','stappen')}</span>${unplanned.length?`<span class="h-chip w">${unplanned.length} zonder dag</span>`:''}<button class="link quiet" data-a="e-pick-edit">Andere mijlpalen kiezen</button></div>
+   ${ban}
+   <div class="h-wgrid"><div class="h-left">${groups.map(card).join('')}${looseCard}</div><aside class="h-right"><div class="lbl">Je week · ruimte voor ${FOCUS_MIN/60} u per dag</div>${col}<p class="small">Afspraken uit Outlook tellen hier niet mee; dit gaat over de stappen die jij inplant.</p></aside></div></div>`}
+
+/* ---------- Week: acties ---------- */
+const hPlace=(t,d)=>placeTask(t,d,d&&t.slot?.start||'',stepDur(t));
+Object.assign(ACT,{
+  'h-day':(b)=>{const t=task(b.dataset.id),d=b.dataset.d,same=t.planDay===d;delete E.hSug?.[t.id];commit(()=>hPlace(t,same?'':d),{msg:same?'Dag weggehaald':'Gepland op '+dayLabel(d)})},
+  'h-open':(b)=>{E.hOpen=b.dataset.id&&E.hOpen!==b.dataset.id?b.dataset.id:null;render()},
+  'h-dur':(b)=>{const t=task(b.dataset.id),n=Math.max(15,Math.min(240,stepDur(t)+Number(b.dataset.v)));commit(()=>{t.dur=n;if(t.slot)t.slot.dur=n})},
+  'h-suggest':()=>{const ws=addDays(weekStart(),7*E.wsOff),days=weekDays(ws),t0=iso(),L=dayLoad(days,ws),avail=days.filter(d=>d>=t0),sug={};
+    const krs=wkKRs(ws);if(!avail.length)return;
+    const plan=[];krs.forEach(id=>{const k=krById(id).k,cur=firstOpen(k);stepsOfKr(k).filter(t=>!t.owner&&!t.done&&msOfTask(t,k)===cur).sort((a,b)=>(a.rank||0)-(b.rank||0)).forEach(t=>plan.push(t))});
+    const prevDay={};
+    commit(()=>{plan.forEach(t=>{if(!isUnplanned(t,days,t0))return;const key=t.krId+'|'+(t.msId||''),min=prevDay[key]||avail[0];
+      const opts=avail.filter(d=>d>=min).sort((a,b)=>L[a].m-L[b].m||a.localeCompare(b));const d=opts[0]||avail.at(-1);
+      hPlace(t,d);L[d].m+=stepDur(t);prevDay[key]=d;sug[t.id]=d})},{msg:'Voorstel toegepast',undo:true});E.hSug=sug},
+});
+document.addEventListener('change',e=>{const el=e.target.closest?.('[data-hf]');if(!el)return;const t=task(el.dataset.id);if(!t)return;
+  if(el.dataset.hf==='time'){if(!t.planDay){toast('Kies eerst een dag.');return}commit(()=>{if(el.value)t.slot={start:el.value,dur:stepDur(t)};else delete t.slot})}
+  if(el.dataset.hf==='ms')commit(()=>{t.msId=el.value},{msg:'Andere mijlpaal'})});
+document.addEventListener('submit',e=>{const f=e.target;if(f.dataset.form!=='h-step')return;e.preventDefault();e.stopImmediatePropagation();
+  const title=clean(new FormData(f).get('title'));if(!title)return;
+  commit(()=>{db.tasks.push({id:uid(),title,objectiveId:f.dataset.o||'',krId:f.dataset.kr||'',msId:f.dataset.ms||'',notes:'',due:'',done:false,focus:false,waiting:false,blocker:'',today:'',rank:Date.now(),doneAt:null,steps:[],created:iso(),status:'todo',planDay:'',week:f.dataset.ws||'',owner:'',level:0,followUp:'',handover:''});log('create',title,f.dataset.o)},{msg:'Toegevoegd',undo:true});
+  const sel=`[data-form=h-step][data-kr="${f.dataset.kr}"][data-ms="${f.dataset.ms||''}"] input`;$(sel)?.focus()},true);
+
+/* ---------- Resultaten: dezelfde keten van boven naar beneden ---------- */
+function eKr(o,k){const on=E.kr===k.id,r={o,k},cur=firstOpen(k),ws=weekStart(),nw=wkSteps(k).length,opn=open().filter(t=>t.krId===k.id).length;
+  const wkChip=achieved(k)?'':nw?`<span class="h-chip">${plural(nw,'stap','stappen')} deze week</span>`:'<span class="h-chip w">Geen stap deze week</span>';
+  const headH=`<button class="e-krh" data-a="e-kr" data-id="${k.id}" aria-expanded="${on}"><span class="e-car">${on?'▾':'▸'}</span><span class="h-ic">${I('kr','hi')}</span><span class="e-krn"><b>${esc(krN(r))}</b><span class="small">${esc(k.title)}</span></span>${progG(k)}<span class="small h-mc">${k.evidence.length?`${evDone(k)} van ${k.evidence.length} mijlpalen`:'geen mijlpalen'}</span>${schemaChip(k)}${wkChip}${stripG(k)}${confTag(achieved(k)?'done':k.confidence)}</button>`;
+  if(!on)return `<div class="e-kr">${headH}</div>`;
+  const msBlock=e=>{const st=msSteps(k,e),late=!e.done&&e.due&&e.due<iso(),isCur=e===cur;
+    const head=`<div class="h-ms-h"><button class="h-ms-b ${e.done?'on':''}" data-a="ev" data-id="${k.id}" data-e="${e.id}" aria-pressed="${e.done}" aria-label="${e.done?'Mijlpaal weer open':'Mijlpaal gehaald'}">${I('ms','hi')}</button><span class="h-ms-t">${esc(e.title)}</span>${isCur?'<span class="h-chip">volgende</span>':''}${!e.done&&st.length?`<span class="small">${st.filter(t=>t.done).length} van ${st.length} stappen</span>`:''}<label class="h-due ${late?'late':''}"><span class="sr">Datum van ${esc(e.title)}</span><input type="date" data-msdue="${k.id}|${e.id}" value="${e.due||''}"></label></div>`;
+    if(e.done)return `<div class="h-ms done">${head}</div>`;
+    return `<div class="h-ms ${isCur?'cur':''}">${head}<ul class="e-list h-ms-l">${st.map(t=>eRow(t,{meta:false})).join('')}</ul><form class="e-add sm" data-form="h-step" data-o="${o.id}" data-kr="${k.id}" data-ms="${e.id}" data-ws="${ws}">${I('plus')}<input name="title" placeholder="Stap toevoegen…" aria-label="Stap toevoegen bij ${esc(e.title)}" maxlength="250" autocomplete="off"></form></div>`};
+  const orphan=db.tasks.filter(t=>t.krId===k.id&&!t.dropped&&!t.done&&!msOfTask(t,k));
+  const sc=krSchema(k),mine=[];
+  return `<div class="e-kr on">${headH}<div class="e-krb h-krb">
+   <div class="h-mss"><div class="lbl">Mijlpalen en stappen</div>${k.evidence.map(msBlock).join('')||'<p class="small">Nog geen mijlpalen. Een mijlpaal is een resultaat met een datum, bijvoorbeeld “sessie voorbereid”.</p>'}
+    ${orphan.length?`<div class="h-ms"><div class="h-ms-h"><span class="h-ms-t">Stappen zonder mijlpaal</span></div><ul class="e-list">${orphan.map(t=>eRow(t,{meta:false})).join('')}</ul></div>`:''}
+    <form class="e-add sm" data-form="ev-add" data-id="${k.id}">${I('plus')}<input name="title" placeholder="Mijlpaal toevoegen: een resultaat, geen taak" aria-label="Mijlpaal toevoegen" maxlength="200" autocomplete="off"></form></div>
+   <div class="h-krs">
+    <div><div class="lbl">Waarom deze KR</div><div style="margin:4px 0">${hCrumb(o)}</div><div class="small">Draagt <b>${Math.round(100/Math.max(1,objKRs(o).length))}%</b> bij aan ${esc(o.name)}.</div></div>
+    <div><div class="lbl">Schema</div><div class="small" style="margin-top:4px">${sc.s==='late'?`<b>${schemaChip(k).replace(/<[^>]+>/g,'')}</b>: “${esc(sc.e.title)}” hoorde op ${fmt(sc.e.due)} klaar te zijn.`:sc.s==='ok'?'Alle mijlpalen met een verstreken datum zijn gehaald.':'Zet een datum bij de mijlpalen om je schema te zien.'}</div></div>
+    <div><div class="lbl">Hoe staat het?</div>${confTag(achieved(k)?'done':k.confidence)}${k.confNote?`<div class="small" style="margin-top:6px">“${esc(k.confNote)}”</div>`:'<div class="small" style="margin-top:4px">Zet je in de weekreview.</div>'}</div>
+    <div class="h-tip">Een mijlpaal beschrijft een resultaat (“sessie voorbereid”), geen taak (“plannen”).</div>
+    <div class="e-krlinks"><button class="link quiet" data-a="e-kredit" data-o="${o.id}" data-id="${k.id}">Bewerk</button><button class="link quiet" data-a="g-park" data-id="${k.id}">${k.parkedQ===quarter()?'Terughalen':'Niet dit kwartaal'}</button></div>
+   </div></div></div>`}
+document.addEventListener('change',e=>{const el=e.target.closest?.('[data-msdue]');if(!el)return;const [kid,eid]=el.dataset.msdue.split('|'),r=krById(kid),ev=r?.k.evidence.find(x=>x.id===eid);if(!ev)return;commit(()=>{ev.due=el.value||''},{msg:el.value?'Datum gezet':'Datum weggehaald'})});
+const objBar=o=>{const ks=objKRs(o),n=ks.reduce((a,k)=>a+k.evidence.length,0),d=ks.reduce((a,k)=>a+evDone(k),0);return `<div class="h-oprog">${I('obj','hi')}<div class="h-bar"><i style="width:${objPct(o)}%;background:${o.color}"></i></div><b>${objPct(o)}%</b><span class="small">${d} van ${n} mijlpalen</span></div>`};
+
+/* ---------- Review: voor en na ---------- */
+function rvSummaryH(ws,krs){const ks=krs.map(id=>krById(id)).filter(Boolean),ev=ks.reduce((a,{k})=>a+k.evidence.filter(e=>e.done&&inWeekD(e.doneAt,ws)).length,0),
+  mine=db.tasks.filter(t=>!t.dropped&&!t.owner&&ks.some(x=>x.k.id===t.krId)&&(inWeekD(t.planDay,ws)||t.week===ws||inWeekD(t.doneAt,ws))),dn=mine.filter(t=>t.done).length,
+  os=[...new Set(ks.map(x=>x.o))],at=o=>{const un=new Set(db.tasks.filter(t=>t.done&&inWeekD(t.doneAt,ws)).map(t=>t.id)),evun=new Set(o.krs.flatMap(k=>k.evidence).filter(e=>e.done&&inWeekD(e.doneAt,ws)).map(e=>e.id));return objPct(o,{undone:un,evUn:evun})};
+  return `<div class="h-rsum"><div><span class="lbl">Mijlpalen</span><b>${ev} <small>gehaald</small></b></div><div><span class="lbl">Stappen</span><b>${dn} van ${mine.length} <small>gedaan</small></b></div>${os.map(o=>`<div><span class="lbl">${esc(o.name)}</span><b>${at(o)}% → <span class="up">${objPct(o)}%</span></b></div>`).join('')}</div>`}
 
 /* boot */
 captureAuthHash();sessInit();load();save();route=parseHash();render();startSync();if(pinLocked())showLock();if(contentNotice||okrNotice)toast(okrNotice||contentNotice);
