@@ -1304,6 +1304,25 @@ body.e{--bg:#F6F3EC;--rail:#FFFFFF;--surface:#FFFFFF;--sunken:#EFEBE2;--hover:#F
 .f-nchips{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}.f-nchip{display:inline-flex;align-items:center;gap:6px;min-height:30px;padding:4px 12px;border-radius:15px;background:var(--sunken);font-size:12.5px;text-align:left}.f-nchip.on{background:var(--accent-soft);color:var(--accent-ink);box-shadow:inset 0 0 0 1.5px var(--accent);font-weight:650}
 .f-rfoot{margin-top:22px;align-items:center}
 @media (max-width:1100px){.f-cols{grid-template-columns:minmax(0,1fr)}.f-rgrid{grid-template-columns:minmax(0,1fr)}.f-days{grid-template-columns:minmax(0,1fr)}.f-day{min-height:0}.f-add{margin-left:0;width:100%}.f-add input{flex:1;width:auto}}
+/* ===== Focus G ===== */
+.g-q{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:8px 0 14px;font-size:13px;color:var(--ink-2)}.g-q.c{padding-top:0}
+.g-dots{display:inline-flex;gap:4px}.g-dots i{display:block;width:14px;height:6px;border-radius:3px;background:var(--line-2)}.g-dots i.gp{background:var(--accent);opacity:.45}.g-dots i.gn{background:var(--accent)}.g-dots i.gm{box-shadow:0 0 0 1.5px var(--warn-mid)}
+.g-bar{display:inline-block;width:56px;height:6px;border-radius:3px;background:var(--line-2);overflow:hidden;vertical-align:middle;flex:none}.g-bar i{display:block;height:100%;background:var(--accent)}.g-pct{min-width:32px}
+.g-strip{display:inline-flex;gap:3px;flex:none}.g-strip i{width:9px;height:9px;border-radius:50%;background:var(--line-2)}.g-strip i.ok{background:var(--ok)}.g-strip i.warn{background:var(--warn-mid)}.g-strip i.bad{background:var(--bad)}
+.g-sent{margin:6px 0 4px;font-size:13.5px;color:var(--ink-2)}
+.g-l{display:block;font-size:12px;font-weight:650;color:var(--ink-3);margin:2px 0 -4px}
+.g-rowi{display:flex;gap:8px;align-items:center}.g-rowi .input{flex:1;min-width:0}
+.g-warn{padding:10px 12px;border-radius:10px;background:var(--warn-soft);font-size:13px;color:var(--ink);display:grid;gap:8px}.g-opts{display:flex;gap:8px;flex-wrap:wrap}
+.f-rr.compact{padding:10px 18px;gap:8px}.f-rr.compact .f-pills button{padding:5px 8px;font-size:12.5px}
+.f-rr.bad{box-shadow:0 0 0 1px var(--warn-mid),inset 3px 0 0 var(--c)}
+.g-guide{font-size:13px;color:var(--ink-2)}.g-guide summary{cursor:pointer;color:var(--accent-ink);font-weight:600}.g-guide p{margin:8px 0}.g-ex span{display:inline-block;min-width:44px;font-weight:700;color:var(--ink-3)}
+.g-lead{max-width:760px;font-size:14.5px;color:var(--ink-2);margin:0 0 16px}
+.g-qrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;margin-bottom:8px;border-radius:12px;background:var(--surface);box-shadow:0 0 0 1px var(--line),inset 3px 0 0 var(--c)}.g-qrow.dim{opacity:.7}.g-qn{display:flex;align-items:center;gap:8px;min-width:200px}
+.g-decs{display:grid;gap:10px}.g-dec{display:grid;gap:8px;padding:12px 16px;border-radius:12px;background:var(--surface);box-shadow:0 0 0 1px var(--line),inset 3px 0 0 var(--c)}.g-dec .f-pills button[aria-pressed=true]{background:var(--accent);color:#fff;box-shadow:none}
+.g-ssc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.g-quarter{max-width:980px}
+.g-hint{margin-top:6px;font-size:12.5px;line-height:1.45;color:var(--ink-3)}.g-hint.warn{color:var(--warn)}.g-hint.ok{color:var(--ok)}.g-hint .small{display:block;margin-top:2px}
+@media (max-width:1100px){.g-ssc{grid-template-columns:minmax(0,1fr)}}
 
 </style>
 </head>
@@ -3384,6 +3403,7 @@ function parseHash(){const [a,b,c]=location.hash.replace(/^#\/?/,'').split('/');
   if(a==='resultaten')return{view:'res',id:b||'',kr:c||''};
   if(a==='o'&&b)return{view:'res',id:b,kr:''};
   if(a==='samen')return{view:'samen',id:b||''};
+  if(a==='kwartaal')return{view:'kwartaal',sub:b||''};
   if(a==='taken')return{view:'tasks',tab:b||'inbox'};
   if(a==='review'||a==='checkin')return{view:'week',sub:'review'};
   return{view:'home'}}
@@ -3400,8 +3420,8 @@ function render(){
   document.body.classList.add('e');closeMenu();
   renderRail();renderTabbar();
   const v=route.view;
-  $('#main').innerHTML=v==='week'?eWeek():v==='res'?eRes():v==='samen'?eSamen():v==='tasks'?(route.tab==='wacht'||route.tab==='klaar'?tasksPage():boardPage()):eNu();
-  $('#mTitle').textContent={week:'Week',res:'Resultaten',samen:'Samen',tasks:'Acties'}[v]||'Nu';
+  $('#main').innerHTML=v==='week'?eWeek():v==='res'?eRes():v==='kwartaal'?eQuarter():v==='samen'?eSamen():v==='tasks'?(route.tab==='wacht'||route.tab==='klaar'?tasksPage():boardPage()):eNu();
+  $('#mTitle').textContent={week:'Week',res:'Resultaten',kwartaal:'Kwartaal',samen:'Samen',tasks:'Acties'}[v]||'Nu';
   flashId=null;renderSessionPill();
 }
 
@@ -3535,7 +3555,7 @@ function eFlow(ws,krs,choosing){const days=weekDays(ws);
 function eChoose(ws){const prev=wkKRs(addDays(ws,-7));if(!E.pick)E.pick=wkKRs(ws).length?wkKRs(ws):prev.filter(id=>krById(id)&&!achieved(krById(id).k)).slice(0,3);
   const q=quarter(),soon=addDays(ws,28);
   const why=k=>{const n=krOpenMine(k).length;return [k.due&&k.due<=soon?'deadline '+fmt(k.due):'',['risk','blocked'].includes(k.confidence)?confL(k.confidence).toLowerCase():'',prev.includes(k.id)?'vorige week ook':'',n?plural(n,'open actie','open acties'):'nog geen actie'].filter(Boolean).join(' · ')};
-  const groups=objs().filter(o=>E.onb||!isOnb(o)).map(o=>({o,krs:o.krs.filter(k=>!achieved(k)&&(!k.quarter||k.quarter===q))})).filter(g=>g.krs.length);
+  const groups=objs().filter(o=>E.onb||!isOnb(o)).map(o=>({o,krs:o.krs.filter(k=>!achieved(k)&&(!k.quarter||k.quarter===q)&&k.parkedQ!==q)})).filter(g=>g.krs.length);
   const btn=`${wkKRs(ws).length?`<button class="btn ghost" data-a="e-pick-cancel">Annuleren</button>`:''}<button class="btn primary" data-a="e-pick-save" ${E.pick.length?'':'disabled'}>${!E.pick.length?'Kies resultaten':'Verder: stappen plannen →'}</button>`;
   return `<div class="e-h e-choose-h"><span class="lbl">Stap 1 · Welke resultaten krijgen deze week je aandacht?</span><span class="small">${E.pick.length} van max. 3</span><span class="spacer"></span>${btn}</div>
    <p class="small" style="margin:0 0 12px">Loop je objectives langs en kies er drie. Je doelverdeling: ${esc(Object.entries(weekTargets()).map(([b,v])=>bucketName(b)+' '+v+'%').join(', ')||'—')}.</p>
@@ -3646,20 +3666,20 @@ function eRes(){const list=objs();
   const inQ=k=>q==='Alles'||!k.quarter||k.quarter===q,krs=o.krs.filter(inQ),later=o.krs.filter(k=>!inQ(k));
   if(!krs.some(k=>k.id===E.kr)&&E.kr!=='')E.kr=krs[0]?.id||null;
   const arch=db.objectives.filter(x=>x.archived);
-  return `<div class="page e-page e-res"><div class="e-rgrid2">
+  return `<div class="page e-page e-res">${quarterLine(true)}<div class="e-rgrid2">
    <aside class="e-objs">${qs.length?`<div class="e-qseg" role="group" aria-label="Kwartaal">${[...qs,'Alles'].map(x=>`<button data-a="e-q" data-v="${x}" aria-pressed="${q===x}">${esc(x)}</button>`).join('')}</div>`:''}
     <div class="lbl">Objectives</div>${list.map(x=>`<a class="e-obj ${x.id===o.id?'on':''}" href="#/resultaten/${x.id}"><span class="dot" style="--c:${x.color}"></span><span><b>${esc(x.name)}</b><span class="small">${plural(x.krs.filter(inQ).length,'KR','KR\'s')}</span></span></a>`).join('')}
     ${arch.length?`<div class="small e-arch">${arch.map(x=>esc(x.name)).join(', ')} · gearchiveerd</div>`:''}
     <button class="link" data-a="new-obj">+ Objective</button></aside>
    <section class="e-omain" style="--c:${o.color}">
     <div class="e-ometa"><span class="dot" style="--c:${o.color}"></span>${esc(o.name)} · ${plural(o.krs.length,'Key Result','Key Results')}${o.context||o.achieved?` · <button class="link" data-a="e-why" aria-expanded="${E.why}">waarom en bereikt</button>`:''}<span class="spacer"></span>${membersOf(o.id).map(m=>avatar(m,22)).join('')}<button class="btn sm" data-a="e-objedit" data-id="${o.id}">Bewerk</button></div>
-    <h1 class="e-otitle">${esc(o.objective||o.name)}</h1>
+    <h1 class="e-otitle">${esc(o.objective||o.name)}</h1>${objSentence(o)}
     ${E.why?`<div class="e-why">${o.context?`<p><b>Waarom</b> · ${esc(o.context)}</p>`:''}${o.achieved?`<p><b>Bereikt</b> · ${esc(o.achieved)}</p>`:''}</div>`:''}
     <div class="e-krs">${krs.map(k=>eKr(o,k)).join('')||'<p class="small">Geen Key Results in dit kwartaal.</p>'}</div>
     <div class="row e-krfoot">${later.length?`<button class="link quiet" data-a="e-q" data-v="Alles">${later.map(k=>esc(k.quarter||'')).filter((v,i,a)=>a.indexOf(v)===i).join(', ')} · ${plural(later.length,'KR','KR\'s')}</button>`:''}<span class="spacer"></span><button class="link" data-a="e-kradd" data-id="${o.id}">+ Key Result</button></div>
    </section></div></div>`}
 function eKr(o,k){const on=E.kr===k.id,r={o,k},opn=open().filter(t=>t.krId===k.id).length;
-  const headH=`<button class="e-krh" data-a="e-kr" data-id="${k.id}" aria-expanded="${on}"><span class="e-car">${on?'▾':'▸'}</span><span class="e-krn"><b>${esc(krN(r))}</b><span class="small">${esc(k.title)}</span></span>${pipsE(k)}${confTag(achieved(k)?'done':k.confidence)}<span class="small e-krc">${opn?plural(opn,'actie','acties'):''}</span></button>`;
+  const headH=`<button class="e-krh" data-a="e-kr" data-id="${k.id}" aria-expanded="${on}"><span class="e-car">${on?'▾':'▸'}</span><span class="e-krn"><b>${esc(krN(r))}</b><span class="small">${esc(k.title)}</span></span>${pipsE(k)}${progG(k)}${stripG(k)}${confTag(achieved(k)?'done':k.confidence)}<span class="small e-krc">${opn?plural(opn,'actie','acties'):''}</span></button>`;
   if(!on)return `<div class="e-kr">${headH}</div>`;
   const mine=krOpenMine(k),nx=mine[0],theirs=open().filter(t=>t.krId===k.id&&(t.owner||t.waiting)),done=db.tasks.filter(t=>t.krId===k.id&&t.done&&t.doneAt>=addDays(iso(),-14)).slice(0,4);
   return `<div class="e-kr on">${headH}<div class="e-krb">
@@ -3671,7 +3691,7 @@ function eKr(o,k){const on=E.kr===k.id,r={o,k},opn=open().filter(t=>t.krId===k.i
     <div><div class="lbl">Bewijs</div><div class="e-evs">${k.evidence.map(e=>`<button class="e-ev ${e.done?'on':''}" data-a="ev" data-id="${k.id}" data-e="${e.id}" aria-pressed="${e.done}"><span class="e-ck">${e.done?I('check'):''}</span>${esc(e.title)}</button>`).join('')}</div>
      <form class="e-add sm" data-form="ev-add" data-id="${k.id}">${I('plus')}<input name="title" placeholder="bewijsstuk" aria-label="Bewijsstuk toevoegen" maxlength="200" autocomplete="off"></form></div>
     <div><div class="lbl">Hoe staat het?</div>${confTag(achieved(k)?'done':k.confidence)}<div class="small" style="margin-top:4px">Zet je in de weekreview.</div>${k.confNote?`<div class="small" style="margin-top:6px">“${esc(k.confNote)}”</div>`:''}</div>
-    <div class="e-krlinks"><button class="link quiet" data-a="e-kredit" data-o="${o.id}" data-id="${k.id}">Bewerk</button></div>
+    <div class="e-krlinks"><button class="link quiet" data-a="e-kredit" data-o="${o.id}" data-id="${k.id}">Bewerk</button><button class="link quiet" data-a="g-park" data-id="${k.id}">${k.parkedQ===quarter()?'Terughalen':'Niet dit kwartaal'}</button></div>
    </div></div></div>`}
 
 /* ---------- Samen ---------- */
@@ -3787,12 +3807,12 @@ const dnum=d=>new Date(d+'T12:00').getDate();
 function renderRail(){renderQuarter();
   const v=route.view,item=(h,ic,l,cur,badge='')=>`<a class="nav-item e-nav" href="#${h}" ${cur?'aria-current="page"':''}>${I(ic)}<span class="nm">${l}</span>${badge}</a>`,wm=waitMeList().length;
   $('#nav').innerHTML=item('/','home','Nu',v==='home'||v==='samen',wm?`<span class="e-badge warn" title="${wm} wacht op jou"></span>`:'')+item('/week','cal','Week',v==='week',eReviewDue()?'<span class="e-badge" title="Weekreview staat klaar"></span>':'')
-    +item('/resultaten','target','Resultaten',v==='res');
+    +item('/resultaten','target','Resultaten',v==='res'||v==='kwartaal');
   $('#objNav').innerHTML='';
   if(!$('#ePlus')){const b=document.createElement('button');b.id='ePlus';b.className='e-plus';b.dataset.a='capture';b.setAttribute('aria-label','Vastleggen (N)');b.title='Vastleggen (N)';b.innerHTML=I('plus');$('.rail-foot').prepend(b)}
 }
 function renderTabbar(){const v=route.view,t=(h,ic,l,cur)=>`<a href="#${h}" ${cur?'aria-current="page"':''}>${I(ic)}${l}</a>`;
-  $('#tabbar').innerHTML=t('/','home','Nu',v==='home'||v==='samen')+t('/week','cal','Week',v==='week')+`<button class="plus" data-a="capture" aria-label="Vastleggen"><span>${I('plus')}</span></button>`+t('/resultaten','target','Resultaten',v==='res')}
+  $('#tabbar').innerHTML=t('/','home','Nu',v==='home'||v==='samen')+t('/week','cal','Week',v==='week')+`<button class="plus" data-a="capture" aria-label="Vastleggen"><span>${I('plus')}</span></button>`+t('/resultaten','target','Resultaten',v==='res'||v==='kwartaal')}
 
 /* ---------- Nu ---------- */
 function eWaitRow(t){const m=member(t.owner),od=t.followUp&&t.followUp<=iso(),fn=m?esc(m.name.split(' ')[0]):'';
@@ -3819,6 +3839,7 @@ function eNu(){
   const tl=today.length?`<ul class="e-list">${today.map(t=>eRow(t,{meta:false})).join('')}</ul>`:'';
   return `<div class="page e-page e-nu">
    <div class="e-date">${esc(date[0].toUpperCase()+date.slice(1))}${df?` · ${df.loc} · ${esc(df.label)}`:''}</div>
+   ${quarterLine()}
    ${eReviewDue()?`<a class="e-banner" href="#/week/review"><b>Weekreview</b><span>Eén scherm, drie minuten. Daarna staat volgende week klaar.</span><span class="spacer"></span><span class="link">Start review</span></a>`:''}
    ${card}
    <div class="e-cols f-cols">
@@ -3863,42 +3884,6 @@ function eWeek(){
    <div class="f-days">${days.map(col).join('')}</div>
    <p class="small f-note">Sleep stappen naar een dag. Een tijd is optioneel; alleen stappen met een tijd komen in je Outlook-agenda.</p></div>`}
 
-/* ---------- Weekreview: één scherm ---------- */
-const fStale=(ws,krs)=>db.tasks.filter(t=>mineOpen(t)&&(t.planDay?inWeekD(t.planDay,ws):(krs.includes(t.krId)||t.week===ws)));
-function eReview(){const ws=addDays(weekStart(),0),krs=wkKRs(ws),nws=addDays(ws,7);
-  if(!krs.length)return `<div class="page e-page"><div class="e-top"><h1>Weekreview</h1><span class="spacer"></span><a class="link" href="#/week">Terug naar de week</a></div><p class="muted">Deze week zijn nog geen resultaten gekozen. Kies ze in Week; de review loopt daarlangs.</p></div>`;
-  if(!E.rvNext)E.rvNext=krs.filter(id=>!achieved(krById(id).k)).slice(0,3);
-  const q=quarter(),inW=d=>inWeekD(d,ws);
-  const row=id=>{const r=krById(id),k=r.k,a=E.rvAns[id]||{},v=a.v||(['on','risk','blocked'].includes(k.confidence)?k.confidence:'');
-    const all=db.tasks.filter(t=>t.krId===k.id&&!t.owner&&!t.dropped&&(inW(t.planDay)||t.week===ws||inW(t.doneAt))),dn=all.filter(t=>t.done).length,gave=db.tasks.filter(t=>t.krId===k.id&&t.owner&&t.done&&inW(t.doneAt));
-    return `<section class="f-rr" style="--c:${r.o.color}"><div class="f-rr-h"><span class="dot" style="--c:${r.o.color}"></span><b>${esc(krN(r))}</b><span class="spacer"></span><span class="small">${dn} van ${all.length} stappen gedaan${gave.length?` · ${gave.length} door anderen`:''}</span></div>
-     <div class="f-pills" role="group" aria-label="Hoe staat ${esc(krN(r))}">${CONF3.map(([c,l])=>`<button class="${confC(c)}" data-a="f-rv-conf" data-id="${id}" data-v="${c}" aria-pressed="${v===c}">${l}</button>`).join('')}</div>
-     <input class="input" data-rvnote="${id}" value="${esc(a.note||'')}" placeholder="Eén regel, optioneel" aria-label="Toelichting bij ${esc(krN(r))}"></section>`};
-  const stale=fStale(ws,krs),loose=open().filter(t=>mineOpen(t)&&!t.krId&&!stale.includes(t));
-  const keep=t=>{const dr=!!E.rvDrop[t.id];return `<div class="f-keep"><span class="f-keep-t">${esc(t.title)}</span><span class="f-tog" role="group" aria-label="${esc(t.title)}"><button data-a="f-rv-drop" data-id="${t.id}" data-v="0" aria-pressed="${!dr}">Houd</button><button data-a="f-rv-drop" data-id="${t.id}" data-v="1" aria-pressed="${dr}" class="bad">Laat los</button></span></div>`};
-  const cands=db.objectives.filter(o=>!o.archived&&(E.onb||!isOnb(o))).flatMap(o=>o.krs.filter(k=>!achieved(k)&&(!k.quarter||k.quarter===q)).map(k=>({o,k})));
-  const chips=cands.map(({o,k})=>{const on=E.rvNext.includes(k.id);return `<button class="f-nchip ${on?'on':''}" data-a="f-rv-next" data-id="${k.id}" aria-pressed="${on}"><span class="dot" style="--c:${o.color}"></span>${esc(krN({o,k}))}</button>`}).join('');
-  return `<div class="page e-page e-week f-review">
-   <div class="e-top"><h1>Week ${isoWeek(ws)}</h1><span class="muted">review</span><span class="spacer"></span><a class="link" href="#/week">Terug naar de week</a></div>
-   <div class="f-rgrid"><div class="f-rleft"><div class="lbl">Hoe staat het?</div>${krs.map(row).join('')}
-     <div class="field" style="margin-top:6px"><label for="rv-wins" class="lbl">Eén zin terug <span class="small">optioneel</span></label><input class="input" id="rv-wins" data-rvend="wins" value="${esc(E.rvEnd.wins||'')}" placeholder="Wat ging goed of wat leerde je?" maxlength="300"></div></div>
-    <aside class="f-rright">
-     <div><div class="lbl">Wat bleef liggen · ${stale.length}</div>${stale.length?stale.map(keep).join(''):'<p class="small">Alles is afgerond of ingepland.</p>'}</div>
-     ${loose.length?`<div><div class="lbl">Losse acties zonder KR · ${loose.length}</div><ul class="e-list">${loose.slice(0,4).map(t=>eRow(t,{meta:false})).join('')}</ul>${loose.length>4?`<p class="small">en ${loose.length-4} meer</p>`:''}</div>`:''}
-     <div><div class="lbl">Volgende week · kies tot 3</div><div class="f-nchips">${chips}</div>${!E.onb&&db.objectives.some(isOnb)?'<button class="link quiet" data-a="f-onb">Onboarding (persoonlijk) tonen</button>':''}</div>
-    </aside></div>
-   <div class="row f-rfoot"><span class="small">Duurt ongeveer drie minuten.</span><span class="spacer"></span><button class="btn primary lg" data-a="e-rv-finish">Klaar · volgende week staat klaar</button></div></div>`}
-function eRvFinish(){const ws=weekStart(),krs=wkKRs(ws),items=[],nws=addDays(ws,7);let changed=0,moved=0,dropped=0;
-  commit(()=>{for(const id of krs){const r=krById(id);if(!r)continue;const a=E.rvAns[id]||{};
-      if(a.v&&a.v!==r.k.confidence){r.k.confidence=a.v;changed++;log('measure',`${r.o.name} · ${krName(r.k)}: ${STATE[a.v]||confL(a.v)}`,r.o.id)}
-      if(a.note)r.k.confNote=clean(a.note);
-      items.push({krId:id,confidence:a.v||r.k.confidence,note:clean(a.note)||undefined})}
-    for(const t of fStale(ws,krs)){if(E.rvDrop[t.id]){t.dropped=true;t.today='';delete t.slot;dropped++}else{t.week=nws;t.planDay='';t.today='';delete t.slot;moved++}}
-    const cid=uid();db.checkins.unshift({id:cid,date:iso(),ws,weekKrs:krs,items,notes:{},wins:clean(E.rvEnd.wins),learned:'',next:'',stop:'',help:''});
-    ensureWeek(ws).reviewed=cid;const nw=ensureWeek(nws),nx=(E.rvNext||[]).filter(id=>krById(id));nw.krs=nx.length?nx:krs.filter(id=>!achieved(krById(id).k)).slice(0,3);nw.confirmed=true;
-    log('checkin','Weekreview week '+isoWeek(ws))},{msg:`Review vastgelegd${changed?' · '+plural(changed,'inschatting','inschattingen')+' bijgewerkt':''}${moved?' · '+plural(moved,'stap','stappen')+' mee naar volgende week':''}${dropped?' · '+dropped+' losgelaten':''}`});
-  E.rvAns={};E.rvEnd={};E.rvDrop={};E.rvNext=null;E.wsOff=1;E.week='plan';go('/week')}
-
 /* ---------- acties ---------- */
 Object.assign(ACT,{
   'f-rv-conf':(b)=>{(E.rvAns[b.dataset.id]??={}).v=b.dataset.v;render();$(`[data-rvnote="${b.dataset.id}"]`)?.focus()},
@@ -3910,6 +3895,148 @@ document.addEventListener('submit',e=>{const f=e.target;if(f.dataset.form!=='f-s
   const fd=new FormData(f),title=clean(fd.get('title')),r=krById(fd.get('kr'));if(!title)return;
   commit(()=>{db.tasks.push({id:uid(),title,objectiveId:r?r.o.id:'',krId:r?r.k.id:'',notes:'',due:'',done:false,focus:false,waiting:false,blocker:'',today:'',rank:Date.now(),doneAt:null,steps:[],created:iso(),status:'todo',planDay:'',week:f.dataset.ws||'',owner:'',level:0,followUp:'',handover:''});log('create',title,r?.o.id)},{msg:'Toegevoegd',undo:true});
   $('[data-form=f-step] input')?.focus()},true);
+
+/* ---- 97-g.js ---- */
+/* ================= Focus G · OKR-gids: check-in met vier vragen, kwartaalritme, afsluiten, begeleiding ================= */
+// Gebaseerd op de OKR-gids (Tability): weekcheck-in met getal/zekerheid/wat veranderde/volgende stap, gele-kaartregel,
+// kwartaal van 13 weken met tussentijdse review in week 7, afsluiten per resultaat (verlengen, kopiëren, opnieuw beginnen),
+// hints bij het schrijven van OKR's. Nieuwe optionele velden: k.parkedQ, db.quarterClose[], db.quarterMid{}, checkin-items next/help.
+Object.assign(E,{rvOpen:{},rvOrder:null,qc:{kr:{},obj:{},start:'',stop:'',keep:''}});
+const nextQ=q=>{const m=/Q(\d)\s+(\d{4})/.exec(q)||[0,1,2026];let n=+m[1]+1,y=+m[2];if(n>4){n=1;y++}return 'Q'+n+' '+y};
+const qStartD=()=>{const d=new Date();return iso(new Date(d.getFullYear(),Math.floor(d.getMonth()/3)*3,1,12))};
+const qWeekNo=()=>Math.min(13,Math.max(1,Math.floor(dayDiff(iso(),qStartD())/7)+1));
+const qPhase=w=>w===1?'Publiceren en kick-off':w<=4?'De gewoonte beschermen':w>=12?'Afsluiten en nieuw plan':w>=6&&w<=8?'Tussentijdse review':'Elke week bijsturen';
+const activeKRs=()=>{const q=quarter();return objs().flatMap(o=>o.krs.filter(k=>!achieved(k)&&(!k.quarter||k.quarter===q)&&k.parkedQ!==q).map(k=>({o,k})))};
+const fStale=(ws,krs)=>db.tasks.filter(t=>mineOpen(t)&&(t.planDay?inWeekD(t.planDay,ws):(krs.includes(t.krId)||t.week===ws)));
+
+/* ---------- voortgang en zekerheid per week ---------- */
+function progPct(k){if(achieved(k))return 100;if(isMilestone(k))return k.evidence.length?Math.round(evDone(k)/k.evidence.length*100):0;return Math.max(0,Math.min(100,Math.round(Number(k.current||0)/Number(k.target||1)*100)))}
+function progG(k){const p=progPct(k);return `<span class="g-bar" title="Voortgang ${p}%"><i style="width:${p}%"></i></span><span class="small g-pct">${p}%</span>`}
+function stripG(k){const h=confHistory(k.id,6);return h.length?`<span class="g-strip" title="Zekerheid per week, oudste links">${h.map(c=>`<i class="${confC(c)}"></i>`).join('')}</span>`:''}
+
+/* ---------- kwartaalregel op Nu en Resultaten ---------- */
+function habitLine(){const s=weekStart(qStartD()),w=qWeekNo(),dn=new Date().getDay(),el=Math.max(1,w-(dn>=5||dn===0?0:1)),have=new Set(db.checkins.filter(c=>c.ws>=s).map(c=>c.ws)).size;
+  return `Reviews: ${have} van ${el} weken`}
+function quarterLine(compact){const w=qWeekNo(),q=quarter(),mid=db.quarterMid?.[q],closing=w>=12,midNow=w>=6&&w<=9&&!mid;
+  const dots=Array.from({length:13},(_,i)=>`<i class="${i+1<w?'gp':i+1===w?'gn':''} ${i+1===7?'gm':''}"></i>`).join('');
+  const act=closing?`<a class="link" href="#/kwartaal/sluit">Sluit het kwartaal af</a>`:midNow?`<a class="link" href="#/kwartaal/mid">Start de tussentijdse review</a>`:'';
+  return `<div class="g-q ${compact?'c':''}"><span class="g-q-t"><b>Week ${w} van 13</b> · ${esc(qPhase(w))}</span><span class="g-dots" aria-hidden="true">${dots}</span>${compact?'':`<span class="small">${esc(habitLine())}</span>`}<span class="spacer"></span>${act}</div>`}
+function objSentence(o){const ks=o.krs.filter(k=>!achieved(k)&&k.parkedQ!==quarter()&&(!k.quarter||k.quarter===quarter()));const bets=(o.initiatives||[]).filter(i=>i.status!=='done').slice(0,3).map(i=>i.title);
+  const many=ks.length>5?`<span class="warn"> ${ks.length} actieve resultaten bij één objective is veel; de gids houdt het bij drie tot vijf.</span>`:'';
+  return `<p class="g-sent">Gemeten aan: <b>${ks.map(k=>esc(krName(k))).join(' · ')||'nog geen resultaten'}</b>${bets.length?`. Eerste weddenschappen: ${bets.map(esc).join(' · ')}`:''}.${many}</p>`}
+
+/* ---------- weekreview: vier vragen ---------- */
+const rvRank=v=>v==='blocked'?0:v==='risk'?1:v===''?2:3;
+function rvStreak(id){const h=confHistory(id,6);let n=0;for(let i=h.length-1;i>=0&&h[i]==='risk';i--)n++;return n}
+function eReview(){const ws=weekStart(),krs=wkKRs(ws),nws=addDays(ws,7),q=quarter(),inW=d=>inWeekD(d,ws);
+  if(!krs.length)return `<div class="page e-page"><div class="e-top"><h1>Weekreview</h1><span class="spacer"></span><a class="link" href="#/week">Terug naar de week</a></div><p class="muted">Deze week zijn nog geen resultaten gekozen. Kies ze in Week; de review loopt daarlangs.</p></div>`;
+  if(!E.rvNext)E.rvNext=krs.filter(id=>!achieved(krById(id).k)).slice(0,3);
+  const stored=id=>{const c=krById(id).k.confidence;return ['on','risk','blocked'].includes(c)?c:''};
+  if(!E.rvOrder||E.rvOrder.some(id=>!krs.includes(id)))E.rvOrder=[...krs].sort((a,b)=>rvRank(stored(a))-rvRank(stored(b)));
+  const ans=id=>E.rvAns[id]||{},val=id=>ans(id).v||stored(id);
+  const row=id=>{const r=krById(id),k=r.k,a=ans(id),v=val(id),dn=db.tasks.filter(t=>t.krId===k.id&&!t.owner&&!t.dropped&&(inW(t.planDay)||t.week===ws||inW(t.doneAt))),done=dn.filter(t=>t.done).length,gave=db.tasks.filter(t=>t.krId===k.id&&t.owner&&t.done&&inW(t.doneAt)).length,bad=v==='risk'||v==='blocked',n=rvStreak(id);
+    const head=`<div class="f-rr-h"><span class="dot" style="--c:${r.o.color}"></span><b>${esc(krN(r))}</b>${progG(k)}${stripG(k)}<span class="spacer"></span><span class="small">${done} van ${dn.length} stappen${gave?` · ${gave} door anderen`:''}</span></div>`;
+    const pills=`<div class="f-pills" role="group" aria-label="Hoe staat ${esc(krN(r))}">${CONF3.map(([c,l])=>`<button class="${confC(c)}" data-a="f-rv-conf" data-id="${id}" data-v="${c}" aria-pressed="${v===c}">${l}</button>`).join('')}</div>`;
+    if(v==='on'&&!E.rvOpen[id]&&!a.note&&!a.next)return `<section class="f-rr compact" style="--c:${r.o.color}">${head}${pills}<button class="link quiet" data-a="g-rv-open" data-id="${id}">Toelichting of volgende stap toevoegen</button></section>`;
+    const warn=v==='risk'&&n>=1?`<div class="g-warn" role="alert"><b>${n===1?'Tweede week op rij op Risico.':'Derde week op rij op Risico. Dat mag niet.'}</b> De gids: twee keer geel, dan beslis je. <span class="g-opts"><button class="btn sm" data-a="g-rv-red" data-id="${id}">Noem het rood</button><button class="btn sm" data-a="g-rv-help" data-id="${id}">Vraag hulp</button><button class="btn sm" data-a="e-kredit" data-o="${r.o.id}" data-id="${id}">Pas het plan aan</button></span></div>`:'';
+    const ask=bad?`<label class="g-l" for="rn-${id}">Wat blokkeert het?</label><input class="input" id="rn-${id}" data-rvnote="${id}" value="${esc(a.note||'')}" placeholder="Eén zin, concreet" maxlength="300"><label class="g-l" for="rh-${id}">Wie pakt het op, of welke hulp heb je nodig?</label><input class="input" id="rh-${id}" data-rvhelp="${id}" value="${esc(a.help||'')}" placeholder="Bijv. besluit van Tom voor woensdag" maxlength="300">`
+      :`<label class="g-l" for="rn-${id}">Wat veranderde of leerde je?</label><input class="input" id="rn-${id}" data-rvnote="${id}" value="${esc(a.note||'')}" placeholder="Noem het getal of de stap, geen activiteit" maxlength="300">`;
+    return `<section class="f-rr ${bad?'bad':''}" style="--c:${r.o.color}">${head}${pills}${warn}${ask}<label class="g-l" for="rx-${id}">Volgende stap voor maandag</label><div class="g-rowi"><input class="input" id="rx-${id}" data-rvnext="${id}" value="${esc(a.next||'')}" placeholder="Wat doe je als eerste?" maxlength="250"><button class="btn sm" data-a="g-draft" data-id="${id}" title="Claude schrijft een concept op basis van je afgeronde stappen">Concept laten schrijven</button></div></section>`};
+  const stale=fStale(ws,krs),loose=open().filter(t=>mineOpen(t)&&!t.krId&&!stale.includes(t));
+  const keep=t=>{const dr=!!E.rvDrop[t.id];return `<div class="f-keep"><span class="f-keep-t">${esc(t.title)}</span><span class="f-tog" role="group" aria-label="${esc(t.title)}"><button data-a="f-rv-drop" data-id="${t.id}" data-v="0" aria-pressed="${!dr}">Houd</button><button data-a="f-rv-drop" data-id="${t.id}" data-v="1" aria-pressed="${dr}" class="bad">Laat los</button></span></div>`};
+  const cands=db.objectives.filter(o=>!o.archived&&(E.onb||!isOnb(o))).flatMap(o=>o.krs.filter(k=>!achieved(k)&&(!k.quarter||k.quarter===q)&&k.parkedQ!==q).map(k=>({o,k})));
+  const chips=cands.map(({o,k})=>{const on=E.rvNext.includes(k.id);return `<button class="f-nchip ${on?'on':''}" data-a="f-rv-next" data-id="${k.id}" aria-pressed="${on}"><span class="dot" style="--c:${o.color}"></span>${esc(krN({o,k}))}</button>`}).join('');
+  const bad=E.rvOrder.filter(id=>['risk','blocked'].includes(val(id))).length;
+  return `<div class="page e-page e-week f-review">
+   <div class="e-top"><h1>Week ${isoWeek(ws)}</h1><span class="muted">review</span><span class="spacer"></span><a class="link" href="#/week">Terug naar de week</a></div>
+   <div class="f-rgrid"><div class="f-rleft"><div class="lbl">Hoe staat het? ${bad?`<span class="warn">· ${plural(bad,'resultaat','resultaten')} met aandacht`:'· rode en gele eerst'}</span></div>${E.rvOrder.map(row).join('')}
+     <details class="g-guide"><summary>Wat is een goede update?</summary><div><p>Vier vragen: <b>waar sta je</b> (getal of stap), <b>haal je het</b> (kleur), <b>wat veranderde</b>, <b>wat nu</b> (stap en hulp).</p><p class="g-ex"><span>Zwak:</span> “Goede voortgang, veel gesproken, volgende week meer.”<br><span>Sterk:</span> “Twee van de vier criteria klaar. Risico: de sessie schuift. Volgende stap: deelnemers uitnodigen; ik heb een besluit van Tom nodig vóór woensdag.”</p></div></details>
+     <div class="field" style="margin-top:6px"><label for="rv-wins" class="lbl">Eén zin terug <span class="small">optioneel</span></label><input class="input" id="rv-wins" data-rvend="wins" value="${esc(E.rvEnd.wins||'')}" placeholder="Wat ging goed of wat leerde je?" maxlength="300"></div></div>
+    <aside class="f-rright">
+     <div><div class="lbl">Wat bleef liggen · ${stale.length}</div>${stale.length?stale.map(keep).join(''):'<p class="small">Alles is afgerond of ingepland.</p>'}</div>
+     ${loose.length?`<div><div class="lbl">Losse acties zonder KR · ${loose.length}</div><ul class="e-list">${loose.slice(0,4).map(t=>eRow(t,{meta:false})).join('')}</ul>${loose.length>4?`<p class="small">en ${loose.length-4} meer</p>`:''}</div>`:''}
+     <div><div class="lbl">Volgende week · kies tot 3</div><div class="f-nchips">${chips}</div>${!E.onb&&db.objectives.some(isOnb)?'<button class="link quiet" data-a="f-onb">Onboarding (persoonlijk) tonen</button>':''}</div>
+    </aside></div>
+   <div class="row f-rfoot"><span class="small">Duurt ongeveer drie minuten.</span><span class="spacer"></span><button class="btn primary lg" data-a="e-rv-finish">Klaar · volgende week staat klaar</button></div></div>`}
+function eRvFinish(){const ws=weekStart(),krs=wkKRs(ws),items=[],nws=addDays(ws,7);let changed=0,moved=0,dropped=0,steps=0;
+  const nt=(title,x)=>({id:uid(),title,objectiveId:'',krId:'',notes:'',due:'',done:false,focus:false,waiting:false,blocker:'',today:'',rank:Date.now(),doneAt:null,steps:[],created:iso(),status:'todo',planDay:'',week:nws,owner:'',level:0,followUp:'',handover:'',...x});
+  commit(()=>{for(const id of krs){const r=krById(id);if(!r)continue;const a=E.rvAns[id]||{};
+      if(a.v&&a.v!==r.k.confidence){r.k.confidence=a.v;changed++;log('measure',`${r.o.name} · ${krName(r.k)}: ${STATE[a.v]||confL(a.v)}`,r.o.id)}
+      if(a.note)r.k.confNote=clean(a.note);
+      const nx=clean(a.next),hp=clean(a.help);
+      if(nx){db.tasks.push(nt(nx,{objectiveId:r.o.id,krId:id,notes:'Volgende stap uit weekreview '+fmt(iso())}));steps++}
+      if(hp&&['risk','blocked'].includes(a.v)){db.tasks.push(nt('Hulp regelen: '+hp,{objectiveId:r.o.id,krId:id,notes:'Uit weekreview '+fmt(iso())+(a.note?' · blokkade: '+clean(a.note):'')}));steps++}
+      items.push({krId:id,confidence:a.v||r.k.confidence,note:clean(a.note)||undefined,next:nx||undefined,help:hp||undefined})}
+    for(const t of fStale(ws,krs)){if(E.rvDrop[t.id]){t.dropped=true;t.today='';delete t.slot;dropped++}else{t.week=nws;t.planDay='';t.today='';delete t.slot;moved++}}
+    const cid=uid();db.checkins.unshift({id:cid,date:iso(),ws,weekKrs:krs,items,notes:{},wins:clean(E.rvEnd.wins),learned:'',next:'',stop:'',help:''});
+    ensureWeek(ws).reviewed=cid;const nw=ensureWeek(nws),nx=(E.rvNext||[]).filter(id=>krById(id));nw.krs=nx.length?nx:krs.filter(id=>!achieved(krById(id).k)).slice(0,3);nw.confirmed=true;
+    log('checkin','Weekreview week '+isoWeek(ws))},{msg:`Review vastgelegd${changed?' · '+plural(changed,'inschatting','inschattingen')+' bijgewerkt':''}${steps?' · '+plural(steps,'stap','stappen')+' klaar voor maandag':''}${moved?' · '+moved+' mee':''}${dropped?' · '+dropped+' losgelaten':''}`});
+  E.rvAns={};E.rvEnd={};E.rvDrop={};E.rvNext=null;E.rvOrder=null;E.rvOpen={};E.wsOff=1;E.week='plan';go('/week')}
+
+/* ---------- kwartaal: tussentijdse review en afsluiten ---------- */
+function eQuarter(){const w=qWeekNo(),q=quarter(),mode=route.sub==='sluit'||(route.sub!=='mid'&&w>=12)?'sluit':'mid';
+  return `<div class="page e-page g-quarter"><div class="e-top"><a class="link quiet" href="#/resultaten">← Resultaten</a><h1>${mode==='sluit'?'Kwartaal afsluiten':'Tussentijdse review'}</h1><span class="muted">${esc(q)} · week ${w} van 13</span></div>${mode==='sluit'?eQClose():eQMid()}</div>`}
+function eQMid(){const list=activeKRs(),parked=objs().flatMap(o=>o.krs.filter(k=>k.parkedQ===quarter()).map(k=>({o,k})));
+  const row=({o,k})=>`<div class="g-qrow" style="--c:${o.color}"><div class="g-qn"><span class="dot" style="--c:${o.color}"></span><b>${esc(krN({o,k}))}</b><span class="small">${esc(o.name)}</span></div>${progG(k)}${stripG(k)}${confTag(k.confidence)}<span class="spacer"></span><button class="btn sm" data-a="e-kredit" data-o="${o.id}" data-id="${k.id}">Aanpassen</button><button class="btn sm" data-a="g-park" data-id="${k.id}">Niet dit kwartaal</button></div>`;
+  return `<p class="g-lead">De doelen blijven staan; je past aan <b>wat je doet</b> om ze te halen. Loop de resultaten langs: welk loopt achter, welke stap werkt niet, wat laat je bewust liggen?</p>
+   ${list.length?list.map(row).join(''):'<p class="muted">Geen actieve resultaten dit kwartaal.</p>'}
+   ${parked.length?`<div class="lbl" style="margin-top:18px">Niet dit kwartaal · ${parked.length}</div>${parked.map(({o,k})=>`<div class="g-qrow dim"><div class="g-qn"><b>${esc(krN({o,k}))}</b><span class="small">${esc(o.name)}</span></div><span class="spacer"></span><button class="btn sm" data-a="g-park" data-id="${k.id}">Terughalen</button></div>`).join('')}`:''}
+   <div class="row" style="margin-top:20px"><span class="small">Targets blijven vast; zeg het vroeg als je ze niet haalt.</span><span class="spacer"></span><button class="btn primary lg" data-a="g-mid-done">Klaar met tussentijdse review</button></div>`}
+function eQClose(){const q=quarter(),qc=E.qc,items=objs().flatMap(o=>o.krs.filter(k=>(!k.quarter||k.quarter===q)).map(k=>({o,k})));
+  const OUT=[['done','Behaald'],['part','Deels'],['miss','Gemist']];
+  const kr=({o,k})=>{const a=qc.kr[k.id]||{},o0=a.o||(achieved(k)?'done':'');return `<section class="f-rr" style="--c:${o.color}"><div class="f-rr-h"><span class="dot" style="--c:${o.color}"></span><b>${esc(krN({o,k}))}</b>${progG(k)}${stripG(k)}<span class="spacer"></span><span class="small">${esc(o.name)}</span></div><div class="f-pills" role="group" aria-label="Uitkomst ${esc(krN({o,k}))}">${OUT.map(([v,l])=>`<button class="${v==='done'?'ok':v==='part'?'warn':'bad'}" data-a="g-qc-out" data-id="${k.id}" data-v="${v}" aria-pressed="${o0===v}">${l}</button>`).join('')}</div><input class="input" data-qlearn="${k.id}" value="${esc(a.l||'')}" placeholder="Eén regel: wat leerde je? Waarom wel of niet gehaald?" aria-label="Leerpunt ${esc(krN({o,k}))}" maxlength="300"></section>`};
+  const DEC=[['extend','Verlengen','Het doel telt nog en is niet af: ongehaalde resultaten gaan naar het volgende kwartaal.'],['copy','Kopiëren','Hetzelfde doel komt terug: de structuur wordt gekopieerd, cijfers en bewijs opnieuw.'],['over','Opnieuw beginnen','Het doel is gehaald of de prioriteit veranderde: archiveren en later opnieuw kiezen.']];
+  const ob=o=>{const d=qc.obj[o.id]||'';return `<div class="g-dec" style="--c:${o.color}"><div><span class="dot" style="--c:${o.color}"></span><b>${esc(o.name)}</b></div><div class="f-pills" role="group" aria-label="Besluit ${esc(o.name)}">${DEC.map(([v,l,h])=>`<button data-a="g-qc-obj" data-id="${o.id}" data-v="${v}" aria-pressed="${d===v}" title="${esc(h)}">${l}</button>`).join('')}</div>${d?`<p class="small" style="margin:0">${esc(DEC.find(x=>x[0]===d)[2])}</p>`:''}</div>`};
+  const objsQ=objs().filter(o=>o.krs.some(k=>!k.quarter||k.quarter===q));
+  return `<p class="g-lead">Eén ding tegelijk: wat is er gebeurd, wat leerde je, wat doe je ermee. Daarna bepaal je per objective wat er met het volgende kwartaal gebeurt.</p>
+   <div class="lbl">1 · Resultaten</div><div class="f-rleft">${items.map(kr).join('')||'<p class="muted">Geen resultaten dit kwartaal.</p>'}</div>
+   <div class="lbl" style="margin-top:22px">2 · Per objective</div><div class="g-decs">${objsQ.map(ob).join('')}</div>
+   <div class="lbl" style="margin-top:22px">3 · Terugblik · start, stop, continue</div>
+   <div class="g-ssc">${[['start','Start','Wat ga je doen dat je nog niet deed?'],['stop','Stop','Wat laat je los?'],['keep','Continue','Wat houdt je vast?']].map(([k,l,p])=>`<div class="field"><label class="g-l" for="qs-${k}">${l}</label><textarea class="textarea" id="qs-${k}" rows="3" data-qsc="${k}" placeholder="${p}">${esc(qc[k]||'')}</textarea></div>`).join('')}</div>
+   <p class="small" style="margin:4px 0 0">Houd het bij drie veranderingen in hoe je werkt. De doelen volgen later, in de planning.</p>
+   <div class="row" style="margin-top:18px"><span class="spacer"></span><button class="btn primary lg" data-a="g-qc-finish">Sluit ${esc(q)} af</button></div>`}
+function eQCloseApply(){const q=quarter(),nq=nextQ(q),qc=E.qc,rec={q,date:iso(),krs:{},objs:{},start:clean(qc.start),stop:clean(qc.stop),keep:clean(qc.keep)};let ext=0,cp=0,arch=0;
+  commit(()=>{for(const o of objs()){for(const k of o.krs){if(k.quarter&&k.quarter!==q)continue;const a=qc.kr[k.id]||{};if(a.o||a.l)rec.krs[k.id]={outcome:a.o||'',learned:clean(a.l),final:progPct(k)};
+        if(a.o==='done'&&isMilestone(k)){k.current=k.target;k.confirmed=true;k.confidence='done'}}
+      const d=qc.obj[o.id];if(!d)continue;rec.objs[o.id]=d;
+      if(d==='extend'){for(const k of o.krs){if((!k.quarter||k.quarter===q)&&!achieved(k)&&(qc.kr[k.id]?.o!=='done')){k.quarter=nq;k.parkedQ=undefined;ext++}}}
+      else if(d==='copy'){for(const k of [...o.krs].filter(x=>!x.quarter||x.quarter===q)){const c=JSON.parse(JSON.stringify(k));Object.assign(c,{id:uid(),quarter:nq,current:null,confirmed:false,confidence:'unknown',proofs:[],measures:[],parkedQ:undefined,evidence:(k.evidence||[]).map(e=>({...e,id:uid(),done:false,doneAt:null}))});o.krs.push(c);cp++}}
+      else if(d==='over'){o.archived=true;arch++}}
+    db.quarterClose=[rec,...(db.quarterClose||[])];log('checkin','Kwartaal afgesloten: '+q)},{msg:`${q} afgesloten${ext?' · '+plural(ext,'resultaat','resultaten')+' verlengd':''}${cp?' · '+plural(cp,'resultaat','resultaten')+' gekopieerd':''}${arch?' · '+plural(arch,'objective','objectives')+' gearchiveerd':''}`});
+  E.qc={kr:{},obj:{},start:'',stop:'',keep:''};go('/resultaten')}
+
+/* ---------- acties en invoer ---------- */
+Object.assign(ACT,{
+  'f-rv-conf':(b)=>{(E.rvAns[b.dataset.id]??={}).v=b.dataset.v;render();$(`[data-rvnote="${b.dataset.id}"]`)?.focus()},
+  'g-rv-open':(b)=>{E.rvOpen[b.dataset.id]=true;render();$(`[data-rvnote="${b.dataset.id}"]`)?.focus()},
+  'g-rv-red':(b)=>{(E.rvAns[b.dataset.id]??={}).v='blocked';render();$(`[data-rvnote="${b.dataset.id}"]`)?.focus()},
+  'g-rv-help':(b)=>{$(`[data-rvhelp="${b.dataset.id}"]`)?.focus()},
+  'g-draft':async(b)=>{const id=b.dataset.id,r=krById(id);if(!r)return;const ws=weekStart(),k=r.k;
+    const dn=db.tasks.filter(t=>t.krId===id&&t.done&&inWeekD(t.doneAt,ws)).map(t=>(t.owner?`(${member(t.owner)?.name||'iemand anders'}) `:'')+t.title),op=open().filter(t=>t.krId===id).slice(0,5).map(t=>t.title);
+    const prompt=`Schrijf een korte weekupdate (maximaal drie zinnen, Nederlands, ik-vorm, zonder verzonnen cijfers) voor dit Key Result: "${k.title}". Voortgang: ${evDone(k)} van ${k.evidence.length} succescriteria voldaan. Deze week afgerond: ${dn.join('; ')||'niets'}. Nog open: ${op.join('; ')||'niets'}. Beantwoord: wat veranderde of leerde ik? Eindig met "Volgende stap: ..." in één zin.`;
+    try{toast('Claude schrijft een concept…');const t=clean(await callAI(prompt));const a=(E.rvAns[id]??={});const m=/volgende stap:\s*(.+)$/i.exec(t);if(m&&!a.next)a.next=m[1].trim();a.note=t.replace(/\s*volgende stap:[\s\S]*$/i,'').trim();E.rvOpen[id]=true;render()}catch(e){toast('Geen concept: '+(e.message||'AI niet bereikbaar')+'. Schrijf het zelf of kopieer een briefing via de AI-assistent.')}},
+  'g-park':(b)=>{const r=krById(b.dataset.id);if(!r)return;const q=quarter(),was=r.k.parkedQ===q;commit(()=>{r.k.parkedQ=was?undefined:q;if(!was){for(const w of db.weeks)w.krs=w.krs.filter(x=>x!==r.k.id)}},{msg:was?'Terug op je lijst':'Niet dit kwartaal: uit je weekkeuze gehaald',undo:true})},
+  'g-mid-done':()=>{commit(()=>{(db.quarterMid??={})[quarter()]=iso();log('checkin','Tussentijdse review '+quarter())},{msg:'Tussentijdse review gedaan'});go('/resultaten')},
+  'g-qc-out':(b)=>{(E.qc.kr[b.dataset.id]??={}).o=b.dataset.v;render()},
+  'g-qc-obj':(b)=>{E.qc.obj[b.dataset.id]=b.dataset.v;render()},
+  'g-qc-finish':()=>{const n=Object.keys(E.qc.kr).length;if(!n&&!confirm('Nog geen uitkomsten ingevuld. Toch afsluiten?'))return;eQCloseApply()},
+});
+document.addEventListener('input',e=>{const el=e.target;
+  if(el.dataset.rvhelp){(E.rvAns[el.dataset.rvhelp]??={}).help=el.value;return}
+  if(el.dataset.qlearn){(E.qc.kr[el.dataset.qlearn]??={}).l=el.value;return}
+  if(el.dataset.qsc){E.qc[el.dataset.qsc]=el.value;return}
+  if(el.id==='kf-t')hintKr(el);else if(el.id==='of-o')hintObj(el)});
+function hintBox(el){let h=el.closest('.field').querySelector('.g-hint');if(!h){h=document.createElement('div');h.className='g-hint';h.setAttribute('aria-live','polite');el.closest('.field').append(h)}return h}
+function hintKr(el){const t=el.value.trim(),h=hintBox(el);if(t.length<8){h.textContent='';h.className='g-hint';return}
+  const project=/^(lever|oplever|bouw|ontwikkel|implementeer|lanceer|organiseer|schrijf|maak|start|stel|zet|ship|launch|build|implement|deliver|ga)\w*/i.test(t)||/\b(uiterlijk|vóór|voor|per|tot)\s+\d{1,2}\s+(jan|feb|maa|apr|mei|jun|jul|aug|sep|okt|nov|dec)/i.test(t)||/\b(q[1-4])\b/i.test(t);
+  const vague=/\b(verbeter|beter|meer|minder|goede|optimaliseer)\b/i.test(t)&&!/\d/.test(t);
+  if(project){h.className='g-hint warn';h.innerHTML='Dit leest als een taak of project. Waar dient het voor? Schrijf het als uitkomst: wat is er anders als het klaar is? <span class="small">Voorbeeld: niet “Lever de app op voor 15 maart”, maar “Klanten doen hun dag vanaf hun telefoon”.</span>'}
+  else if(vague){h.className='g-hint warn';h.textContent='Hoe merk je dat het beter is? Maak het aantoonbaar met een getal of een stap die je kunt laten zien.'}
+  else if(t.length>160){h.className='g-hint warn';h.textContent='Houd het bij één zin.'}
+  else{h.className='g-hint ok';h.textContent='Helder: een uitkomst, geen taak. Zet onder Bewijs 3 tot 4 stappen (25, 50, 75, 100 procent) zodat je voortgang ziet.'}}
+function hintObj(el){const t=el.value.trim(),h=hintBox(el);if(t.length<8){h.textContent='';h.className='g-hint';return}
+  if(/\d/.test(t)||/^(lever|implementeer|bouw|ontwikkel|lanceer|organiseer)\w*/i.test(t)){h.className='g-hint warn';h.textContent='Een objective is een richting, geen taak of getal. Zet getallen in de Key Results.'}
+  else{h.className='g-hint ok';h.innerHTML=`Leest als: “We willen ${esc(t.charAt(0).toLowerCase()+t.slice(1))}, gemeten aan …”. Maak daarna drie of vier Key Results.`}}
 
 /* boot */
 captureAuthHash();sessInit();load();save();route=parseHash();render();startSync();if(pinLocked())showLock();if(contentNotice||okrNotice)toast(okrNotice||contentNotice);
